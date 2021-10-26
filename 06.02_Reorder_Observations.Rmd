@@ -1,0 +1,37 @@
+## Reorder Observations {#reorder-observations}
+
+Now, let's look at the second task: find the 10 houses with the highest sale prices. To order observations, you can use the function `arrange()` in the **dplyr** package. 
+
+To make the ordering easier to check, we will first focus on a smaller data set, that corresponds to the houses that was sold in Jan 2009 with overall condition equaling 5. 
+
+```{r}
+library(r02pro)
+library(dplyr)
+library(tibble)
+jan09 <- filter(ahp, yr_sold == 2009, mo_sold == 1, oa_cond == 5)
+jan09
+```
+
+To arrange the observations in the ascending order of the year that the house was built (`yr_built`), you just need to add `yr_built` as a second argument of the `arrange()` function. To arrange the descending order, you just need to add `desc()` around the variable. 
+
+```{r, results=TRUE}
+arrange(jan09, yr_built)         #arrange in the ascending order of yr_built
+arrange(jan09, desc(yr_built))   #arrange in the descending order of yr_built
+```
+
+You may observe from the results that there are several houses with the same `yr_built` value, leading to a tie. To break the tie, you can supply additional variables in the `arrange()` function, which will arrange the observations in the tie according to the additional variables sequentially.
+
+```{r, results=TRUE}
+arrange(jan09, desc(yr_built), bldg_class)
+```
+
+Here, the observations are arranged in the descending order of `yr_built`, and the ties are broken in the ascending order of `bldg_class`. Clearly, you can supply as many arguments as needed in the `arrange()` function. It is also important to note that the observations that has an `NA` value in the specified variable will always be arranged at the end of the output. 
+
+### Exercises
+
+Using the `ahp` dataset,
+
+1. Find all houses built in `2008` with house style as `2Story`, then arrange the the observations in the ascending order of remodel year, and break the ties in the descending order of sale price.
+
+
+

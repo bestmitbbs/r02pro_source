@@ -1,0 +1,205 @@
+## Sort, Rank, & Order {#sort-vector}
+
+In the past two sections, you have mastered how to create vectors of different types including numeric, character and logical. In addition, you know how to create vectors with patterns. A vector usually contains more than one elements. Sometimes, you want to order the elements in various ways. In this section, we will introduce important functions that relate to ordering elements in a vector. 
+
+### Numeric vectors
+
+Let's start with numeric vectors. Firstly, let's create a numeric vector which will be used throughout this part.
+
+```{r}
+x <- c(2, 3, 2, 0, 4, 7) 
+x #check the value of x
+```
+
+***a. Sort vectors***
+
+The first function we will introduce is `sort()`. By default, the `sort()` function **sorts** elements in vector in the ascending order, namely from the smallest to largest.
+
+```{r, results = TRUE}
+sort(x)
+```
+
+If you want to sort the vector in the descending order, namely from the largest to smallest, you can set a second argument `decreasing = TRUE`.
+
+```{r}
+sort(x, decreasing = TRUE)
+```
+
+***b. Ranks of vectors***
+
+Next, let's talk about ranks. The `rank()` function gives the **ranks** for each element of the vector, namely the corresponding positions in the **ascending order**.
+
+```{r results = TRUE}
+rank(x)
+```
+
+If you check the values of `x`, you can see that the smallest value of `x` is 0, which corresponds to the fourth element. Thus, the fourth element has rank 1. The second smallest value of `x` is 2, which is shared at the first and the third elements, resulting a **tie** (elements with the same value will result in a tie). Normally, these two elements would have ranks 2 and 3. To break the tie, the `rank()` function assigns all the elements involving in the tie (the first and third elements in this example) the same rank, which is **average** of all their ranks (the average of 2 and 3), by default. In addition to this default behavior for handling ties, `rank()` also provides other options by setting the `ties.method` argument. 
+
+If you set `ties.method = "min"`, all the tied elements will have the *minimum rank* instead of the average rank. In this case, the minimum rank is 2. 
+
+```{r results = TRUE}
+rank(x, ties.method = "min")
+```
+
+If you want to break the ties by the order element appears in the vector, you can set `ties.method = "first"`. Then the earlier appearing element will have smaller ranks than the later one. In this example, the first element will have rank 2 and the third element has rank 3, since the first element appears earlier than the third element. There are other options for handling ties, which you can look up in the documentation of `rank()` if interested. 
+
+```{r results = TRUE}
+rank(x, ties.method = "first")
+```
+
+::: {.infobox .caution data-latex="{caution}"}
+Unlike `sort()`, you can't get positions in the descending order from the `rank()` function, which means you can't add `decreasing = TRUE` in `rank()`.
+:::
+
+
+
+***c. Order of vectors***
+
+The next item we want to introduce is the `order()` function. Note that the function name order could be a bit misleading since ordering elements also has the same meaning of sorting. However, although it is related to sorting, `order()` is a very *different* function from `sort()`.  
+
+Let's recall the values of `x` and apply `order()` on `x`.
+
+```{r results = TRUE}
+x
+order(x)
+```
+
+From the result, you can see that the `order()` function returns **indices** for the elements in the ascending order, namely from the smallest to the largest. For example, the first output is 4, indicating the 4th element in `x` is the smallest. The second output is 1, showing the 1st element in `x` is the second smallest. 
+
+::: {.infobox .caution data-latex="{caution}"}
+Unlike `rank()`, the `order()` function breaks the ties by the appearing order by default.
+:::
+
+If you want the indices corresponding to the descending order, then you can set `decreasing = TRUE` just like what we did in the `sort()` function. 
+
+```{r}
+order(x, decreasing = TRUE)  
+```
+
+So far, we have covered `sort()`, `rank()` and `order()` functions for numeric vectors. It is helpful to provide a brief summary. 
+
+- The `sort()` function sorts elements in vectors. 
+- The `rank()` function will give ranks for each element of the vector.
+- The `order()` function returns indices for the elements.
+
+
+
+### Character vectors {#sort-character}
+
+Now, let's move to character vectors. For character vectors, R uses the **lexicographical ordering**, which is sometimes called dictionary order since it is the order used in a dictionary. Similar to numeric vectors, let's first prepare a character vector. Note that the strings in character vectors can contain letters, numbers, or symbols. 
+
+```{r}
+char_vec <- c("a", "A", "B", "b", "ab","aC", "1c", ".a", "1a","2a",".a","&u","3","_4")
+```
+
+
+***a. Ordering rules***
+
+First, let's discuss the ordering of a single character, including symbols, digits and letters. 
+There are a few important ordering rules as follows.
+
+- symbols < digits < letters: symbols appear first, followed by digits, and letters come last.
+- symbols are ordered in the following way.
+
+```{r, results = TRUE}
+syms <- c(" ",",",";","_","(",")","!","[","]","{","}","-","*","/","#","$","%","^","&","`","@","+","=","|","?","<",">",".")
+sort(syms)
+```
+
+- digits are in an ascending order: the smaller digits appear earlier than the bigger ones.
+
+```{r, results = TRUE}
+nums <- 0:9
+sort(nums)
+```
+
+- letters are alphabetically ordered, for the same letter，the lower case comes first.      
+
+```{r, results = TRUE}
+all_letters <- c(letters,LETTERS)
+sort(all_letters)
+```
+
+Here, `letters` is a character vector pre-created by R, it has all 26 letters in the alphabet with lower case. And `LETTERS` is another character vector, which has all 26 letters in the alphabet with upper case.
+ 
+
+***b. Sort vectors***
+
+As before, you can apply `sort()` on character vectors. Basically, the elements of character vectors ordered by the first character of their values,  move to the second character if there are ties in the first character (same first character), and look at more characters until the ties are broken or run out of characters.
+
+```{r results = TRUE}
+sort(char_vec)
+```
+
+
+We have the following observations.
+
+- Symbols appear first, followed by digits, and letters come last.
+- According to the ordering rule of symbols, `_4` is the first, `.a` should be the second and `&u` is the third.
+- `1a` and `1c` have the same first character, since a comes before c, `1a` comes before `1c`.
+- `ab` and `aC` have the same first character, since b comes before C (regardless of the case), `ab` comes before `aC`.
+
+Of course, we can also have the order reversed by setting `decreasing = TRUE`. 
+
+```{r}
+sort(char_vec, decreasing = TRUE)
+```
+
+***c. Ranks of vectors***
+
+Similarly, you can look at the rank for each element according to the ordering rules. Here, the element with rank 1 is `_4` and `.a` has rank 2. Just like numeric vectors, if you have elements with the same value in character vectors, the rank of these elements will be the same (the average of the corresponding ranks) by default. 
+
+```{r results = TRUE}
+rank(char_vec)
+```
+
+As expected, you can set the `ties.method` argument in `rank()` to use other methods for breaking ties.
+
+```{r}
+rank(char_vec, ties.method = "min")
+rank(char_vec, ties.method = "first")
+```
+
+***d. Order of vectors***
+
+Again, you can get the indices for each element in character vectors with the same `order()` function like that for numeric vectors. Also, the `order()` function breaks the ties by the appearing order by default.
+
+```{r results = TRUE}
+order(char_vec)
+```
+
+The `decreasing` argument still works for `order()`!
+
+```{r results = TRUE}
+order(char_vec, decreasing = TRUE)
+```
+
+### Logical vectors
+
+Since there are only two possible values `TRUE` and `FALSE` for logical vectors, it is straightforward to sort them with the knowledge of `FALSE < TRUE`. You can try the following example. 
+
+```{r, eval=F}
+logi_vec <- c(TRUE, FALSE, FALSE, TRUE, TRUE)
+sort(logi_vec)
+rank(logi_vec)
+order(logi_vec)
+```
+
+
+
+### Exercises
+
+Write R codes to solve the following problems.
+
+1. Create a numeric vector named `exe` with values `2, 0, -3, 0, 5, 6` and sort `exe` from the largest to the smallest.
+
+2. In `exe`, what's the ranks of `2` and the first `0`? 
+
+3. For `exe`, get indices for the elements in the ascending order.
+
+4. Create a character vector with values `"&5", "Nd", "9iC", "3df", "df", "nd", "_5", "9ic"` and sort it in the  ascending order. Then, explain 1) why `3df` goes before `9ic`; 2) why `&5` goes before `3df`; 3) why `9ic` goes before `9iC`.
+
+
+
+
+

@@ -1,0 +1,18 @@
+## Matching Pattern with Regular Expressions {#match-pattern}
+
+In many applications, we may want to find out which strings match a certain pattern.  To illustrate this, we will be using the variable names from the `ahp` data set from **r02pro** package. 
+
+```{r}
+library(r02pro)
+library(stringr)
+ahp_names <- colnames(ahp)
+```
+
+The **stringr** package provides a very useful function called `str_view()` to highlight the elements that match the given pattern. Let's describe a few commonly usd patterns.
+
+***a. contain a given string***
+To find all strings that contain `"yr"`, you can run the following code.
+```{r, results = TRUE}
+str_view(ahp_names, "yr")
+```
+

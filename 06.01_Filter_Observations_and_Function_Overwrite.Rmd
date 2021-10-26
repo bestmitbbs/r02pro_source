@@ -1,0 +1,89 @@
+## Filter Observations and Objects Masking {#filter-observations}
+
+Let's start with the first task outlined at the beginning of this chapter. Suppose we want to find the houses that are sold in Jan 2009. You can use the function `filter()` in the **dplyr** package, a member of the **tidyverse** package. If you haven't installed the **tidyverse** package, you need to install it. Let's first load the **dplyr** package. 
+
+```{r, echo = TRUE, results = TRUE, message=TRUE, warning=TRUE, tidy = TRUE}
+library(dplyr)
+```
+
+
+### Objects Masking
+
+After loading the package **dplyr**, you can see the following message
+
+```
+The following objects are masked from ‘package:stats’:
+
+    filter, lag
+```
+
+
+The message appears because **dplyr** contains the functions `filter()` and `lag()` which are already defined and preloaded in the R package **stats**. As a result, the original functions  are masked by the new definition in **dplyr**. 
+
+In this scenario when the same function name is shared by multiple packages, we can add the package name as a prefix to the function name with *double colon* (`::`). For example, `stats::filter()` represents the `filter()` function in the **stats** package, while `dplyr::filter()` represents the `filter()` function in the **dplyr** package. You can also look at their documentations.
+```{r, eval=FALSE}
+?stats::filter
+?dplyr::filter
+```
+
+It is helpful to verify which version of `filter()` you are using by typing the function name `filter`. 
+```{r, eval = FALSE}
+filter
+```
+
+Usually, R will use the function in the package that is loaded at a later time. To verify the search path, you can use the `search()` function. R will show a list of attached packages and R objects. 
+
+```{r, results=TRUE}
+search()
+```
+
+### Filter Observations
+
+Now, let's introduce how to use `filter()` to get the subset of `ahp` which consists of  houses that are sold in Jan 2009. To use the `filter()` function, you put the dataset in the first argument, and put the **logical statements** as individual arguments after that. We know the `ahp` dataset has the year information in `yr_sold` and the month information in `mo_sold`. Apparently, Jan 2009 corresponding to `yr_sold == 2009` and `mo_sold == 1`. 
+
+```{r, results=TRUE}
+library(r02pro)
+filter(ahp, yr_sold == 2009, mo_sold == 1) 
+```
+
+In the `filter()` function, each logical statement will be computed, which leads to a logical vector of the same length as the number of observations. Then, only the observations that have `TRUE` values in all logical vectors are kept. 
+
+It is helpful to learn the mechanism of `filter()` by reproducing the results using what we learned on data frame subsetting in Section \@ref(subset_df). 
+```{r, eval = FALSE}
+ahp[ahp$yr_sold == 2009 & ahp$mo_sold == 1, ] 
+```
+
+Although we got the same answer, we hope you agree with us that the `filter()` function provides more intuitive and simpler codes than the raw data frame subsetting. For example, the tibble name `ahp` appeared three times in the data frame subsetting while it only appears once in the `filter()` function. 
+
+
+::: {.infobox .caution data-latex="{caution}"}
+This is an example of the power of creating new R functions and R packages. They usually enable us to do tasks that couldn't be done using the existing functions in base R, or making coding easier than just using the existing functions.  Recall that the same thing happened in the visualization where we compared the visualization functions in base R with the `ggplot()` function. No matter how complicated the figure we want to create is, we only need to put the data set name once in the `ggplot()` function if all the layers are using the same data set.   
+::: 
+
+
+
+
+It is worth noting that the `filter()` function only returns the obsevations when the conditions are all `TRUE`, without including the `NA` observations. 
+
+Using the `filter()` function, the original tibble is **unchanged**, which is actually the feature of many functions we will learn in this Chapter. To save the filtered tibble, you can either assign the value to the original tibble name, which will overwrite it; or assign the value to a new name, which will create a new tibble with the new values. Let's save all houses that were sold in Apr 2009 in a new tibble.
+```{r, eval = FALSE}
+apr09 <- filter(ahp, yr_sold == 2009, mo_sold == 4)
+apr09
+```
+
+In addition to using separate logical statements, you can also have logical operations between multiple logical vectors inside each statement. This makes the `filter()` function very flexible in expressing different kinds of filtering operation. Let's say we want to find all houses that are sold in 2007, remodeled in 2006, and with house style either "1Story" or "2Story". 
+```{r, eval = FALSE}
+filter(ahp, dt_sold >= "2007-01-01", dt_sold < "2008-01-01", yr_remodel == 2006, house_style == "1Story" | house_style == "2Story")
+```
+
+From the above example, you can see that a variable can used multiple times in different logical statements. 
+
+
+### Exercise
+
+Using `ahp` dataset,
+
+1. Create a new tibble named `some_apr` that contains all houses that are built before year 2000 (not including 2000), sold on or after year 2009, and with 2 or 3 bedrooms.
+
+
+

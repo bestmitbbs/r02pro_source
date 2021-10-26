@@ -1,0 +1,308 @@
+## Create Vectors with Patterns {#vector-patterns}
+
+Now you are familiar with numeric vector, character vector and logical vector, and you can create them from scratch using the `c()` function. However, in many applications, we may want to create vectors with values of **certain patterns**. In this section, we will introduce several commonly used functions for generating vectors with patterns.
+
+### Create equally-spaced numeric vectors via `:`  
+
+One of the commonly used patterns associated with numeric vectors is numeric vectors composed of **equally-spaced** integers, where the differences between adjacent values in the vectors are all $1$ or $-1$. 
+
+Suppose we want to create a vector with consecutive integers from 1 to 5. The first method is to write all numbers down in `c()`,
+
+```{r}
+pattern1 <- c(1, 2, 3, 4, 5)
+```
+
+You can see that it is not too cumbersome to enumerate all 5 integers when creating `pattern1`. Let's imagine if we want to create a vector containing 100 consecutive integers. Do we have a faster way than writing all 100 integers down? The answer is Yes! 
+
+You can use the **colon operator** `:`, which is frequently used in everyday programming. (Note that you don't need to use `c()` together with `:`)
+
+```{r}
+pattern2 <- 1:5 #consecutive integers from 1 to 5
+```
+
+
+::: {.infobox .caution data-latex="{caution}"}
+It is worth mentioning the subtle difference between `pattern1` and `pattern2`. 
+```{r, results=TRUE}
+pattern1
+pattern2
+typeof(pattern1)
+typeof(pattern2)
+```
+You can see that although `pattern1` and `pattern2` appear to have the same values, they are stored as double and integer values, respectively. The reason is that when you create consecutive integers using `:`, R will store them as integers to save space.
+:::
+
+In addition to creating vectors with consecutive integers that is increasing, `:` can also be used to create vectors with integers in decreasing sequences.
+
+```{r}
+pattern3 <- 6:2  #decreasing sequence from 6 to 2
+pattern4 <- 3:-3 #decreasing sequence from 3 to -3
+```
+
+Powerful the `:` operator is, it can only generate equally-spaced numeric vectors with increment 1 or -1. If you want to generate equally-spaced numeric vectors with different increments, you can use the more powerful `seq()` function.
+
+### Create equally-spaced numeric vectors via `seq()`  
+
+A very efficient way to create **equally-spaced** numeric vectors is to use the `seq()` function, which is short for sequence. 
+
+***a. Create sequences with `by` argument***
+
+To use the `seq()` function, you can specify the start value of the sequence in the `from` argument, the limit end value in the `to` argument, and the increment in the `by` argument.
+
+```{r}
+seq(from = 1, to = 5, by = 1)
+```
+
+Here, the vector starts with 1, increases by 1 at each step, and ends at 5. Note that the `from` and `by` arguments are optional in `seq()`. If you don't specify their values, `seq()` will use the default value 1 for both arguments. 
+
+```{r}
+seq(to = 5)
+```
+
+::: {.infobox .caution data-latex="{caution}"}
+Now you have had four methods to create vectors with consecutive integers. 
+```{r, eval = F}
+c(1,2,3,4,5,6)                #write all numbers down
+1:6                           #use colon operator
+seq(from = 1, to = 6, by = 1) #use seq()
+seq(to = 6)                   #use seq()
+```
+:::
+
+Next, let's change the increment to 2 and you will get a numeric vector with `1 3 5` as its values.
+
+```{r results=TRUE}
+seq(from = 1, to = 5, by = 2)
+```
+
+Note that the end value of the sequence doesn't always equal the `to` argument. If you change the limit end value to 6, you still get the same sequence, since the next value in the sequence would be 7 which is larger than the limit end value 6. This is the reason why `to` is called the limited end value, not the end value.
+
+```{r results=TRUE}
+seq(from = 1, to = 6, by = 2) 
+```
+
+
+Unlike `:`, you can set values of three arguments in `seq()` as decimal numbers. 
+
+```{r results=TRUE}
+seq(from = 1.1, to = 6.2, by = 0.7) 
+```
+
+Here, you will get a sequence which starts with 1.1, increases by 0.7 each time until it is larger than 6.2.
+
+You can also create a decreasing sequence by using a smaller `to` value than the `from` value, coupled with a negative value in the `by` argument.
+
+```{r eval=TRUE}
+seq(from = 1.5, to = -1, by = -0.5) 
+```
+
+If a positive value is used in the `by` argument in a decreasing sequence, you will see an error message.
+
+```{r eval=TRUE, error=TRUE}
+seq(from = 1.5, to = -1, by = 0.5) 
+```
+
+***b. Create sequences with `length.out` argument***
+
+Instead of setting the increment, you can also specify the `length.out` argument, which creates a sequence with equal space in the specified length. R will automatically calculate the interval between two neighboring numbers according to values of three arguments in `seq()`.
+
+```{r eval=TRUE}
+seq(from = 1, to = 5, length.out = 9) 
+```
+
+Here, you will get a equally-spaced sequence of length 9 from 1 to 5.
+
+You can also create a decreasing sequence by using the `length.out` argument. 
+
+```{r eval=TRUE}
+seq(from = 5, to = -5, length.out = 9) 
+```
+
+::: {.infobox .caution data-latex="{caution}"}
+Unlike creating sequences with `by` argument, if you specify the `length.out` argument in `seq()`, the start value and end value of the sequence you get will be exactly match the input arguments. 
+::: 
+
+
+***c. Create sequences with both `by` and `length.out` arguments***
+
+Lastly, if you provide both the `by` and `length.out` arguments, only one of `from` and `to` is needed. With one value (the start value or the limit end value) fixed, `seq()` will create a vector with specified increment and length.
+
+If you only have the `from` argument, you will get a sequence starting from the value you set with the increment in the `by` argument, until you get a sequence with specified length.
+
+```{r}
+seq(from = 1, by = 2, length.out = 5)
+```
+
+If you only have the `to` argument, you will get a sequence end with the value you set with the increment in the `by` argument, until you get a sequence with specified length.
+
+```{r}
+seq(to = 1, by = 2, length.out = 5)
+```
+
+One last thing regarding `seq()` is that you can *at most* provide three arguments. For example, you will see an error when running the following example since all four arguments are specified. 
+
+```{r, error = TRUE}
+seq(from = 1, to = 3, by = 1, length.out = 3)
+```
+
+### Create matching numeric vectors via `seq_along()` 
+
+Now, we will introduce one function related to `seq()`. Let's first create a numeric vector, 
+
+```{r}
+extend <- seq(from = 2, to = 8, length.out = 9) 
+```
+
+From the `seq()` above, you know that the length of this vector is 9. Next, let's put this numeric vector in `seq_along()`.
+
+```{r results=TRUE}
+seq_along(extend)
+```
+
+`seq_along()` takes a vector as its argument, and generates consecutive integers from 1 to the length of the input vector.  The `seq_along()` function is commonly used when writing loops, which will be covered at a later time.
+
+::: {.infobox .caution data-latex="{caution}"}
+You can also use `1:length(extend)` to get the same result as `seq_along(extend)`. 
+```{r}
+1:length(extend)
+```
+:::
+
+### Create numeric vectors via `sequence()`
+
+Sometimes, you may want to combine multiple equally-spaced integer sequences into a single vector. To do this, you can use the function `sequence()`. The most common usage of `sequence()` is to supply a vector of integers as its input. 
+
+```{r results=TRUE}
+comp_seq1 <- sequence(c(2, 3, 5)) 
+comp_seq1
+```
+From the result, you can see that it firstly create equally-spaced vectors `1:2`, `1:3`, and `1:5`, then combine all vectors into a single one. This avoids the trouble of writing something like `c(1:2, 1:3, 1:5)`.
+
+<!-- More generally, we can construct a vector composed of more complex integer sequences with additional arguments, namely `sequence(nvec, from, by)`. Here, the `nvec` , `from` and `by` are integer vectors of the corresponding `length.out`, `from`, and `by` arguments of each equally-spaced sequence. Let's see the following example. -->
+
+<!-- ```{r results=TRUE} -->
+<!-- comp_seq2 <- sequence(nvec = c(4, 3, 2), from = c(1, 2, -1), by = c(2, -1, 2)) -->
+<!-- comp_seq2 -->
+<!-- ``` -->
+
+<!-- Now, `sequence()` generate three different equally-spaced integer sequences and combine them to a single vector. We can reproduce the vector using `c()` and three calls of the `seq()` function. -->
+
+<!-- ```{r results=TRUE} -->
+<!-- comp_seq3 <- c(seq(from = 1,  by =  2, length.out = 4), -->
+<!--                seq(from = 2,  by = -1, length.out = 3), -->
+<!--                seq(from = -1, by =  2, length.out = 2)) -->
+<!-- comp_seq3 -->
+<!-- ``` -->
+
+
+
+### Create numeric, character and logical vectors with repetition
+
+Another commonly used pattern associated with vectors is **repetition**. Note that while the equally-spaced pattern only makes sense for numeric vectors, the repetition pattern work for all three kinds of vectors. 
+
+To do repetition, you can use the `rep()` function, which works by repeating the first argument for the number of times indicated in the second argument. 
+
+Firstly, let's create a numeric vector with repetition. 
+
+```{r results = TRUE}
+num1 <- rep(2, 4)
+num1
+```
+
+Since the first argument is `2` and the second argument is `4`, `2` is repeated for `4` times, resulting a length-4 vector with all elements of value 2. 
+
+
+The first argument can also be a numeric vector with several values. 
+```{r results=TRUE}
+num2 <- rep(c(1, 4, 2), 3)
+num2
+```
+
+Here, the `rep()` will repeat the whole vector `c(1, 4, 2)` three times. Note that the vector is **repeated as a whole**, not elementwisely. 
+
+
+You may be wondering what happens the second argument also has several numbers? Let's try together.
+
+```{r results=TRUE}
+num3 <- rep(c(1,5,7), c(3,2,1))
+num3
+```
+
+When the second argument is also a vector, R will do an **element repeat** operation by repeating each element in the first argument the number of times indicated in the corresponding location of the second argument, and combine the repeated vectors to a single vector. In this example, 1 is repeated 3 times, 4 is repeated twice, and 7 is repeated once. It is equivalent to
+
+```{r}
+c(rep(1,3), rep(4,2), rep(7,1))
+```
+
+The `rep()` function works the same way if the first argument is a character vector. 
+
+```{r eval=FALSE}
+animals1 <- rep(c("sheep", "pig", "monkey"), 2)
+animals1
+animals2 <- rep(c("sheep", "pig", "monkey"), c(3, 2, 1))
+animals2
+```
+
+You can also use logical vectors in the first argument.
+
+```{r eval=FALSE}
+logic <- rep(c(TRUE, FALSE), c(3,2))
+logic
+```
+
+### Getting unique elements and their frequencies
+
+So far, you have learned how to create vectors with different patterns. Sometimes, you may want to get the unique elements (elements of different values) of a vector and their corresponding frequencies. Let's use `num3` as an example. **(Don't forget to use `ls()` or check the environment panel to find all objects you have defined)**,  
+
+```{r results=TRUE}
+num3           #check the values
+```
+
+You can use `unique()` to show all unique elements in vectors.
+
+```{r results=TRUE}
+unique(num3)   #get the unique elements
+```
+
+From the result, you know the unique elements in `num3` are `1`,`5`, and `7`. To get the frequency of each element, you can use the `table()` function.
+
+```{r results=TRUE}
+table(num3)    #get the frequency table
+```
+
+Here, the first row is the name of the object, the second row shows all unique elements, and the third row is the corresponding frequency of each element in the same column. In `num3`, there are three `1`s, two `5`s and one `7`.
+
+`unique()` and `table()` work similarly for character vectors and logical vectors. You can try the following codes.
+
+```{r eval=FALSE}
+animals
+unique(animals)
+table(animals)
+logic
+unique(logic)
+table(logic)
+```
+
+### Exercises
+
+
+
+1. Use five different ways to create an equally-spaced sequence with `2 4 6 8 10` as result.
+
+
+
+2. Use two different ways to create a numeric vector with `1 2 3 1 2 3 4 5 1 2 3 4 5 6 7` as result. Show the unique elements and their corresponding frequency.
+
+
+
+3. Write R code using `rep()` function to create a character vector with the same result as `c("sheep","pig", "cat","sheep","pig", "cat","sheep","pig", "cat")`
+
+
+
+4. Write R code using `rep()` function to create character vector with the same result as `c("sheep","sheep","pig","pig","pig","pig","cat","cat","cat")`
+
+
+
+
+
+

@@ -1,0 +1,163 @@
+## Use R as a Fancy Calculator {#Calculator}
+
+While R is super powerful, it is, first of all, a very fancy calculator.
+
+### Add comments using "#"
+
+The first item we will cover is about adding comments. In R, you can add comments using the pound sign `#`. In each line, anything after `#` are comments, which will be ignored by R. Let's see an example,
+
+```{r results = TRUE}
+6 - 1 / 2 #first calculate 1/2=0.5, then 6-0.5=5.5
+```
+
+Just looking at the resulting value 5.5, you may not know the detail of the calculation process. The comment informs you the operation order: the division is calculated before the subtraction.
+
+In general, adding comments to codes is a very good practice, as it greatly increases readability and make collaboration easier. We will also add many comments in our codes to help you learn R.
+
+### Basic calculation
+
+Now let's start to use R as a calculator! You can use R to do addition, subtraction, multiplication，division, and combine multiple basic operations. You can also calculate the square root, absolute value and the sign of a number.
+
+```{r results = TRUE, echo=FALSE}
+Operation  <- c("1 + 2", "1 - 2", "2 * 4", "2 / 4", "6 - 1 / 2", "sqrt(100)", "abs(-3)", "sign(-3)")
+Explanation <- c("addition", "subtraction", "multiplication", "division", "multiple operations", "square root", "absolute value", "sign")
+d <- data.frame(Operation, Explanation)
+knitr::kable(d)
+```
+
+
+While the first seven operations in the table look intuitive, you may be wondering, what does the `sign()` function mean here? Is it a stop sign?       
+
+
+```{r stop, results=TRUE, echo=FALSE, fig.align = 'center', out.width = '16%'}
+knitr::include_graphics("pics/1stop.jpg")
+```
+
+
+Sometimes, you may have no idea how a particular function works. Fortunately, R provides a detailed documentation for each function. There are three ways to ask for help in R.
+
+- Use a question mark followed by the function name, e.g. `?sign`  
+- Use help function, e.g. `help(sign)`
+- Use the help window in RStudio, as shown in Figure \@ref(fig:help). The help window is the panel 4 of Figure \@ref(fig:four) in Section \@ref(Installation). Then type in the function name in the box to the right of the magnifying glass and press return.
+
+```{r help, results=TRUE, echo=FALSE, fig.align = 'center', fig.cap="Ask for help", out.width = '70%'}
+knitr::include_graphics("pics/1help.PNG")
+```
+
+
+### Approximation
+
+After learning about doing basic calculations, let's move on to do approximation in R. When you do division, for example, when computing `7 / 3`, the answer is not a whole number since 7 is not divisible by 3. Under these circumstances, approximation operators are very handy to use. Let's take `7 / 3` as the example.
+
+***a. Get the integer part and the remainder***
+
+```{r results = TRUE, echo=FALSE}
+Code  <- c("7%/%3","7%%3")
+Pattern <- c("percent,divide,percent", "percent,percent")
+Name <- c("integer division", "modulus")
+d <- data.frame(Code, Name)
+knitr::kable(d)
+```
+
+We all know that 7 = 3 * **2** + **1**. So the *integer division* will pick up the integer part, which is 2 here; and the *modulus* will get the remainder, which is 1.
+
+
+***b. Get the nearby integer***
+```{r results = TRUE}
+floor(7 / 3)   
+ceiling(7 / 3) 
+```
+
+Since **2** <= 7/3 <= **3**, you can use the `floor` function to find the *largest integer* <= 7/3, which is 2; and the `ceiling` function gives the *smallest integer* >= 7/3, which is 3.
+
+
+***c. Round to the nearest number***
+```{r results = TRUE}
+round(7 / 3)   
+round(7 / 3, digits = 3)
+```
+
+The `round()` function follows the **rounding principle**. By default, you will get the nearest integer to `7 / 3`, which is `2`. If you want to control the approximation accuracy, you can add a `digits` argument to specify how many digits you want after the decimal point. Here you will get `2.333` after adding `digits = 3`.
+
+### Power & logarithm
+
+You can also use R to do *power* and *logarithmic* operations.  
+
+Generally, you can use `^` to do power operations. For example, `10^5` will give us 10 to the power of 5. Here, 10 is the *base* value, and 5 is the *exponent*. The result is 100000, but it is shown as `1e+05` in R. That's because R uses the so-called *scientific notation*.
+
+::: {.infobox .caution data-latex="{caution}"}
+**scientific notation**: a common way to express numbers which are too large or too small to be conveniently written in decimal form.  Generally, it expresses numbers in forms of $m \times 10^n$ and R uses the **e notation**. Note that the **e notation** has nothing to do with the natural number $e$. Let's see some examples, 
+\begin{align}
+1 \times 10^5 &= \mbox{1e+05}\\
+2 \times 10^4 &= \mbox{2e+04}\\
+1.2 \times 10^{-3} &= \mbox{1.2e-03}
+\end{align}
+:::
+
+In mathematics, the *logarithmic operations* are inverse to the power operations. If **$b^y = x$** and you only know *$b$* and *$x$*, you can do logarithm operations to solve *$y$* using the general form **$y = \log(x, b)$**, which is called the logarithm of $x$ with base $b$. 
+
+In R, logarithm functions with base value of 10, 2, or the natural number $e$ have shortcuts `log10()`, `log2()`, and `log()`, respectively. Let's see an example of `log10()`, the logarithm function with base *10*.
+
+```{r results = TRUE}
+10^6 
+log10(1e6) #log10(x) = log(x, 10)
+```
+
+Next, let's see `log2()`, the logarithm function with base *2*.
+
+```{r results = TRUE}
+2^10
+log2(1024)  #log2(x) = log(x, 2)
+```
+
+Before moving on to the natural logarithm, note that the natural number $e$ needs to be written as `exp(1)` in R. When you want to do power operations on $e$, you can simply change the argument in the function `exp()`, for example, `exp(3)` is $e$ to the power of 3.  Here, `log()` without specifying the `base` argument represents the logarithm function with base $e$.
+
+```{r results = TRUE}
+exp(1)      
+exp(3)
+log(exp(3))  #log(x) = log(x, exp(1))
+```
+
+### Trigonometric function
+
+R also provides the common trigonometric functions. 
+
+```{r results = TRUE}
+cos(pi)
+acos(-1)
+```
+
+Here, `acos()` is the inverse function of `cos()`. If we set $cos(a) = b$, then we will get $acos(b) = a$.
+
+```{r results = TRUE}
+sin(pi/2)
+asin(1)
+```
+
+Similarly, `asin()` is the inverse function of `sin()`. If we set $sin(a) = b$, then we will get $asin(b) = a$.
+
+```{r results = TRUE}
+tan(pi/4)
+atan(1)
+```
+
+Also, `atan()` is the inverse function of `tan()`. If we set $tan(a) = b$, then we will get $atan(b) = a$.
+
+### Exercises
+
+1. Write R code to compute $\sqrt{5 \times 5}$.
+
+
+2. Write R code to get help on the function `floor`.
+
+
+3. Write R code to compute the square of $\pi$ and round it to 4 digits after the decimal point. 
+
+
+
+4. Write R code to compute the logarithm of 1 billion with base 1000. 
+
+
+
+5. Write R code to verify $sin^2(x) + cos^2(x) = 1$, for $x = 724$. 
+

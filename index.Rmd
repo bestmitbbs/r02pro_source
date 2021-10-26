@@ -1,0 +1,62 @@
+--- 
+title: "R Programming: Zero to Pro"
+author: "[Yang Feng](https://yangfeng.hosting.nyu.edu/) and [Jianan Zhu](https://yangfeng.hosting.nyu.edu/authors/jianan-zhu/)"
+date: "`r Sys.Date()`"
+site: bookdown::bookdown_site
+output: bookdown::gitbook
+documentclass: book
+bibliography: [book.bib, packages.bib]
+biblio-style: apalike
+link-citations: yes
+github-repo: "r02pro/r02pro.github.io"
+colorlinks: yes
+description: "R Programming: Zero to Pro"
+---
+```{r, include=FALSE}
+knitr::opts_chunk$set(
+  comment = "#>", echo = TRUE, eval = TRUE, results = FALSE, error = TRUE, fig.width = 6, warning = FALSE, collapse = TRUE
+)
+```
+
+# Preface {-}
+
+This book is for anyone who is interested in learning R and Data Science. It is designed for people with zero background in programming. 
+
+We also have a companion R package named **r02pro**, containing the data sets used as well as interactive exercises for each part. 
+
+# Contributing to the Book  {-}
+
+To improve the book, we would like to ask for your help. 
+
+### Submitting Questions or Feedbacks  {-}
+
+If you have any questions or feedback (including typos or grammar issues) about any materials in the book, we greatly appreciate if you can write to us at r02pro007@gmail.com. We will also add your name in the Acknowledgement section to show our gratitude. 
+
+### Contributing Exercises  {-}
+
+We warmly welcome everyone to help the book via contributing exercises for each section. Please make sure the exercise you are contributing only needs the knowledge up to the specific section number (it of course can use any knowledge of all sections up to the particular section) you would like to put the exercise into.
+
+Please submit the proposed exercise(s) via the  [Google Form](https://docs.google.com/forms/d/e/1FAIpQLSckpcPZvRSr2vju-J2w8NhOx_oIyYtd8uuX0xqq_ThfRWMltw/viewform).
+
+Thanks a lot for your contribution.
+
+
+# Acknowledgement {-}
+
+
+
+```{r, results = "asis", echo = FALSE, message = FALSE}
+library(dplyr)
+contributors <- readr::read_csv("contributors.csv", col_types = list())
+
+contributors <- contributors %>% 
+  mutate(
+    link = glue::glue("[\\@{login}](https://github.com/{login})"),
+    desc = ifelse(is.na(login), name, ifelse(is.na(name), link, glue::glue("{name} ({link})")))
+  )
+
+cat("This book is the product of numerous collaborative efforts. Among all people, we are most grateful to the students in the course GPH-GU 2183: Introduction to Statistical Programming in R in Fall 2021 at New York University. The list of people that made contributions include   ")
+cat(paste0(contributors$desc, collapse = ", "))
+```
+
+

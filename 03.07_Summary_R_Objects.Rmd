@@ -1,0 +1,14 @@
+## Summary of R Objects {#summary-r-objects}
+
+Throughout last chapter and this one, we have covered all types of R objects including vectors, matrices, arrays, data frames (tibbles), and lists. In this section, we would like to summarize what we have covered and highlight the differences of the different types of objects in terms of their **dimensions** and the **data types** they can contain. 
+
+```{r echo = FALSE, results = TRUE}
+library(tibble)
+Type  <- c("Vector","Matrix","Array","Data Frame/Tibble", "List")
+Section <- c("\\@ref(vector)","\\@ref(matrix)","\\@ref(array)","\\@ref(dataframe) - \\@ref(tibble)","\\@ref(list)")
+Dim <- c(1, 2, ">=3", 2, 1)
+data_type <- c("Single", "Single","Single", "Multiple", "Multiple")
+d <- tibble(Type, Section, Dim, `Data Type` = data_type )
+knitr::kable(d)
+```
+

@@ -1,0 +1,172 @@
+## Object Assignment {#Object-Assignment}
+
+In the last section, you have seen the power of R as a fancy calculator. However, in order to do more complicated and interesting tasks, you may need to store intermediate results for future use.  
+
+Let's take a look at a concrete example. Say if you want to do the following calculations involving `exp(3) / log(20,3) * 7`.  
+
+```{r}
+(exp(3) / log(20,3) * 7) + 3 #addition
+(exp(3) / log(20,3) * 7) - 3 #subtraction
+(exp(3) / log(20,3) * 7) / 3 #division
+```
+
+You need to type the expression `exp(3) / log(20,3) * 7` three times, which is a bit cumbersome. In this section, we will introduce how to do **object assignment** with `exp(3) / log(20,3) * 7` which can help you to assign the value of it to a name for future use. Then, for any operation involving `exp(3) / log(20,3) * 7`, you can just use the corresponding name instead.  
+
+### What is an R Object?
+
+Before we get started, let's firstly have a basic understanding of the most important thing in R, which is called **object**. In principle, **everything that exists in R is an object**. For example, the number `5` is an object, the expression `1 + 2` is an object, the expression `floor(7 / 3)` is an object, and of course expression `exp(3) / log(20,3) * 7` is also an object.   
+
+If you run `5`, you will get one element of value 5 from the output. Similarly, if you run `1 + 2`, you will get one element of value 3 from the output. You can try to run `floor(7 / 3)` and `exp(3) / log(20,3) * 7` by yourself.  In these four examples, you can see that there is only one **element** in each object.
+
+However, an object can contain more than one elements, and each element has its own **value**. Notice that different elements can have the same value. Therefore, different objects can have different values. 
+
+
+
+### Assignment Operation with `<-` {#assignment}
+
+Knowing the importance of objects and their corresponding values, let's introduce how to do **object assignments** in R. To do object assignments, you need to assign **value(s)** to a **name** via the assignment operator, which will create a new object with a name. You can use the new named object once it is created in subsequent calculations without redundancy. Let's start with a simple example,
+
+```{r results = TRUE}
+x_numeric <- 5
+```
+
+The assignment operation has three components. From left to right，
+
+- the first component `x_numeric` is the **object name** of a new object, which has certain naming rules which we will discuss shortly in Section \@ref(Naming). 
+- The second component is the **assignment operator** `<-`, which is a combination of the less than sign `<` immediately followed by the minus sign `-`. 
+- The final component is the **value(s)** to be assigned to the name, which is 5 here. 
+
+::: {.infobox .caution data-latex="{caution}"}
+There is no space between `<` and `-` in the assignment operator `<-`. Note that although `=` may also appear to be working as the assignment operator, it is not recommended as `=` is usually reserved for specifying the value(s) of arguments in a function call, which will be introduced in Section \@ref(vector-patterns).
+:::
+
+After running the code above, you will see no output in the console, unlike the case when we ran `1 + 2` which gives us the answer `3` (as shown in the Figure \@ref(fig:noa)). You may be wondering, did we successfully make our first assignment operation? 
+
+```{r noa, results=TRUE, echo=FALSE, fig.align = 'center', fig.cap="No output", out.width = '70%'}
+knitr::include_graphics("pics/2noa.PNG")
+```
+
+To verify it, you can run the code with just the object name to check its value. (For named objects, you can get their value(s) by running codes with their object names.)
+
+```{r results = TRUE}
+x_numeric
+```
+
+Great! You get the value 5, indicating that you have successfully assigned the value 5 to the name x_numeric, and you have created a new object `x_numeric`. You can use `x_numeric` instead of `5` to do the subsequent calculations because `x_numeric` and `5` have the same value. 
+
+You can assign **value(s)** of any R objects to a name. Let's try to simplify the three expressions we did at the beginning of this section. It is easy to observe that the three lines of codes share a common term `exp(3) / log(20,3) * 7`. Let's assign the value of the common term to a name. 
+
+```{r results = TRUE}
+y_numeric <- exp(3) / log(20,3) * 7
+y_numeric
+```
+
+Now you have successfully created an object `y_numeric` with value 51.56119. Using the named object `y_numeric`, you can simplify the three calculations as follows. 
+
+```{r}
+y_numeric + 3
+y_numeric - 3
+y_numeric / 3
+```
+
+::: {.infobox .caution data-latex="{caution}"}
+Note that in the object assignment process, it is not the expression itself but rather the value(s) of the expression, that is assigned to a name. So you will not get the expression `exp(3) / log(20,3) * 7` from `y_numeric`. 
+:::
+
+
+
+You can also try the following examples by yourself.
+
+```{r}
+a <- floor(7 / 3) 
+a
+b <- 7%/%3
+b
+```
+
+Clearly, using the object assignment, you can greatly simplify your code and avoid redundancy. 
+
+Note that R object names are **case-sensitive**. For example, you have defined `x_numeric`, but if you type `X_numeric`, you will get an error message as follow. 
+
+```{r, error = TRUE}
+X_numeric
+```
+
+
+
+### Review objects in environment
+
+After creating new objects `x_numeric` and `y_numeric`, they will appear in the **Environment**, located in the top right panel (**panel3 in Figure \@ref(fig:four)**). You can check all the **named objects** and their values in this area. It is helpful to monitor the environment from time to time to make sure everything look fine. Notice that objects without names will not be shown in the environment.
+
+You can also see the list of all the named objects using function `ls()`.
+
+```{r, results = TRUE}
+ls()
+```
+
+All the objects shown in the environment or the list have been saved in R, so they are available for future use directly. It is a good habit to do object assignments if you want to save important values for future use.
+
+### Object naming rule {#Naming}
+
+Now you have created two named objects `x_numeric` and `y_numeric`. In general, R is very flexible in the name you give to an object，however, there are three important rules you need to follow.
+
+***a. Must start with a letter or . (period)***     
+If starting with period, the second character can't be a number.   
+
+***b. Can only contain letters, numbers, `_` (underscore), and `.` (period)***
+One recommended naming style is to use lowercase letters and numbers, and use underscore to separate words within a name. So you can use relatively longer names that is more readable.
+
+***c. Can not use special keywords as names.***
+For example, **TRUE <- 12** is not permitted as `TRUE` is a special keyword in R. You can see from the following that this assignment operation leads to an error message. 
+
+```{r error=TRUE}
+TRUE <- 12
+```
+
+Some commonly used reserved keywords that cannot be used as names are listed as below.
+
+
+```{r results = TRUE, echo=FALSE, warning=FALSE}
+Keys  <- c("break", "else", "FALSE", "for", "function", "if", "Inf", "NA", "NaN", "next", "repeat", "return", "TRUE", "while")
+key_mat <- matrix(Keys, 7, 2)
+knitr::kable(key_mat)
+```
+
+To get a complete list of reserved words, you can run the following code.
+```{r, eval = FALSE}
+?Reserved
+```
+
+
+### Object types
+
+In this section, you have learned about how to assign a value to a name. The values you assigned are all of numeric type. Actually, an object may contain more than one values. Also, the values it contains can be of other types than numeric, including character and logical. Depending on the **composition of values**, the object belongs to one particular type. 
+
+
+
+```{r echo = FALSE, results = TRUE}
+Type  <- c("Vector","Matrix","Array","Data Frame", "List")
+Section <- c("\\@ref(vector)","\\@ref(matrix)","\\@ref(array)","\\@ref(dataframe)","\\@ref(list)")
+d <- data.frame(Type, Section)
+knitr::kable(d)
+```
+
+We will focus on vectors in Chapter \@ref(r-objects) and discuss other object types in Chapter \@ref(r-objects-other-types).
+
+While some of the object types look more intuitive than others, you have nothing to worry about since we have the next two chapters devoted to the details of R objects. Objects are the building blocks of R programming and it will be time well spent mastering every object type. 
+
+
+### Exercises
+
+1. Write R code to assign the value 20 to the name `num_1`.
+
+2. Which of the following is a valid object name in R?
+
+- `2.True`
+- `else`
+- `I_am_not_a_valid_name`
+- `I_am_a_Pretty#_name`
+
+3. Write R code to get the list of all objects in the environment.
+
+

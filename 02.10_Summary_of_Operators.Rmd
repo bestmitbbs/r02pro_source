@@ -1,0 +1,60 @@
+## Summary of Operators
+
+Now we have fully introduced the first object----**vectors**. You have learned how to create vectors and apply various operations on them. There are several different types of **operators** to conduct different **operations** in R. In this section, we want to give you a brief review of some operators and operations according to their types.
+
+Let's summarize the four types of operators we have learned. In the following parts, we will review each type one by one.
+```{r results = TRUE, echo=FALSE}
+Operator  <- c("arithmetic operator", "assignment operator", "relational operator", "logical operator")
+Section <- c("\\@ref(Calculator)", "\\@ref(Object-Assignment)", "\\@ref(comparison-vector-subsetting)", "\\@ref(logical-operators)")
+d <- data.frame(Operator, Section)
+knitr::kable(d)
+```
+
+### Arithmetic operator
+
+**Arithmetic operators** (Section \@ref(Calculator)) are operators that often used to some basic calculations. The following is a list of operators available in R.
+```{r results = TRUE, echo=FALSE}
+Operator  <- c("+", "-", "*", "/", "%/%", "%%", "^")
+Explanation <- c("addition", "subtraction", "multiplication", "division", "integer division", "modulus", "exponentiation")
+d <- data.frame(Operator, Explanation)
+knitr::kable(d)
+```
+
+### Assignment operator
+
+The **assignment operator** (Section \@ref(Object-Assignment)) is the perhaps the most fundamental operator. It can help you to create objects with names.
+```{r results = TRUE, echo=FALSE}
+Operator  <- c("<-")
+Explanation <- c("do object assignment")
+d <- data.frame(Operator, Explanation)
+knitr::kable(d)
+```
+
+### Relational operator
+
+**Relational operators** are operators that are often used to do comparisons. The following is a list of operators available in R.
+```{r results = TRUE, echo=FALSE}
+Operator  <- c("<", "<=", ">", ">=", "==", "!=")
+Explanation <- c("less", "less than or equal to", "bigger", "bigger than or equal to", "equal to", "not equal to")
+d <- data.frame(Operator, Explanation)
+knitr::kable(d)
+```
+
+### Logical operator
+
+**Logical operators** are often used between two logical vectors when we want to do a particular vector subsetting.  The following is a list of logical operators available in R. 
+```{r results = TRUE, echo=FALSE}
+Operator  <- c("!", "&", "|", "xor()")
+Explanation <- c("NOT", "AND", "OR", "Exculsive OR")
+d <- data.frame(Operator, Explanation)
+knitr::kable(d)
+```
+
+In addition to using various operators to conduct operations, we can do much more using various functions in R. 
+
+
+
+
+
+
+

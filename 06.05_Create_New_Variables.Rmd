@@ -1,0 +1,64 @@
+## Create New Variables via mutate() and transmute() {#create-variables}
+
+You are now an expert in filtering observations (Section \@ref(filter-observations)), reordering observations (Section \@ref(reorder-observations)),  and selecting, renaming & reordering variables (Section \@ref(select-variables)). In many applications, you may want to **create new variables** as functions of the existing ones. In this section, we will learn how to do this using the **dplyr** package.
+
+Let's say you want to compute the average sale price per square foot for each house in the `sahp` data set. To highlight the useful columns, we first use `select()` to select the `oa_qual`, `liv_area`, and `sale_price`. Then, use the `mutate()` function to add a new variable named `ave_price` with the value `sale_price/liv_area` to the end. 
+
+```{r, results=TRUE}
+library(r02pro)
+library(tidyverse)
+sahp %>% 
+  select(oa_qual, liv_area, sale_price) %>%
+  mutate(ave_price = sale_price/liv_area) 
+```
+
+From the result, you can check that the resulting tibble has 4 columns, with the last column being the newly created variable `ave_price`. You can use `mutate()` to create multiple variables at the same time following the same format. 
+
+```{r, results=TRUE}
+sahp %>% 
+  select(oa_qual, liv_area, sale_price, lot_area) %>%
+  mutate(ave_price = sale_price/liv_area, area = lot_area + liv_area)
+```
+
+This operation adds two new columns `ave_price` and `area` to the existing tibble. Note that the `mutate()` function can **only** use the variables inside the `select()` function. The following code will show an error since `lot_area` is not included in the `select()` function. 
+
+```{r, error=TRUE}
+sahp %>% 
+  select(oa_qual, liv_area, sale_price) %>%
+  mutate(ave_price = sale_price/liv_area, area = lot_area + liv_area)
+```
+
+Note that you are free to use any functions on a vector, including all the arithmetic operations and various functions. For example,  to include the order of each house in terms of sale price, you can use `mutate(sale_price_order = order(sale_price))`. To create a variable as the mean of the sale prices of all houses, you can add `sale_price_ave = mean(sale_price)` as an argument in the `mutate()` function.
+```{r, results=TRUE}
+sahp %>%
+  filter(sale_price > 400) %>%
+  select(sale_price) %>% 
+  mutate(sale_price_order = order(sale_price),
+         sale_price_ave = mean(sale_price))
+```
+
+From the result, you can see that `sale_price_order` represent the order for each house in terms of sale price while the `sale_price_ave` has a constant value for all houses. The different behavior lies in the fact that the function `order()` returns another vector of the same length as the input, while `mean()` always returns a vector of length 1, which is recycled to fill in the new variable `sale_price_ave`. 
+
+Once creating the new variables,  you can immediately use them to do visualization. Let's say we want to create a scatterplot between `area` and `ave_price`, using different colors to represent whether `oa_qual > 5`. 
+
+```{r, results=TRUE}
+sahp %>% 
+  mutate(ave_price = sale_price/liv_area, area = lot_area + liv_area) %>%
+  ggplot() +
+  geom_point(mapping = aes(x = area, y = ave_price, color = oa_qual > 5))
+```
+
+This plots shows that the average sale price does not have a trend when the total area changes. In addition, the "good" quality houses (`oa_qual > 5`) has a higher `ave_price` in general when the total area is the same. 
+
+Using the `mutate()` function, we add newly created variable while keeping all the existing ones. If you want to only keep the newly created variables, you can use the `transmute()` function. 
+
+```{r, results=TRUE}
+sahp %>% 
+  transmute(ave_price = sale_price/liv_area, area = lot_area + liv_area)
+```
+
+### Exercises
+
+Using the `ahp` dataset and the pipe operator for the following exercises.
+
+1. Create a new variables named `age` being the age of the house when it was sold in terms of years (the number of years from when the house was built to when the house was sold). Then, select the variables `age`, `sale_price`, and `kit_qual`. Finally, generate a scatterplot between `age` (x-axis) and `sale_price` (y-axis), with different colors representing different `kit_qual`. Explain the findings from the figure. 
