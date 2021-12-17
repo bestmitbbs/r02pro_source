@@ -84,4 +84,16 @@ my_data_frame[, 1]           #vector
 my_tibble[, 1, drop = TRUE]  #vector
 ```
 
-
+### Exercises
+Consider the following tibble,
+```{r, results=TRUE}
+animal <- rep(c("sheep", "pig"), c(3,3))
+weight <- c(110, NA, 140, NA, 300, 800)
+condition <- c("excellent", "good", NA, "excellent", "good", "average")
+healthy <- c(rep(TRUE, 5), FALSE)
+my_tibble <- tibble(animal, weight, condition, healthy)
+my_data_frame <- data.frame(animal, weight, condition, healthy)
+my_tibble
+```
+1. Use the `add_row()` function to add the following observation to `my_tibble`: `animal = "pig"`, `weight = 900`, `condition = average`, and `healthy = FALSE`. 
+2. Without running in R, what do you think are the difference between `my_tibble[, 1]` and `my_data_frame[, 1]`? How can you reproduce ``my_data_frame[, 1]` by subsetting `my_tibble`? 

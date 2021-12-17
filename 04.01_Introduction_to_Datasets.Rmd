@@ -20,9 +20,9 @@ After loading the three packages, you can type `sahp` to have a quick look of th
 sahp
 ```
 
-You can see that `sahp` is a *tibble* with 165 observations and 12 variables. By default, the output only shows the first 10 observations in the tibble along with the first few variables that can fit the window. To view the full dataset, you can use the `view()` function, which will open the dataset in a new window. 
+You can see that `sahp` is a *tibble* with 165 observations and 12 variables. By default, the output only shows the first 10 observations in the tibble along with the first few variables that can fit the window. To view the full dataset, you can use the `View()` function, which will open the dataset in a new window. 
 ```{r, eval=FALSE}
-view(sahp)
+View(sahp)
 ```
 
 To view the top rows of the dataset, you can 

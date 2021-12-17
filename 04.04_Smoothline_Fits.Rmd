@@ -14,17 +14,23 @@ ggplot(data = sahp) +
 
 Perhaps it is helpful to review the code for generating a scatterplot between `liv_area` and `sale_price`. 
 ```{r, eval = FALSE}
-ggplot(data = sahp) + geom_point(mapping = aes(x = liv_area, y = sale_price))
+ggplot(data = sahp) + 
+  geom_point(mapping = aes(x = liv_area, y = sale_price))
 ```
 
 We can see that the only difference is the use of different geoms. In fact, the mechanism of `geom_smooth()` is that it fits a smooth line according to the points of the given variable pair. By default, it uses the **loess** method (locally estimated scatterplot smoothing), which is a popular nonparametric regression technique. In addition to the smoothline, it also generates a shaded area, representing the confidence interval around the fitted smoothline. To hide this shaded area, you can add the argument `se = FALSE` as a global aesthetic. 
+
 ```{r, eval = FALSE}
-ggplot(data = sahp) + geom_smooth(mapping = aes(x = liv_area, y = sale_price), se = FALSE)
+ggplot(data = sahp) + 
+  geom_smooth(mapping = aes(x = liv_area, y = sale_price), 
+              se = FALSE)
 ```
 
 In addition to the default loess method for smoothline fit, `geom_smooth()` also provides other smoothing methods. For example, we can set `method = "lm"` to fit a linear line. 
 ```{r}
-ggplot(data = sahp) + geom_smooth(mapping = aes(x = liv_area, y = sale_price), method = "lm")
+ggplot(data = sahp) + 
+  geom_smooth(mapping = aes(x = liv_area, y = sale_price), 
+              method = "lm")
 ```
 
 ### Aesthetics in Smoothline Fits
@@ -39,7 +45,10 @@ sahp$good_qual <- sahp$oa_qual > 5
 When we map a variable to the `group` aesthetic, `geom_smooth` will first divide all the data points into different *groups* according to the variable value, and then fit a separate smoothline for each group. 
 
 ```{r}
-ggplot(data = sahp) + geom_smooth(mapping = aes(x = liv_area, y = sale_price, group = good_qual))
+ggplot(data = sahp) + 
+  geom_smooth(mapping = aes(x = liv_area, 
+                            y = sale_price, 
+                            group = good_qual))
 ```
 
 You can see that two smoothlines are generated. However, it is not clear from the plot which group each smoothline corresponds to. To make the two smoothlines different, you can map the variable to other aesthetics. 
@@ -49,17 +58,25 @@ You can see that two smoothlines are generated. However, it is not clear from th
 As in `geom_point()`, we can map the variable to the color aesthetic. 
 
 ```{r}
-ggplot(data = sahp) + geom_smooth(mapping = aes(x = liv_area, y = sale_price, color = good_qual))
+ggplot(data = sahp) + 
+  geom_smooth(mapping = aes(x = liv_area, 
+                            y = sale_price, 
+                            color = good_qual))
 ```
-This is a more informative plot than the one using `group` aesthetic as you can see the two smoothlines have different colors according to the `good_qual` variable.ß
+
+This is a more informative plot than the one using `group` aesthetic as you can see the two smoothlines have different colors according to the value of `good_qual`.
 
 
-***c. Linetype***
+***c. Line Type***
 
 Another useful aesthetic that was not applicable in `geom_point()` is `linetype`, which controls the linetypes for each smoothline. 
 ```{r}
-ggplot(data = sahp) + geom_smooth(mapping = aes(x = liv_area, y = sale_price, linetype = good_qual))
+ggplot(data = sahp) + 
+  geom_smooth(mapping = aes(x = liv_area, 
+                            y = sale_price, 
+                            linetype = good_qual))
 ```
+
 The plot shows a dashed line for the smoothline corresponding to `good_qual == TRUE`, and a solid line for the smoothline corresponding to `good_qual == FALSE`.
 
 
@@ -68,12 +85,18 @@ The plot shows a dashed line for the smoothline corresponding to `good_qual == T
 You can also map `good_qual` to the `size` aesthetic, which controls the width of each smoothline fit.
 
 ```{r}
-ggplot(data = sahp) + geom_smooth(mapping = aes(x = liv_area, y = sale_price, size = good_qual))
+ggplot(data = sahp) + 
+  geom_smooth(mapping = aes(x = liv_area, 
+                            y = sale_price, 
+                            size = good_qual))
 ```
 
 It is worth to mention that `shape` is not a valid aesthetic for `geom_smooth` as it doesn't make sense to talk about the shape of a line. 
 ```{r, error = TRUE}
-ggplot(data = sahp) + geom_smooth(mapping = aes(x = liv_area, y = sale_price, shape = good_qual))
+ggplot(data = sahp) + 
+  geom_smooth(mapping = aes(x = liv_area, 
+                            y = sale_price, 
+                            shape = good_qual))
 ```
 
 When you try to map a variable to the `shape` aesthetic, `geom_smooth()` will show a warning message "Warning: Ignoring unknown aesthetics: shape", and use the `group` aesthetic instead. 
@@ -81,7 +104,11 @@ When you try to map a variable to the `shape` aesthetic, `geom_smooth()` will sh
 
 Naturally, you can also have global aesthetic and it is straightforward to combine multiple aesthetics in the same plot.
 ```{r}
-ggplot(data = sahp) + geom_smooth(mapping = aes(x = liv_area, y = sale_price, color = good_qual), linetype = 2)
+ggplot(data = sahp) + 
+  geom_smooth(mapping = aes(x = liv_area, 
+                            y = sale_price, 
+                            color = good_qual), 
+              linetype = 2)
 ```
 
 

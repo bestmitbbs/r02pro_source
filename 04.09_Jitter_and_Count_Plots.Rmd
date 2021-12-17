@@ -31,7 +31,9 @@ For the jittered plot, we can clearly see which pair of `kit_qual` and `heat_qua
 
 ```{r}
 ggplot(data = sahp) + 
-  geom_jitter(mapping = aes(x = kit_qual, y = heat_qual),  width = 0.1, height = 0.1)
+  geom_jitter(mapping = aes(x = kit_qual, y = heat_qual),  
+              width = 0.1, 
+              height = 0.1)
 ```
 
 ### Counts Plots {#count}

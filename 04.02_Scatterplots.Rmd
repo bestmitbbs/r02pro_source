@@ -11,10 +11,11 @@ In base R, we can use the `plot()` function to generate this scatterplot with th
 library(r02pro)
 plot(sahp$liv_area, sahp$sale_price)
 ```
+
 From the scatterplot, we can see a clear increasing trend between `sale_price` and `liv_area`, which is consistent with our intuition. The `plot()` function provides a rich capability of customization by setting the **graphical parameters**. We summarize a few commonly used parameters for scatterplots as below. 
 ```{r echo = FALSE, results = TRUE}
 Parameter  <- c('`col`',"`xlab`","`ylab`","`main`","`pch`","`cex`")
-Meaning <- c("Color", "A title for the x-axis", "A title for the y-axis", "A overall title for the plot", "Shape of the points","Size of text and symbols")
+Meaning <- c("Color", "A title for the x-axis", "A title for the y-axis", "An overall title for the plot", "Shape of the points","Size of text and symbols")
 Example <- c('"red"', '"Living Area"', '"Sale Price"', '"Sale Price vs. Living Area"', '`2`', '`2`')
 d <- data.frame(Parameter, Meaning, Example)
 knitr::kable(d)
