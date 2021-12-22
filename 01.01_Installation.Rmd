@@ -176,3 +176,5 @@ install.packages(r02pro)
 
 3. Write R code to calculate `2 + 3`.
 
+Today is 12/22
+
