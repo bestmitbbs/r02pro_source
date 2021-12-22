@@ -2,4 +2,7 @@
 
 This chapter begins with the installation of R, RStudio, and R Packages in Section \@ref(Installation), shows how to use R as a fancy calculator in Section \@ref(Calculator), and introduce how to do object assignments in Section \@ref(Object-Assignment).
 
-This is a testing message for git! 
+This is a testing message for git!
+
+
+This is another testing by Yang! 
