@@ -1,5 +1,3 @@
 # R Objects (I): Vectors {#r-objects}
 
 In this chapter, we focus on the most fundamental R object type: vectors. We will introduce different vector types, creating vectors with patterns, applying different functions and operations on vectors, comparing and extracting vectors. We will also discuss data and times, factors, and how R represents unexpected results. 
-
-This is an exercise attempt
