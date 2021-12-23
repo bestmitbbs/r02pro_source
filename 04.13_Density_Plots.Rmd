@@ -52,7 +52,8 @@ The `fill` aesthetic also divides the data into groups according to `oa_qual`, t
 
 ```{r, warning=FALSE}
 ggplot(data = remove_missing(sahp, vars = "oa_qual")) +  
-  geom_density(aes(x = sale_price, fill = oa_qual > 5), alpha = 0.5)
+  geom_density(aes(x = sale_price, fill = oa_qual > 5), 
+               alpha = 0.5)
 ```
 
 We can now see both shaded areas in a clearly way. 
@@ -73,7 +74,9 @@ As usual, we can also set global aesthetics for `geom_density()` and combine it 
 
 ```{r, warning=FALSE}
 ggplot(data = remove_missing(sahp, vars = "oa_qual")) +  
-  geom_density(aes(x = sale_price, linetype = oa_qual > 5), size = 1, color = "red")
+  geom_density(aes(x = sale_price, linetype = oa_qual > 5), 
+               size = 1, 
+               color = "red")
 ```
 
 Here, the `size` controls the width of the density curve. 

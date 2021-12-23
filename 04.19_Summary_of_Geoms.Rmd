@@ -14,22 +14,36 @@ First, let's summarize all the geoms we have covered.
 
 ```{r echo = FALSE, results = TRUE, warning=FALSE, message=FALSE}
 library(kableExtra)
+Names <- c("Histogram",
+           "Density",
+           "Boxplot",
+           "Violin",
+           "Errorbar",
+           "Bar Chart",
+           "Pie Chart",
+           "Scatterplot",
+           "Smoothline",
+           "Line Plot",
+           "Jiter Plot",
+           "Count Plot",
+           "Boxplot")
 Type  <- c("One continuous variable","(e.g. `sale_price`)","","","","One discrete variable","(e.g. `kit_qual`)", "Two continuous variables", "(e.g. `liv_area` and `sale_price`)", "","Two discrete variables", "(e.g. `kit_qual` and `heat_qual`)", "One continous varialbe and one discrete variable")
 Funs <- c("`geom_histogram(aes(x = sale_price))`", "`geom_density(aes(x = sale_price))`", '`geom_boxplot(aes(x = "", y = sale_price))`', "`geom_violin(aes(x = sale_price))`", '`geom_errorbar(aes(x = "", y = sale_price), stat = "summary", fun.data = "mean_se")`',
- "`geom_bar(mapping = aes(x = kit_qual))`","",
+ "`geom_bar(mapping = aes(x = kit_qual))`",'`geom_bar(aes(), stat = "identity") + coord_polar("y")` ',
  "`geom_point(mapping = aes(x = liv_area, y = sale_price))`",
  "`geom_smooth(mapping = aes(x = liv_area, y = sale_price))`",
  "`geom_line(mapping = aes(x = dt_sold, y = sale_price))`",
  "`geom_jitter(mapping = aes(x = kit_qual, y = heat_qual))`",
  "`geom_count(mapping = aes(x = kit_qual, y = heat_qual))`", "`geom_boxplot(aes(x = kit_qual, y = sale_price))`")
-Section <- c("\\@ref(histogram)","\\@ref(density-plot)","\\@ref(boxplot-1)","\\@ref(violin)", "\\@ref(errorbar)","\\@ref(bar-charts)","","\\@ref(point)","\\@ref(smoothline)","\\@ref(line-plot)","\\@ref(jitter)","\\@ref(count)","\\@ref(boxplot-2)")
+Section <- c("\\@ref(histogram)","\\@ref(density-plot)","\\@ref(boxplot-1)","\\@ref(violin)", "\\@ref(errorbar)","\\@ref(bar-charts)","\\@ref(pie-charts)","\\@ref(point)","\\@ref(smoothline)","\\@ref(line-plot)","\\@ref(jitter)","\\@ref(count)","\\@ref(boxplot-2)")
 
 
 
-d <- data.frame(Funs, Section)
-kableExtra::kable(d) %>% kableExtra::row_spec(c(5, 7,10), hline_after = T)%>%kableExtra::pack_rows("One continuous variable (e.g. `sale_price`)", 1, 5,background = "orange")%>%pack_rows("One discrete variable (e.g. `kit_qual`)", 6, 7,background = "orange")%>%pack_rows("Two continuous variables (e.g. `liv_area` and the `sale_price`)", 8, 10,background = "orange")%>%pack_rows("Two discrete variables (e.g. `kit_qual` and `heat_qual`):", 11, 12,background = "orange")%>%pack_rows("One continuous variable and one discrete variable (e.g. `kit_qual` and `sale_price`):", 13, 13,background = "orange")
+d <- data.frame(Names, Funs, Section)
+kableExtra::kable(d) %>% kableExtra::row_spec(c(5, 7,10), hline_after = T)%>%kableExtra::pack_rows("One continuous variable (e.g. `sale_price`)", 1, 5,background = "orange")%>%pack_rows("One discrete variable (e.g. `kit_qual`)", 6, 7,background = "orange")%>%pack_rows("Two continuous variables (e.g. `liv_area` and `sale_price`)", 8, 10,background = "orange")%>%pack_rows("Two discrete variables (e.g. `kit_qual` and `heat_qual`):", 11, 12,background = "orange")%>%pack_rows("One continuous variable and one discrete variable (e.g. `kit_qual` and `sale_price`):", 13, 13,background = "orange")
 #row_spec(4,hline_after = T)
 ```
+
 Note that in the summary, we are only using the basic geoms. Clearly, we can map variables to aesthetics or use `facet_wrap()` (in Section \@ref(facet-wrap)) or `facet_grid()` (in Section \@ref(facet-grid)) to arrange the subplots into facets depending on the grouping variable(s).
 
 There are more than 40 geoms in the **ggplot2** package with many more geoms developed in other packages. So far, we've covered the most commonly used geoms. You can feel free to explore other geoms by doing an online search or looking at the documentation. 

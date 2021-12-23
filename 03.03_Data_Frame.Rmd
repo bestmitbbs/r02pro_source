@@ -17,7 +17,7 @@ my_data_frame <- data.frame(animal, year, weight, height, condition, healthy)
 my_data_frame
 ```
 
-Looking at the data frame `my_data_frame`, it has 6 columns, each of which represents one variable. The variables are of different types. The `animal` is factor, `year` is integer, both `weight` and `height` are doubles, `condition` is ordered factor, and `healthy` is logical. '
+Looking at the data frame `my_data_frame`, it has 6 columns, each of which represents one variable. The variables are of different types. The `animal` is factor, `year` is integer, both `weight` and `height` are doubles, `condition` is ordered factor, and `healthy` is logical. 
 
 
 ::: {.infobox .caution data-latex="{caution}"}
@@ -137,4 +137,18 @@ my_data_frame[which(my_data_frame$condition == "excellent"), ]    #remove the NA
 ```
 
 
+### Exercises
+Consider the following data frame,
+```{r, results=TRUE}
+animal <- rep(c("sheep", "pig"), c(3,3))
+weight <- c(110, NA, 140, NA, 300, 800)
+condition <- c("excellent", "good", NA, "excellent", "good", "average")
+healthy <- c(rep(TRUE, 5), FALSE)
+my_data_frame <- data.frame(animal, weight, condition, healthy)
+my_data_frame
+```
 
+1. Generate a data frame with rows of `my_data_frame` containing complete observations.
+2. In `my_data_frame`, fill in the missing values in `weight` by the median of its non-missing values. 
+3. Add the following observation to `my_data_frame`: `animal = "pig"`, `weight = 900`, `condition = average`, and `healthy = FALSE`. 
+4. Extract the sub-data-frame of `my_data_frame` that contains the columns of `animal` and `healthy` and the rows that has `weight` less than 400 and condition is `"good"` or `"excellent"`.
