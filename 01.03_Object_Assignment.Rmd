@@ -180,4 +180,3 @@ While some of the object types look more intuitive than others, you have nothing
 
 3. Write R code to get the list of all objects in the environment.
 
-a
