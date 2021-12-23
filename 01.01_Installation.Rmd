@@ -177,4 +177,3 @@ install.packages(r02pro)
 2. Write R code to load the package **r02pro**
 
 3. Write R code to calculate `2 + 3`.
-
