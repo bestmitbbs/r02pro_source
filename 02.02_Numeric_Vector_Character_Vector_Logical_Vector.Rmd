@@ -1,7 +1,10 @@
 ## Vectors: Numeric, Character, and Logical {#vector} 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> parent of 8c31dd3... changed some letters
 This is test from BF!
 
 >>>>>>> parent of 8c31dd3... changed some letters
