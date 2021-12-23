@@ -90,9 +90,20 @@ sum(array_1[2, 1, ])      #verify the [2, 1] element
 sum(array_1[2, 2, ])      #verify the [2, 2] element
 ```
 
-In addition the three arguments, you can add additional arguments that will be passed when applying the specified function as we did in Section \@ref(apply-matrix). For example, the follow code generates the third quartile of along the third dimension.
+In addition the three arguments, you can add additional arguments that will be passed when applying the specified function as we did in Section \@ref(apply-matrix). For example, the follow code generates the third quartile along the third dimension.
 
 ```{r, results=TRUE}
 apply(array_1, 3, quantile, 0.75) 
 ```
+
+### Exercises
+First use R to create the following array 
+```{r, echo=TRUE}
+a <- array(1:24, c(2, 3, 4))
+```
+
+1. Compute the mean along the second dimension of `a`. (Hint: the result will be a vector of length -3.)
+2. Compute the first quantile along the first and third dimension of `a`. (Hint: the result will be a matrix of dimension $2\times 4$)
+3. Compute the first and third quantile along the first and third dimension of `a`. (Hint: the result will be an array of dimension $(2, 2, 4)$)
+
 
