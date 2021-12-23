@@ -7,8 +7,7 @@ Let's first review the scatterplot we created between `liv_area` and `sale_price
 ```{r, results=FALSE}
 library(r02pro)
 library(tidyverse)
-g <- ggplot(data = sahp, 
-            mapping = aes(x = liv_area, y = sale_price)) + 
+g <- ggplot(data = sahp, mapping = aes(x = liv_area, y = sale_price)) + 
   geom_point()
 ```
 
@@ -36,9 +35,7 @@ g1 + theme(axis.text = element_text(size = 25, color = "red"))
 
 To customize the font, you can use `axis.title` argument to change the size, color, and face of the labels. 
 ```{r}
-g1 + theme(axis.title = element_text(size = 18, 
-                                     color = "red", 
-                                     face = "italic"))
+g1 + theme(axis.title = element_text(size = 18, color = "red", face = "italic"))
 ```
 
 
@@ -48,9 +45,7 @@ g1 + theme(axis.title = element_text(size = 18,
 Similarly, you can use the `plot.title` argument to customize the font of the title. 
 
 ```{r}
-g1 + theme(plot.title = element_text(size = 24, 
-                                     color = "magenta", 
-                                     face = "bold"))
+g1 + theme(plot.title = element_text(size = 24, color = "magenta", face = "bold"))
 ```
 
 
@@ -59,10 +54,7 @@ g1 + theme(plot.title = element_text(size = 24,
 Sometimes, we may want to center the title. We can achieve this by setting the `hjust` parameter. 
 
 ```{r}
-g1 + theme(plot.title = element_text(size = 24, 
-                                     color = "magenta", 
-                                     face = "bold",
-                                     hjust = 0.5)) 
+g1 + theme(plot.title = element_text(size = 24, color = "magenta", face = "bold",hjust = 0.5)) 
 ```
 
 
@@ -70,30 +62,14 @@ g1 + theme(plot.title = element_text(size = 24,
 
 Apparently, you are free to mix all the different customizations. Let's see an example as below.
 ```{r}
-g1 + theme(axis.title = element_text(size = 18, 
-                                     color = "red", 
-                                     face = "italic"), 
-           axis.text = element_text(size = 12, 
-                                    color = "blue"), 
-           plot.title = element_text(size = 24, 
-                                     color = "magenta", 
-                                     face = "bold", 
-                                     hjust = 0.5))
+g1 + theme(axis.title = element_text(size = 18, color = "red", face = "italic"), axis.text = element_text(size = 12, color = "blue"), plot.title = element_text(size = 24, color = "magenta", face = "bold", hjust = 0.5))
 ```
 
 ***g. save as a theme***
 
 As you can see from the code, the code gets complicated if we want to customize many things at the same time. To save time, you can actually save the desired into an R object and reuse it later. 
 ```{r}
-mytheme <- theme(axis.title = element_text(size = 18, 
-                                           color = "red", 
-                                           face = "italic"), 
-                 axis.text = element_text(size = 12, 
-                                          color = "blue"), 
-                 plot.title = element_text(size = 24, 
-                                           color = "magenta", 
-                                           face = "bold", 
-                                           hjust = 0.5))
+mytheme <- theme(axis.title = element_text(size = 18, color = "red", face = "italic"), axis.text = element_text(size = 12, color = "blue"), plot.title = element_text(size = 24, color = "magenta", face = "bold", hjust = 0.5))
 ```
 Then, we can generate the same plot with `mytheme` using
 

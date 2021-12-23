@@ -42,4 +42,4 @@ Using the `ahp` dataset and the pipe operator for the following exercises.
 
 1. For each month when the house was sold, summarize the 1st and 3rd quartile of the sale price. Then, create a scatterplot between the month (x-axis) and the quartile of the sale price with different colors for 1st and 3rd quantile. Explain the findings from the figure.
 
-2. Someone has a conjecture that when sold, the houses that are less than or equal to 30 years old have a higher sale price than the houses that are more than 30 years old. Show whether this is true in terms of maximum price, median price, and the minimum price for the houses in each group.
+2. Someone has a conjecture that that the houses that are less than 30 years old have a higher sale price than the houses that are more than 30 years old. Show whether this is true in terms of maximum price, median price, and the minimum price for the houses in each group.

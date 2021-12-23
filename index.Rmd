@@ -28,9 +28,9 @@ We also have a companion R package named **r02pro**, containing the data sets us
 
 To improve the book, we would like to ask for your help. 
 
-### Submitting Questions or Feedback  {-}
+### Submitting Questions or Feedbacks  {-}
 
-If you have any questions or feedback (including typos or grammar issues) about any materials in the book, we greatly appreciate if you can write to us at r02pro007@gmail.com. We will also add your name in the Acknowledgment section to show our gratitude. 
+If you have any questions or feedback (including typos or grammar issues) about any materials in the book, we greatly appreciate if you can write to us at r02pro007@gmail.com. We will also add your name in the Acknowledgement section to show our gratitude. 
 
 ### Contributing Exercises  {-}
 
@@ -55,17 +55,8 @@ contributors <- contributors %>%
     desc = ifelse(is.na(login), name, ifelse(is.na(name), link, glue::glue("{name} ({link})")))
   )
 
-cat("This book is the product of numerous collaborative efforts. Among all people, we would like to thank Dr. Rebecca Betensky, Dr. Rumi Chunara, and Dr. Hai Shu, for the initial planning of the new courses GPH-GU 2183: Introduction to Statistical Programming in R and GPH-GU 2183: Intermediate Statistical Programming in R. In addition, we
-    are most grateful to the students in the course GPH-GU 2183: Introduction to Statistical Programming in R in Fall 2021 at New York University. The list of people that made contributions include   ")
+cat("This book is the product of numerous collaborative efforts. Among all people, we are most grateful to the students in the course GPH-GU 2183: Introduction to Statistical Programming in R in Fall 2021 at New York University. The list of people that made contributions include   ")
 cat(paste0(contributors$desc, collapse = ", "))
 ```
 
-# Building Environment {-}
 
-The R session information when compiling this book is shown below.
-```{r, results=TRUE}
-sessionInfo()
-```
-
-
-In the book, package names are in **bold** text (e.g., **r02pro**), and inline codes and functions are formatted in a typewriter font (e.g. `1 + 2`, `r02pro()`). We always add parentheses after a function name (e.g. `r02pro()`).

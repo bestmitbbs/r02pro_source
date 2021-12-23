@@ -29,8 +29,7 @@ To change the color of all points, you can set the `color` argument in the `geom
 
 ```{r, results = TRUE}
 ggplot(data = sahp) + 
-  geom_point(mapping = aes(x = liv_area, y = sale_price), 
-             color = "red")
+  geom_point(mapping = aes(x = liv_area, y = sale_price), color = "red")
 ```
 
 Clearly, all points are changed to red. 
@@ -42,8 +41,7 @@ Similarly, you can set the `size` element in the `geom_point()` function to chan
 
 ```{r, results = TRUE}
 ggplot(data = sahp) + 
-  geom_point(mapping = aes(x = liv_area, y = sale_price), 
-             size = 3)
+  geom_point(mapping = aes(x = liv_area, y = sale_price), size = 3)
 ```
 
 You may notice that the points are now bigger than before. Looking at the plot, many points are overlapping with each other, which is sometimes called **overplotting**. To solve this issue, you can change the transparency level of the points by setting the `alpha` argument. 
@@ -52,9 +50,7 @@ You may notice that the points are now bigger than before. Looking at the plot, 
 
 ```{r, results = TRUE}
 ggplot(data = sahp) + 
-  geom_point(mapping = aes(x = liv_area, y = sale_price), 
-             size = 3, 
-             alpha = 0.5)
+  geom_point(mapping = aes(x = liv_area, y = sale_price), size = 3, alpha = 0.5)
 ```
 
 By setting `alpha = 0.5`, the points become more visible and the overplotting problem is largely alleviated. 
@@ -65,8 +61,7 @@ Lastly, we can also change the shape of the points from the default one (circle)
 
 ```{r, results = TRUE}
 ggplot(data = sahp) + 
-  geom_point(mapping = aes(x = liv_area, y = sale_price), 
-             shape = 2)
+  geom_point(mapping = aes(x = liv_area, y = sale_price), shape = 2)
 ```
 
 
@@ -75,10 +70,7 @@ ggplot(data = sahp) +
 Of course, we can combine multiple global aesthetics in the same plot. 
 ```{r}
 ggplot(data = sahp) + 
-  geom_point(mapping = aes(x = liv_area, y = sale_price), 
-             color = "red", 
-             size = 3, 
-             shape = 2)
+  geom_point(mapping = aes(x = liv_area, y = sale_price), color = "red", size = 3, shape = 2)
 ```
 
 Here, we have all points red, size of 3, and of triangle shape.
@@ -94,10 +86,7 @@ Now, let's map `house_style` to `color`.
 
 ```{r scatterplot-color}
 ggplot(data = sahp) + 
-  geom_point(mapping = aes(x = liv_area, 
-                           y = sale_price, 
-                           color = house_style), 
-             size = 3)
+  geom_point(mapping = aes(x = liv_area, y = sale_price, color = house_style), size = 3)
 ```
 
 From this figure, we can clearly see houses of different styles in distinct colors. In addition, `ggplot` automatically created a legend to show the correspondence between the house styles and colors.  
@@ -106,11 +95,7 @@ Sometimes, you may want to use specific colors for different values of the facto
 
 ```{r}
 ggplot(data = sahp) + 
-  geom_point(mapping = aes(x = liv_area, 
-                           y = sale_price, 
-                           color = house_style), 
-             size = 3) +  
-  scale_colour_manual(values = c("red", "blue", "green", "orange","purple"))
+  geom_point(mapping = aes(x = liv_area, y = sale_price, color = house_style), size = 3) +  scale_colour_manual(values = c("red", "blue", "green", "orange","purple"))
 ```
 
 
@@ -118,10 +103,7 @@ Similarly, you can also map `central_air` to `color`.
 
 ```{r}
 ggplot(data = sahp) + 
-  geom_point(mapping = aes(x = liv_area, 
-                           y = sale_price, 
-                           color = central_air), 
-             size = 3)
+  geom_point(mapping = aes(x = liv_area, y = sale_price, color = central_air), size = 3)
 ```
 
 The plot tells us the majority of the houses have central AC and the ones without it have relatively lower sale price.
@@ -132,12 +114,8 @@ In addition to color, you can also map a discrete variable to the size aesthetic
 
 ```{r}
 ggplot(data = sahp) + 
-  geom_point(mapping = aes(x = liv_area, 
-                           y = sale_price, 
-                           size = house_style), 
-             alpha = 0.5)
+  geom_point(mapping = aes(x = liv_area, y = sale_price, size = house_style), alpha = 0.5)
 ```
-
 You can see from the plot that the sizes of the points are now different according to the `house_style`. To alleviate the overplotting issue, we added a global aesthetic `alpha = 0.5`, making all points more transparent. 
 
 There is a warning message: "Using size for a discrete variable is not advised." The reason is that different sizes may implicitly indicate a particular ordering of the groups, which are usually not clear for a discrete variable. 
@@ -147,11 +125,7 @@ There is a warning message: "Using size for a discrete variable is not advised."
 We can also map a discrete variable to the `shape` aesthetic. 
 ```{r}
 ggplot(data = sahp) + 
-  geom_point(mapping = aes(x = liv_area, 
-                           y = sale_price, 
-                           shape = house_style), 
-             size = 2, 
-             alpha = 0.5)
+  geom_point(mapping = aes(x = liv_area, y = sale_price, shape = house_style), size = 2, alpha = 0.5)
 ```
 Again, we added global aesthetics `size` and `alpha` to make the points more visible.
 
@@ -161,11 +135,7 @@ Just like global aesthetics, you can also have multiple mappings for aesthetics,
 
 ```{r}
 ggplot(data = sahp) + 
-  geom_point(mapping = aes(x = liv_area, 
-                           y = sale_price, 
-                           color = house_style, 
-                           shape = central_air), 
-             size = 3)
+  geom_point(mapping = aes(x = liv_area, y = sale_price, color = house_style, shape = central_air), size = 3)
 ```
 
 Here, we can see the points have different colors according to `house_style` and are of different shapes depending on the value of `central_air`. Note that there are two legends on the plot showing the color and shape, respectively.
@@ -176,25 +146,16 @@ Let's first generate a scatterplot between `liv_area` and `sale_price` where we 
 
 ```{r}
 ggplot(data = sahp) + 
-  geom_point(mapping = aes(x = liv_area, 
-                           y = sale_price, 
-                           color = heat_qual), 
-             size = 3)
+  geom_point(mapping = aes(x = liv_area, y = sale_price, color = heat_qual), size = 3)
 ```
-
 Looking at the legend, you can see that different `heat_qual` values are in alphabetical order as introduced in Section \@ref(sort-vector) when we introduced the ordering of character vectors. Sometimes, you may want to arrange these values in a different order in the plot, for example from the worst to the best. To achieve this, you can use the `factor()` function with the argument `levels` which specifies the desired order. 
 
 
 ```{r}
-sahp$heat_qual <- factor(sahp$heat_qual, 
-                         levels = c("Fair","Average","Good","Excellent"))
+sahp$heat_qual <- factor(sahp$heat_qual, levels = c("Fair","Average","Good","Excellent"))
 ggplot(data = sahp) + 
-  geom_point(mapping = aes(x = liv_area, 
-                           y = sale_price, 
-                           color = heat_qual), 
-             size = 3)
+  geom_point(mapping = aes(x = liv_area, y = sale_price, color = heat_qual), size = 3)
 ```
-
 After changing the `heat_qual` variable to a factor with desired levels, you can see the order in the legend changes accordingly. 
 
 
@@ -210,41 +171,27 @@ Let's again start with the color aesthetic by mapping `oa_qual` to `color`.
 
 ```{r}
 ggplot(data = sahp) + 
-  geom_point(mapping = aes(x = liv_area, 
-                           y = sale_price, 
-                           color = oa_qual))
+  geom_point(mapping = aes(x = liv_area, y = sale_price, color = oa_qual))
 ```
-
 Here, we can see the color of all points vary from dark blue to light blue, depending on the value of `oa_qual`. Instead of showing different colors in the discrete variable case, the legend now displays a bar showing a continuous color scale according to the value of `oa_qual`. To customize the color scale, you can add another lay using the function `scale_color_continuous` with arguments `low` and `high` being two colors corresponding to the colors when the variable is of low and high values, respectively. 
 
 ```{r}
 ggplot(data = sahp) + 
-  geom_point(mapping = aes(x = liv_area, 
-                           y = sale_price, 
-                           color = oa_qual)) + 
-  scale_color_continuous(low = "green", 
-                         high = "red")
+  geom_point(mapping = aes(x = liv_area, y = sale_price, color = oa_qual)) + 
+  scale_color_continuous(low = "green", high = "red")
 ```
-
 Here, the low value of `oa_qual` is mapped to green color and the high value of `oa_qual` is mapped to red color. You can also try out the following examples.
 
 ```{r, eval=FALSE}
 ggplot(data = sahp) + 
-  geom_point(mapping = aes(x = liv_area, 
-                           y = sale_price, 
-                           color = oa_qual)) + 
-  scale_color_continuous(low = "yellow", 
-                         high = "blue")
+  geom_point(mapping = aes(x = liv_area, y = sale_price, color = oa_qual)) + 
+  scale_color_continuous(low = "yellow", high = "blue")
 ```
 
 ```{r, eval=FALSE}
 ggplot(data = sahp) + 
-  geom_point(mapping = aes(x = liv_area, 
-                           y = sale_price, 
-                           color = bedroom), 
-             size = 3) + 
-  scale_color_continuous(low = "yellow", 
-                         high = "blue")
+  geom_point(mapping = aes(x = liv_area, y = sale_price, color = bedroom), size = 3) + 
+  scale_color_continuous(low = "yellow", high = "blue")
 ```
 
 ***b. Size***
@@ -253,20 +200,15 @@ In addition to the color aesthetic, we can also map continuous variables to the 
 
 ```{r}
 ggplot(data = sahp) + 
-  geom_point(mapping = aes(x = liv_area, 
-                           y = sale_price, 
-                           size = lot_area))
+  geom_point(mapping = aes(x = liv_area, y = sale_price, size = lot_area))
 ```
-
 In this example, you can see the points corresponding to larger `lot_area` values are larger than those corresponding to smaller `lot_area` values. Note that although the legend only shows three different sizes, the actual size of the point is continuous corresponding to the value of `lot_area`. 
 
 How about the shape aesthetic? Can we map a continuous variable to it? Let's try it. 
 
 ```{r, error = TRUE, eval=FALSE}
 ggplot(data = sahp) + 
-  geom_point(mapping = aes(x = liv_area, 
-                           y = sale_price, 
-                           shape = lot_area)) #continuous variable can not be mapped to shape
+  geom_point(mapping = aes(x = liv_area, y = sale_price, shape = lot_area)) #continuous variable can not be mapped to shape
 ```
 
 You will see an error message: "A continuous variable can not be mapped to shape". The reason is intuitive: the shape can't be naturally changed continuously. 
@@ -277,10 +219,7 @@ Lastly, you can also create logical variables on the fly and map them to aesthet
 
 ```{r}
 ggplot(data = sahp) + 
-  geom_point(mapping = aes(x = liv_area, 
-                           y = sale_price, 
-                           shape = lot_area > 1e4), 
-             size = 3)
+  geom_point(mapping = aes(x = liv_area, y = sale_price, shape = lot_area > 1e4), size = 3)
 ```
 
 We can see the houses with `lot_area` larger than 1e4 are of different shapes from those with less than 1e4 in lot area.
@@ -289,9 +228,7 @@ Let's see another example where we want to highlight the different between two-s
 
 ```{r}
 ggplot(data = sahp) + 
-  geom_point(mapping = aes(x = liv_area, 
-                           y = sale_price, 
-                           shape = house_style == "2Story"))
+  geom_point(mapping = aes(x = liv_area, y = sale_price, shape = house_style == "2Story"))
 ```
 
 Now, the two-story houses are triangles and other houses are circles. 

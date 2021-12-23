@@ -8,15 +8,13 @@ Let's say we want to generate a basic violin plot for the variable `sale_price` 
 ```{r, warnings = FALSE}
 library(r02pro)
 library(ggplot2)
-ggplot(data = sahp, 
-       aes(x = "", y = sale_price)) + 
+ggplot(data = sahp, aes(x = "", y = sale_price)) + 
   geom_violin()
 ```
 
 To introduce the detail of the generation process of violin plot, it is helpful to review the density plot.
 ```{r, warnings = FALSE}
-ggplot(data = sahp, 
-       aes(y = sale_price)) +
+ggplot(data = sahp, aes(y = sale_price)) +
   geom_density()
 ```
 
@@ -26,8 +24,7 @@ Looking at these two plots, it is easy to see that the basic violin plot is noth
 Usually, the violin plot includes the boxplot inside it, providing extra information about the data. To do this, we just add the boxplot layer on top of the violin plot.
 
 ```{r, warnings = FALSE}
-ggplot(data = sahp, 
-       aes(x = "", y = sale_price)) + 
+ggplot(data = sahp, aes(x = "", y = sale_price)) + 
   geom_violin() +
   geom_boxplot(width = 0.1)
 ```
@@ -37,18 +34,14 @@ Here, we set the aesthetic `width = 0.1` in the boxplot to make it thinner.
 Just like in the boxplot, we can compare the distributions of a continuous variable for different values of a discrete variable. We can achieve this by mapping the discrete variable to the x axis.
 
 ```{r, warning = FALSE}
-ggplot(data = sahp, 
-       aes(x = house_style, y = sale_price)) + 
+ggplot(data = sahp, aes(x = house_style, y = sale_price)) + 
   geom_violin() +
   geom_boxplot(width = 0.1)
 ```
 
 We can restrict the x-axis to a subset of the possible `house_style` values. 
 ```{r, warning = FALSE}
-ggplot(data = sahp, 
-       aes(x = house_style, 
-           y = sale_price, 
-           color = house_style)) + 
+ggplot(data = sahp, aes(x = house_style, y = sale_price, color = house_style)) + 
   geom_violin() +
   geom_boxplot(width = 0.1) + 
   scale_x_discrete(limits=c("1Story", "2Story"))
@@ -58,10 +51,7 @@ ggplot(data = sahp,
 Similarly, we can map a third variable to an aesthetic.
 
 ```{r, warning = FALSE}
-ggplot(data = remove_missing(sahp, vars="oa_qual"), 
-       aes(x = house_style, 
-           y = sale_price, 
-           fill = oa_qual > 5)) + 
+ggplot(data = remove_missing(sahp, vars="oa_qual"), aes(x = house_style, y = sale_price, fill = oa_qual > 5)) + 
   geom_violin() +
   geom_boxplot(width = 0.1) + 
   scale_x_discrete(limits=c("1Story", "2Story"))
@@ -70,11 +60,8 @@ ggplot(data = remove_missing(sahp, vars="oa_qual"),
 As you can see, the boxplot doesn't align well inside the violin plot. To fix this issue, you can add the global aesthetic `position = position_dodge(0.9)` to both geoms. 
 
 ```{r, warning = FALSE}
-ggplot(data = remove_missing(sahp, vars="oa_qual"), 
-       aes(x = house_style, 
-           y = sale_price, 
-           fill = oa_qual > 5)) + 
-  scale_x_discrete(limits = c("1Story", "2Story")) +
+ggplot(data = remove_missing(sahp, vars="oa_qual"), aes(x = house_style, y = sale_price, fill = oa_qual > 5)) + 
+  scale_x_discrete(limits=c("1Story", "2Story")) +
   geom_violin(position = position_dodge(0.9)) +  
   geom_boxplot(width = 0.1, position = position_dodge(0.9))
 ```
@@ -82,10 +69,7 @@ ggplot(data = remove_missing(sahp, vars="oa_qual"),
 You can also try to add other global aesthetics to both geoms to change their appearances. 
 
 ```{r, warning = FALSE}
-ggplot(data = sahp, 
-       aes(x = house_style, 
-           y = sale_price, 
-           fill = house_style)) + 
+ggplot(data = sahp, aes(x = house_style, y = sale_price, fill = house_style)) + 
   geom_violin(color = "green", size = 2) + 
   geom_boxplot(width = 0.1, color = "blue", size = 1) + 
   scale_x_discrete(limits=c("1Story", "2Story"))

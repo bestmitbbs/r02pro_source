@@ -10,11 +10,7 @@ To generate a line plot, you can use the `plot()` function by setting the argume
 ```{r}
 library(r02pro)
 dt_sold_order <- order(sahp$dt_sold)
-plot(sahp$dt_sold[dt_sold_order], 
-     sahp$sale_price[dt_sold_order], 
-     type = "l", 
-     xlab = "Date Sold", 
-     ylab = "Sale Price")
+plot(sahp$dt_sold[dt_sold_order], sahp$sale_price[dt_sold_order], type = "l", xlab = "Date Sold", ylab = "Sale Price")
 ```
 
 The `plot()` works by first getting the location of the value pairs of `dt_sold` and `sale_price`. Then, connect the points **in the order of the observations**. 
@@ -41,8 +37,7 @@ knitr::kable(d)
 Let's see an example with the two parameters. 
 
 ```{r}
-plot(sahp$dt_sold[dt_sold_order], 
-     sahp$sale_price[dt_sold_order], 
+plot(sahp$dt_sold[dt_sold_order], sahp$sale_price[dt_sold_order], 
      type = "l", 
      xlab = "Date Sold", 
      ylab = "Sale Price", 
@@ -84,10 +79,7 @@ ggplot(data = sahp_2006) + geom_line(mapping = aes(x = dt_sold, y = sale_price))
 
 Next, we add the scatterplot onto the plot using the global mappings. 
 ```{r}
-ggplot(data = sahp_2006, 
-       mapping = aes(x = dt_sold, y = sale_price)) + 
-  geom_line() + 
-  geom_point()
+ggplot(data = sahp_2006, mapping = aes(x = dt_sold, y = sale_price)) + geom_line() + geom_point()
 ```
 
 
@@ -96,28 +88,19 @@ ggplot(data = sahp_2006,
 As expected, we can also map variables to aesthetics in line plots.
 
 ```{r}
-ggplot(data = sahp) + 
-  geom_line(mapping = aes(x = dt_sold, 
-                          y = sale_price, 
-                          color = kit_qual))
+ggplot(data = sahp) + geom_line(mapping = aes(x = dt_sold, y = sale_price, color = kit_qual))
 ```
 
 Here, the observations are divided into groups according to the value of `kit_qual` and separate line plots are generated for each group, representing as different colors. In addition, we can also map variables to the `linetype` aesthetic as in the `geom_smooth()` function. 
 
 ```{r, eval = FALSE}
-ggplot(data = sahp) + 
-  geom_line(mapping = aes(x = dt_sold, 
-                          y = sale_price, 
-                          linetype = kit_qual))
+ggplot(data = sahp) + geom_line(mapping = aes(x = dt_sold, y = sale_price, linetype = kit_qual))
 ```
 
 In addition to mapping aesthetics, you can also set global aesthetics as before. 
 
 ```{r}
-ggplot(data = sahp) + 
-  geom_line(mapping = aes(x = dt_sold, y = sale_price ), 
-            color = "blue", 
-            linetype = 3)
+ggplot(data = sahp) + geom_line(mapping = aes(x = dt_sold, y = sale_price ), color = "blue", linetype = 3)
 ```
 
 ### Exercises

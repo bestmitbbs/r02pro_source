@@ -27,14 +27,14 @@ Let's discuss the five lines on the boxplot.
 - The **lower whisker** is the smallest observation value that is greater than or equal to Q1 - 1.5 * IQR. To find this value, we first calculate Q1 - 1.5 * IQR = `r quantile(sale_price, 0.25) - 1.5 * IQR(sale_price)`. 
 Then, the smallest observation larger than `r quantile(sale_price, 0.25) - 1.5 * IQR(sale_price)` is 
 ```{r, results=TRUE}
-lower_whisker_loc <- which(sale_price >= quantile(sale_price, 0.25) - 1.5 * IQR(sale_price))
-min(sale_price[lower_whisker_loc])
+lower_whisker_loc <- which.min(sale_price >= quantile(sale_price, 0.25) - 1.5 * IQR(sale_price))
+sale_price[lower_whisker_loc]
 ```
 
 - The **upper whisker** is the largest observation value that is smaller than or equal to Q3 + 1.5 * IQR. Similarly, the value is
 ```{r, results=TRUE}
-upper_whisker_loc <- which(sale_price <= quantile(sale_price, 0.75) + 1.5 * IQR(sale_price))
-max(sale_price[upper_whisker_loc])
+upper_whisker_loc <- which.max(sale_price >= quantile(sale_price, 0.75) + 1.5 * IQR(sale_price))
+sale_price[upper_whisker_loc]
 ```
 
 
@@ -66,11 +66,7 @@ In addition to the default summary statistics, we can add other values to the bo
 ```{r}
 ggplot(data = sahp, aes(x = "", y = sale_price)) + 
   geom_boxplot() +
-  geom_point(stat = "summary", 
-             fun = "mean", 
-             shape = 20, 
-             size = 4, 
-             color = "red")
+  geom_point(stat = "summary", fun = "mean", shape = 20, size = 4, color = "red")
 ```
 
 The `geom_point()` function will first calculate the mean hwy, and add it to the boxplot. Note that we used some global aesthetics for `geom_point()`. 
@@ -92,20 +88,13 @@ Just like in bar charts, you may want to arrange the boxplots in a particular or
 
 ```{r}
 ggplot(data = remove_missing(sahp, vars = "sale_price")) + 
-  geom_boxplot(aes(x = fct_reorder(kit_qual, 
-                                   sale_price, 
-                                   median), 
-                   y = sale_price)) 
+  geom_boxplot(aes(x = fct_reorder(kit_qual, sale_price, median), y = sale_price)) 
 ```
 
 To order it by the mean `sale_price` in descending order, you can use 
 ```{r}
 ggplot(data = remove_missing(sahp, vars = "sale_price")) + 
-  geom_boxplot(aes(x = fct_reorder(kit_qual, 
-                                   sale_price, 
-                                   mean, 
-                                   .desc = TRUE), 
-                   y = sale_price)) 
+  geom_boxplot(aes(x = fct_reorder(kit_qual, sale_price, mean, .desc = TRUE), y = sale_price)) 
 ```
 
 If you want to generate a flipped version of the boxplot, you can add `coord_flip()` to the `ggplot()` function. Actually, this works with any ggplot. 
@@ -134,18 +123,15 @@ Note there are also functions `cut_interval()` and `cut_number()` which also dis
 Now, you can compare the distributions of a continuous variable on the constructed groups from another continuous variable. 
 ```{r}
 ggplot(data = remove_missing(sahp, vars="oa_qual")) + 
-  geom_boxplot(aes(x = cut_width(oa_qual, width = 2), 
-                   y = sale_price))
+  geom_boxplot(aes(x = cut_width(oa_qual, width = 2), y = sale_price))
 ```
-
 This agrees perfectly with our intuition that houses with higher overall quality have higher sale prices. 
 
 ### Map aesthetics to boxplot
 
 Before talking about aesthetics, let's create a boxplot of `sale_price` for different values of `house_style`. 
 ```{r, warning=FALSE}
-ggplot(data = na.omit(sahp), 
-       aes(x = house_style, y = sale_price)) +
+ggplot(data = na.omit(sahp), aes(x = house_style, y = sale_price)) +
   geom_boxplot() +
   scale_x_discrete(limits=c("1Story", "2Story"))
 ```
@@ -153,8 +139,7 @@ ggplot(data = na.omit(sahp),
 Note that we only show the two boxplots with `house_style` equaling `"1Story"` or `"2Story"`. To simply the codes, it is sometimes helpful to store the intermediate plot object and build additional plots on top of it. For example, we can generate the same boxplot using the following two steps.
 
 ```{r, eval = TRUE, results = FALSE, warning=FALSE}
-g <- ggplot(data = na.omit(sahp), 
-            aes(x = house_style, y = sale_price)) +
+g <- ggplot(data = na.omit(sahp), aes(x = house_style, y = sale_price)) +
   scale_x_discrete(limits=c("1Story", "2Story"))
 g + geom_boxplot()
 ```
@@ -164,7 +149,7 @@ g + geom_boxplot()
 First, let's try to map the variable `house_style` to the `color` aesthetic. 
 
 ```{r, warning=FALSE}
-g + geom_boxplot(mapping = aes(color = house_style))
+g + geom_boxplot(mapping=aes(color = house_style))
 ```
 
 We can see that the boxplots have different colors according to the value of `house_style`. 
@@ -174,7 +159,7 @@ We can see that the boxplots have different colors according to the value of `ho
 You can also use the `fill` aesthetic to fill in the boxes with different colors according to the value of `house_style`. 
 
 ```{r, warning=FALSE}
-g + geom_boxplot(mapping = aes(fill = house_style))
+g + geom_boxplot(mapping=aes(fill = house_style))
 
 ```
 
@@ -184,14 +169,14 @@ g + geom_boxplot(mapping = aes(fill = house_style))
 So far, we have only mapped the discrete variable on the x-axis to the aesthetic. You can map a third variable to an aesthetic if a further refined comparision is needed. Let's try to map the `oa_qual > 5` to `color`. 
 
 ```{r, warning=FALSE}
-g + geom_boxplot(mapping = aes(color = oa_qual > 5))
+g + geom_boxplot(mapping=aes(color = oa_qual > 5))
 ```
 
 You will get a boxplot for each combination of `house_style` and `oa_qual` grouped by the variable `house_style`, just like when we create the bar charts in Section \@ref(bar-charts). 
 
 As before, you can also cut a continuous variable and map it to aesthetic. 
 ```{r, warning=FALSE}
-g + geom_boxplot(mapping = aes(color = cut_width(oa_qual, 2)))
+g + geom_boxplot(mapping=aes(color = cut_width(oa_qual, 2)))
 ```
 
 
@@ -200,7 +185,7 @@ g + geom_boxplot(mapping = aes(color = cut_width(oa_qual, 2)))
 Similarly, you can also map the variable to the `fill` aesthetic. 
 
 ```{r, warning=FALSE}
-g + geom_boxplot(mapping = aes(fill = oa_qual > 5))
+g + geom_boxplot(mapping=aes(fill = oa_qual > 5))
 
 ```
 
@@ -216,9 +201,7 @@ g + geom_boxplot(fill = "green", color = "red")
 If you want to change the shape and size of the outliers, you can set the arguments `outlier.shape` and `outlier.size`.
 
 ```{r, warning=FALSE}
-g + geom_boxplot(outlier.color = "green", 
-                 outlier.shape = 2, 
-                 outlier.size = 3)
+g + geom_boxplot(outlier.color = "green", outlier.shape = 2, outlier.size = 3)
 ```
 
 ### Notched Boxplots
@@ -226,8 +209,7 @@ g + geom_boxplot(outlier.color = "green",
 In addition to the regular boxplot, there is a more sophiscated version, called **notched boxplot**. We can generate such a boxplot by setting the global aesthetic `notch = TRUE` in the `geom_boxplot()` function.
 ```{r, warnings = FALSE}
 ggplot(data = sahp) + 
-  geom_boxplot(aes(x = "", y = sale_price), 
-               notch = TRUE)
+  geom_boxplot(aes(x = "", y = sale_price), notch = TRUE)
 ```
 
 In a notched box plot, a notch is generated around the median, with the vertical width on each side being 1.58 times IQR divided by the squared root of the sample size: $1.58 * IQR / sqrt(n)$. This gives a roughly 95% confidence interval for the median. As a result, if the notches of two boxplots do not overlap, it offers evidence of a statistically significant difference between the two medians. In this example, the upper and lower points of the notch are 

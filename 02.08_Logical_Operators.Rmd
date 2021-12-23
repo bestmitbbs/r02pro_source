@@ -28,25 +28,13 @@ ys9 <- y <= 9          #xs4 is the same as ys9
  
 ### NOT operator by `!`
 
-The first operator we want to introduce is `!`, often called the **NOT operator**. The NOT operator returns the opposite logical value of the input logical values. It is intuitive to understand since if something is NOT FALSE, then it is TRUE; and if it is NOT TRUE, then it has to be FALSE.
-It is summarized in the following table. 
-
-```{r results = TRUE, echo=FALSE}
-Operation  <- c("!TRUE", "!FALSE")
-Result <- c("FALSE", "TRUE")
-d <- data.frame(Operation, Result)
-knitr::kable(d)
-```
-
-Let's see what happens if you apply the NOT operator on a logical vector.
+The first operator we want to introduce is `!`, often called the **NOT operator**. Let's see what happens if you apply the NOT operator on a logical vector,
 
 ```{r results=TRUE}
 !c(FALSE, FALSE, FALSE, TRUE, TRUE)  #the opposite of a logical vector
 ```
 
-From the result, you get another logical vector with the same length as the original one. The value of each element in the new vector is the **opposite** of the corresponding value in the original vector. 
-
-
+From the result, you get another logical vector with the same length as the original one. The value of each element in the new vector is the **opposite** of the corresponding value in the original vector. It is intuitive to understand since if something is NOT FALSE, then it is TRUE; and if it is NOT TRUE, then it has to be FALSE.
 
 Since `xb3` is also a logical vector, you can try to apply `!` on `xb3`, and use `!xb3` (which is also a logical vector) to do vector subsetting. Guess what will you get?
 
