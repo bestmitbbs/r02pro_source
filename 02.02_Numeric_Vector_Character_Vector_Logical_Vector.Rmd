@@ -2,7 +2,6 @@
 
 In the last chapter, you have had a basic understanding of R objects and how to do object assignments. From this section, we will start to introduce the first and perhaps the most fundamental R object type, called **vector**. **Vector** is the simplest object type in R, which contains one or more values of the **same type**. We will introduce numeric vector, character vector, and logical vector in this section. Let's begin with numeric vector. 
 
-
 ### Numeric vector {#numeric-vector} 
 
 ***a. Create numeric vectors***     

@@ -1,0 +1,25 @@
+## Covariance and Correlation   {#covariance_correlation}
+
+In this section, we will dive further into statistics, this time talking about the relationship among variables. For two random variables $X$ and $Y$, the covariance between them is defined as $Cov(X, Y) = E[(X-E(X))(Y-E(Y))]$. 
+
+```{r}
+set.seed(724)
+n <- 1e5
+x1 <- rnorm(n)
+x2 <- x1 + rnorm(n)
+x3 <- x2 + rnorm(n)
+cor(x1, x2)
+cor(x1, x3)
+cor(x2, x3)
+x <- data.frame(x1, x2, x3)
+cor(x) #correlation matrix
+cov(x) #covariance matrix
+```
+
+
+### Exercise
+
+You can run the following code to do the exercise. 
+```{r eval=FALSE}
+r02pro("8.4")
+```
