@@ -1,15 +1,4 @@
-
 ## Object Assignment {#Object-Assignment}
-
-```{r, echo=FALSE}
-rm(list=ls())
-```
-
-```{r, include=FALSE}
-knitr::opts_chunk$set(
-  comment = "#>", echo = TRUE, eval = TRUE, results = FALSE, error = TRUE, fig.width = 6, warning = FALSE, collapse = TRUE)
-```
-
 
 In the last section, you have seen the power of R as a fancy calculator. However, in order to do more complicated and interesting tasks, you may need to store intermediate results for future use.  
 
@@ -180,4 +169,4 @@ While some of the object types look more intuitive than others, you have nothing
 
 3. Write R code to get the list of all objects in the environment.
 
-
+a

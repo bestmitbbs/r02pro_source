@@ -143,9 +143,4 @@ Summary   |`NA`      | `NULL`     | `NaN`      | `Inf`
 `length()`|   1      |   0        |   1        |  1
 check     |`is.na()` | `is.null()`| `is.nan()` | `is.finite()`
 
-### Exercises
-Suppose `x <- c(NA, NULL, Inf, NaN)`, answer the following questions.
-1. What's the length of `x`?
-2. What's the class and the storage type of `x`?
-3. What's the value of `x + 1`? Explain the reason for each element in the result.
-4. What's the value of `x == x`? Explain the reason for each element in the result.
+

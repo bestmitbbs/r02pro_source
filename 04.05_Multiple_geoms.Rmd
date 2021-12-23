@@ -28,40 +28,24 @@ As usual, you can add aesthetics to both geoms.
 Let's first map `good_qual` (defined as `oa_qual > 5` in Section \@ref(smoothline)) to the color aesthetic for `geom_smooth()`.
 ```{r, warning=F}
 ggplot(data = sahp) + 
-  geom_point(mapping = aes(x = liv_area, 
-                           y = sale_price)) + 
-  geom_smooth(mapping = aes(x = liv_area, 
-                            y = sale_price, 
-                            color = good_qual))
+  geom_point(mapping = aes(x = liv_area, y = sale_price)) + 
+  geom_smooth(mapping = aes(x = liv_area, y = sale_price, color = good_qual))
 ```
 
 To verify the two smoothline fits are indeed fitted from the data points in the two groups, you can map `good_qual` to the color aesthetic for `geom_point()` as well. 
 ```{r, warning=F}
 ggplot(data = sahp) + 
-  geom_point(mapping = aes(x = liv_area, 
-                           y = sale_price, 
-                           color = good_qual)) +
-  geom_smooth(mapping = aes(x = liv_area, 
-                            y = sale_price, 
-                            color = good_qual), 
-              se = FALSE)
+  geom_point(mapping = aes(x = liv_area, y = sale_price, color = good_qual)) +
+  geom_smooth(mapping = aes(x = liv_area, y = sale_price, color = good_qual), se = FALSE)
 ```
-
 The plot is reassuring that the two smoothline fits indeed correspond to the data points in the two groups defined by `good_qual`. Note that the legend also shows a `NA` category since there is a missing value in the variable `good_qual`. 
 
 
 In addition to mapping variables to aesthetics, you can also use global aesthetics.
 ```{r, warning=F}
 ggplot(data = sahp) + 
-  geom_point(mapping = aes(x = liv_area, 
-                           y = sale_price, 
-                           color = good_qual, 
-                           shape = house_style == "2Story")) +
-  geom_smooth(mapping = aes(x = liv_area, 
-                            y = sale_price, 
-                            color = good_qual), 
-              linetype = 2, 
-              se = FALSE)
+  geom_point(mapping = aes(x = liv_area, y = sale_price, color = good_qual, shape = house_style == "2Story")) +
+  geom_smooth(mapping = aes(x = liv_area, y = sale_price, color = good_qual), linetype = 2, se = FALSE)
 ```
 
 ### Exercises

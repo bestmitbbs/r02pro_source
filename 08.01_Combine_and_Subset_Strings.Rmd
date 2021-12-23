@@ -52,8 +52,6 @@ str_c(animals, collapse = "-")
 
 It is often of interest to create **substrings** from an existing string. A **substring** is a string formed by a consecutive sequence of characters within the existing string.
 
-
-
 To get a substring, you can use the `substr()` function. The `start` and `end` arguments represent the starting and ending position of the desired substrings. 
 
 ```{r, results = TRUE}
@@ -72,8 +70,7 @@ Here, for each string, we extract the substring from position 1 to the second to
 str_sub(animals, start = 1:3, end = (-1):(-3))
 ```
 
-Let's look at the result together.
-
+Let's look at the result together. 
 - The first element is the first position to the last position of `"sheep"`. 
 - The second element is the second position to the second to last position of `"pig"`. 
 - The third element is the third position to the third to last position of `"monkey"`.
@@ -81,8 +78,7 @@ Let's look at the result together.
 Once we know how to create the substring, it is straightforward to modify the substing in place of the original string. Let's try to update the substrings.
 ```{r}
 animals
-str_sub(animals, start = 1:3, end = (-1):(-3)) <- 
-        c("ns_1", "ns_2", "ns_3")
+str_sub(animals, start = 1:3, end = (-1):(-3)) <- c("ns_1", "ns_2", "ns_3")
 animals
 ```
 

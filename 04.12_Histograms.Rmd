@@ -33,8 +33,7 @@ We can change the number of bins with the global aesthetic `bins`.
 
 ```{r, warning=FALSE}
 ggplot(data = sahp) + 
-  geom_histogram(mapping = aes(x = sale_price), 
-                 bins = 5)
+  geom_histogram(mapping = aes(x = sale_price), bins = 5)
 ```
 
 We can see that the histogram now has 5 bins and each bin has the same width. 
@@ -45,8 +44,7 @@ And from the message, another way to change the number of bins is to specify the
 
 ```{r, warning=FALSE}
 ggplot(data = sahp) + 
-  geom_histogram(mapping = aes(x = sale_price), 
-                 binwidth = 1e2)
+  geom_histogram(mapping = aes(x = sale_price), binwidth = 1e2)
 ```
 
 ***c. Manually set the bins.***
@@ -55,8 +53,7 @@ If desired, you can manually set the bins via the `breaks` argument in the `geom
 
 ```{r, warning=FALSE}
 ggplot(data = sahp) + 
-  geom_histogram(mapping = aes(x = sale_price), 
-                 breaks = seq(from = 0, to = 600, by = 100))  
+  geom_histogram(mapping = aes(x = sale_price), breaks = seq(from = 0, to = 600, by = 100))  
 ```
 
 The `breaks` argument is a numeric vector specifying how the bins are constructed. Let's verify the height of the first bin. 
@@ -72,8 +69,7 @@ Next, we introduce the aesthetics in histograms, which are very similar to those
 
 ```{r, warning=FALSE}
 ggplot(data = sahp) + 
-  geom_histogram(mapping = aes(x = sale_price, fill = house_style), 
-                 bins = 5)
+  geom_histogram(mapping = aes(x = sale_price, fill = house_style), bins = 5)
 ```
 
 We can see that like the bar chart, the bar for each bin is now divided into sub-bars with different colors. The different colors in each sub-bar correspond to the values of `house_style`. And the height of each sub-bar represents the count for the cases with the `sale_price` in this particular bin and the specific value of  `house_style`. Just like `geom_bar()`, we have a global aesthetic called `position`, which does position adjustment for different sub-bars. The default position value is again `"stack"` if you don't specify it. 
@@ -82,9 +78,7 @@ We can see that like the bar chart, the bar for each bin is now divided into sub
 
 ```{r, eval=FALSE}
 ggplot(data = sahp) + 
-  geom_histogram(mapping = aes(x = sale_price, fill = house_style),
-                 position = "stack", 
-                 bins = 5)
+  geom_histogram(mapping = aes(x = sale_price, fill = house_style), position = "stack", bins = 5)
 ```
 
 As expected, we get the same histogram as before.
@@ -95,9 +89,7 @@ The second option for position is `"dodge"`, which places the sub-bars beside on
 
 ```{r, warning=FALSE}
 ggplot(data = sahp) + 
-  geom_histogram(mapping = aes(x = sale_price, fill = house_style),
-                 position = "dodge", 
-                 bins = 5)
+  geom_histogram(mapping = aes(x = sale_price, fill = house_style), position = "dodge", bins = 5)
 ```
 
 
@@ -107,9 +99,7 @@ Another option for optional is `position = "fill"`. It works like stacking, but 
 
 ```{r, warning=FALSE}
 ggplot(data = sahp) + 
-  geom_histogram(mapping = aes(x = sale_price, fill = house_style),
-                 position = "fill", 
-                 breaks = seq(from = 0, to = 600, by = 100))
+  geom_histogram(mapping = aes(x = sale_price, fill = house_style), position = "fill", breaks = seq(from = 0, to = 600, by = 100))
 ```
 
 Just like `geom_bar()`, the y axis may be labeled as "proportion" rather than "count", to be more precise. This makes it easier to compare proportions of different values of cut for different bins of price. For example, we can see that the proportion of `house_style = "1.5Fin"` is  highest for the houses with sale price less than 100.  
@@ -119,8 +109,7 @@ Just like `geom_bar()`, the y axis may be labeled as "proportion" rather than "c
 In addition to using histograms to visualize the distribution of a discrete variable, you can also construct a density density of variable using a proper normalization. To generate such a density estimate, you can add `y = ..density..` as a mapping in the `aes()` function in `geom_historgram()`. Let's see an example as below.
 ```{r, warning=FALSE}
 ggplot(data = sahp) +  
-  geom_histogram(aes(x = sale_price, y = ..density..), 
-                 breaks = seq(from = 0, to = 6e2, by = 1e2)) + 
+  geom_histogram(aes(x = sale_price, y = ..density..), breaks = seq(from = 0, to = 6e2, by = 1e2)) + 
   scale_y_continuous(breaks = seq(from = 0, to = 7e-3, by = 1e-3))
 ```
 

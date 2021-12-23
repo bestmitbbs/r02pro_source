@@ -14,18 +14,14 @@ You may notice that the arguments inside `geom_point()` and `geom_smooth()` are 
 
 To use the global mapping, we move the `mapping` argument from the geoms into the `ggplot()` function. 
 ```{r, eval=FALSE}
-ggplot(data = sahp, 
-       mapping = aes(x = liv_area, y = sale_price)) + 
+ggplot(data = sahp, mapping = aes(x = liv_area, y = sale_price)) + 
   geom_point() + 
   geom_smooth()
 ```
 
 We can also map variables to aesthetics in the global mapping. The global aesthetic mapping will be inherited in all geoms used. 
 ```{r, warning = FALSE, message=FALSE}
-ggplot(data = sahp, 
-       mapping = aes(x = lot_area, 
-                     y = sale_price, 
-                     color = kit_qual)) +
+ggplot(data = sahp, mapping = aes(x = lot_area, y = sale_price, color = kit_qual)) +
   geom_point() + 
   geom_smooth()
 ```
@@ -39,49 +35,36 @@ In addition to using the same mapping in each geom as the global mapping, we can
 In addition to the global aesthetic mappings, you can add additional mappings in each geom. 
 
 ```{r, warning = FALSE, message=FALSE}
-ggplot(data = sahp, 
-       mapping = aes(x = lot_area, 
-                     y = sale_price, 
-                     color = kit_qual)) + 
-  geom_point(mapping = aes(shape = gar_car > 1)) + 
-  geom_smooth(mapping = aes(linetype = kit_qual))
+ggplot(data = sahp, mapping = aes(x = lot_area, y = sale_price, color = kit_qual)) + geom_point(mapping = aes(shape = gar_car > 1)) + geom_smooth(mapping = aes(linetype = kit_qual))
 ```
 
 Here, both `geom_point()` and `geom_smooth()` will first inherit the global mappings, then add the `shape` and `linetype` aesthetics, respectively. As you can see from the legend, there are some missing values for the variable `gar_car`. If you want to remove the observations that has a missing `gar_car`, you can use the function `remove_missing()`. 
 ```{r, warning = FALSE, message=FALSE}
-ggplot(data = remove_missing(sahp, vars = "gar_car"), 
-       mapping = aes(x = lot_area, 
-                     y = sale_price, 
-                     color = kit_qual)) +
+ggplot(data = remove_missing(sahp, vars = "gar_car"), mapping = aes(x = lot_area, y = sale_price, color = kit_qual)) +
   geom_point(mapping = aes(shape = gar_car > 1)) + 
   geom_smooth(mapping = aes(linetype = kit_qual))
 ```
 
-In the `remove_missing()` function, we use the argument `vars = "gar_car"` to indicate that only the observations with a missing `gar_car` are removed. Note that you may be tempting to use the function `na.omit()` on the data `sahp`. However, it is not recommended as the function will remove all observations whenever there is missing value for one variable, even if the variable is not used in the visualization process. 
+In the `remove_missing()` function, we use the argument `vars = "gar_car"` to indicate that only the observaitons with a missing `gar_car` are removed. Note that you may be tempting to use the function `na.omit()` on the data `sahp`. However, it is not recommended as the function will remove all observations whenever there is missing value for one variable, even if the variable is not used in the visualization process. 
 
 
 ### Overwrite Global Aesthetic Mappings
 
-When you add the same aesthetic mapping in the local geom as one of the global mappings, the corresponding global aesthetic mapping will be overwritten. 
+When you add the same aesthetic mapping in the local geom as one of the global mappings, the corresponding local aesthetic mapping will be overwritten. 
 
 ```{r, warning = FALSE, message=FALSE}
-ggplot(data = sahp, 
-       mapping = aes(x = lot_area, 
-                     y = sale_price, 
-                     color = kit_qual)) +
+ggplot(data = sahp, mapping = aes(x = lot_area, y = sale_price, color = kit_qual)) +
   geom_point(mapping = aes(color = gar_car > 1)) + 
   geom_smooth(mapping = aes(color = gar_car > 1))
 ```
 
-Here, you can see that the `color` aesthetic mapping corresponding to the logical variable `color = gar_car > 1`. 
+Here, you can see that the `color` aesthetic mapping corresponding to the logical variable `gar_car > 1`. 
 
 
-It is worth to note the difference between *global aesthetics* (introduced in Section \@ref(aes)) and the *global aesthetic mappings* introduced here. The *global aesthetics* set the aesthetic for all points/lines on the graph **for a single geom** while the *global aesthetic mapping* represents the mapping which will be passed to **all geoms**.   Although we can set *global aesthetic mappings*, it is impossible to set *"global" global aesthetics*. Let's try to set all points and lines to be red.
+It is worth to note the difference between *global aesthetics* (introduced in Section \@ref(aes)) and the *global aesthetic mappings* introduced here. The *global aesthetics* set the aesthetic for all points/lines on the graph while the *global aesthetic mapping* represents the mapping which will be passed to all geoms.   Although we can set *global aesthetic mappings*, it is impossible to set *global global aesthetics*. Let's try to set all points and lines to be red.
 
 ```{r, warning = FALSE, message=FALSE}
-ggplot(data = sahp, 
-       mapping = aes(x = lot_area, y = sale_price), 
-       color = "red") +
+ggplot(data = sahp, mapping = aes(x = lot_area, y = sale_price), color = "red") +
   geom_point() + 
   geom_smooth()
 ```
@@ -89,8 +72,7 @@ ggplot(data = sahp,
 As you can see the `color = "red"` argument was ignored during the plotting process. To achieve this, you need to use `color = "red"` as global aesthetics for both geoms as below.
 
 ```{r, warning = FALSE, message=FALSE}
-ggplot(data = sahp, 
-       mapping = aes(x = lot_area, y = sale_price)) + 
+ggplot(data = sahp, mapping = aes(x = lot_area, y = sale_price)) + 
   geom_point(color = "red") +
   geom_smooth(color = "red")
 ```
@@ -101,12 +83,8 @@ ggplot(data = sahp,
 As you may have expected, it is straightforward to mix global aesthetic mappings, local aesthetic mappings, and global aesthetics for each geom. 
 
 ```{r, warning = FALSE, message=FALSE}
-ggplot(data = remove_missing(sahp, vars = "kit_qual"), 
-       mapping = aes(x = liv_area, 
-                     y = sale_price, 
-                     color = kit_qual)) +
-  geom_point(mapping = aes(shape = house_style == "2Story"), 
-             size = 2) +
+ggplot(data = remove_missing(sahp, vars = "kit_qual"), mapping = aes(x = liv_area, y = sale_price, color = kit_qual)) +
+  geom_point(mapping = aes(shape = house_style == "2Story"), size = 2) +
   geom_smooth(linetype = 2, se = FALSE)
 ```
 

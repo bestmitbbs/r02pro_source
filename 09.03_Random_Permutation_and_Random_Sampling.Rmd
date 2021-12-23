@@ -7,16 +7,16 @@ Now, you have covered how to work with distributions in R with the four useful f
 In statistics and machine learning, you usually need to do a random permutation of the data. For example, you can evaluate a model's performance by dividing the data randomly into two parts for training and validation, respectively.  
 
 For the vector `x <- 6:10`, you can use the function `sample()` to get a permutation for `x`. 
-```{r, results = TRUE}
+```{r, eval = TRUE}
 x <- 6:10
-set.seed(0)
+set.seed(97)
 sample(x)  #a random permutation of x
 ```
 
 To reproduce the random permutation, we can use the same seed. 
 
-```{r, results=TRUE}
-set.seed(0)
+```{r, eval=TRUE}
+set.seed(97)
 sample(x)  #reproduce the random permutation
 ```
 
@@ -25,7 +25,7 @@ sample(x)  #reproduce the random permutation
 
 Note that the vector `x` has 5 elements in total. To sample a few elements from `x`, you can again use the `sample()` function. For example, if you want to randomly sample two elements from `x`, you can use the following code
 
-```{r, results=TRUE}
+```{r}
 sample(x, size = 2) 
 ```
 
@@ -38,7 +38,7 @@ sample(x, size = 6)
 
 In addition to using a vector in the first argument of `sample`, you can also use a positive integer (e.g., 10), which will be equivalent to `x = 1:10`. See the following code for an example. 
 
-```{r, results = TRUE}
+```{r}
 sample(10, size = 4)   #sample 4 integers from 1 to 10.
 sample(1:10, size = 4) #sample 4 integers from 1 to 10.
 ```
@@ -48,7 +48,7 @@ sample(1:10, size = 4) #sample 4 integers from 1 to 10.
 
 Sometimes, you may want to get a sample with replacements. You will still be using the `sample` function, but setting the argument `replace = TRUE`. The following code samples 10 elements with replacement from x.
 
-```{r, results = TRUE}
+```{r}
 sample(x, size = 10, replace = TRUE)
 ```
 
@@ -56,7 +56,7 @@ As expected, you will see some duplicated elements in the output vector.
 
 A very important application of random sample with replacement is **bootstrap**. A bootstrap sample is a sample of *the same size as the original data* with replacement. So, if you want to get a bootstrap sample from x, you will sample 5 elements with replacement from x.
 
-```{r, results = TRUE}
+```{r}
 sample(x, replace = TRUE) #a bootstrap sample
 ```
 
@@ -71,13 +71,13 @@ By default, the `sample()` function will draw each element with the same probabi
 
 To draw elements with different probabilities, the first method is to use the random number generator for Binomial distribution or Bernoulli distribution. Let's say we want to randomly sample 100 elements from a Bernoulli distribution with success probability $p=0.2$. 
 
-```{r, results = TRUE}
+```{r}
 rbinom(100, size = 1, prob = 0.2)
 ```
 
 In addition to using the `rbinom` function introduced in Section \@ref(other-distributions), you can use the `sample` function with the `prob` argument inside to achieve the same goal.
 
-```{r, results = TRUE}
+```{r}
 sample(c(0, 1), size = 100, replace = TRUE, prob = c(0.8, 0.2))
 ```
 
@@ -85,3 +85,7 @@ You will samples 100 elements with replacement from c(0,1) here, and the probabi
 
 ### Exercise
 
+You can run the following code to do the exercise. 
+```{r eval=FALSE}
+r02pro("8.3")
+```

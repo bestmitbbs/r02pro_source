@@ -14,7 +14,7 @@ my_list <- list(dig_num, ani_char, x_mat, cond_fac)
 my_list
 ```
 
-Here, we created a list named `my_list`, which contains four elements of different types. From the output, at the beginning of each element, its index is shown surrounding by the pair `[[` and `]]`. Usually, you want to assign a name for each element and the elements can be latter accessed by their names.
+Here, we created a list named `my_list`, which contains four elements of different types. From the output, at the beginning of each element, its index is shown surrouding by the pair `[[` and `]]`. Usually, you want to assign a name for each element and the elements can be latter accessed by their names.
 ```{r, results = TRUE}
 my_list <- list(number = dig_num, character = ani_char, matrix = x_mat, factor = cond_fac)
 my_list
@@ -64,7 +64,7 @@ If you want to do list subsetting by extracting multiple elements, you can follo
 The first method is to use indices to do list subsetting.  To get a sublist of the 3rd element of the original list `my_list`, you can use `my_list[3]` as below.
 
 ```{r, results = TRUE}
-my_list[3]      #the third element of my_list
+my_list[3]      #the second element of my_list
 ```
 
 It is worth to do a comparison between the results of `my_list[[3]]` and `my_list[3]`. The former is the third element of `my_list` which is a matrix, while the latter is a list containing a single matrix element. Let's confirm this by looking at their structures.
@@ -162,44 +162,3 @@ my_num_list <- list(a = 1:20, b = rep(c(TRUE, FALSE), c(6,3)))
 sapply(my_num_list, quantile)
 ```
 
-### List Matrix
-In Section \@ref(matrix), we know matrices are 2-dimensional objects containing elements of the same type. A natural extension of matrix to the case where different elements can be of different types is called **list matrix**.  
-
-Let's create a list matrix from `my_list`. Since `my_list` has 4 elements, you can use the `matrix()` function to create a $2\times 2$ matrix of elements. 
-```{r, results = TRUE}
-my_list_mat <- matrix(my_list, 2, 2)
-my_list_mat
-```
-
-To extract the elements from a list matrix, you can the pair of `[[` and `]]` with the indices inside. Similarly to the list subsetting, using the pair of `[` and `]` will result in a list of length 1.
-```{r, results=TRUE}
-my_list_mat[[1, 2]]
-my_list_mat[1, 2]
-```
-
-Similar to combining vectors into matrices in Section \@ref(#combine-vectors), you can also combine lists into list matrix using the `rbind()` or `cbind()` functions.
-```{r, results = TRUE}
-l1 <- list(num = 1:4, mat = matrix(1:6, 2, 3))
-l2 <- list(char = letters[1:5], my_list = list(num = 9:1, char = LETTERS[1:7]))
-list_mat_r <- rbind(l1,l2)
-list_mat_c <- cbind(l1,l2)
-str(list_mat_r)
-typeof(list_mat_r)
-```
-
-You can see from the result that `list_mat_r` is still stored as a list, but with the `"dim"` attributes. This relationship is very similar to that between a vector and its converted matrix. 
-
-### Exercises
-Consider the following list,
-```{r, results=TRUE}
-dig_num <- 1:6
-ani_char <- c("sheep", "pig", "monkey", "pig", "monkey")
-x_mat <- matrix(1:12, nrow = 3, ncol = 4)
-my_list <- list(num = dig_num, char = ani_char, mat = x_mat)
-my_list
-```
-
-1. What's the difference between `my_list[2]` and `my_list[3]`? 
-2. What's the difference between `my_list[2:3]` and `my_list[[2:3]]`? 
-3. Using the `sapply` function to get the length of each element in `my_list`.
-4. Multiple the 3rd row of `mat` in `my_list` by 10. Then, check the new value of `my_list`.  
