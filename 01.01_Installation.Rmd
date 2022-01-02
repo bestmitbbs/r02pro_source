@@ -4,7 +4,7 @@
 
 ### Download and Install
 
-As a first step, you need to download R and RStudio, whose links are as follows. For both software, you need to choose the version that corresponds to your operation system.
+As the first step, you need to download R and RStudio, whose links are as follows. For both software, you need to choose the version that corresponds to your operation system.
 
 Download R: <https://cloud.r-project.org/>
 
