@@ -2,7 +2,6 @@
 
 While R is super powerful, it is, first of all, a very fancy calculator.
 
-
 ### Add comments using "#"
 
 The first item we will cover is about adding comments. In R, you can add comments using the pound sign `#`. In each line, anything after `#` are comments, which will be ignored by R. Let's see an example,
