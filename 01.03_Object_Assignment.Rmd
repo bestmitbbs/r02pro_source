@@ -152,7 +152,7 @@ To get a complete list of reserved words, you can run the following code.
 
 ### Object types
 
-So far in this section, you have learned how to do object assignments. The values you assigned are all numbers, i.e. of numeric type. Actually, an object may contain more than one values. Also, an object may contain values other than numeric type, such like character and logical ones. Depending on the **composition of values**, the object belongs to one particular type. 
+So far in this section, you have learned how to do object assignments. The values you assigned are all numbers, i.e. of numeric type. Actually, an object may contain more than one values. Also, an object may contain values other than the numeric type, such like character and logical ones. Depending on the **composition of values**, the object belongs to one particular type. 
 
 
 
