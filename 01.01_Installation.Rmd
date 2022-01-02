@@ -12,7 +12,7 @@ Download RStudio: <https://rstudio.com/products/rstudio/download/#download>
 <!-- For a step-by-step demonstration, you can refer to the YouTube video via the following **link**. -->
 <!-- ::: -->
 
-RStudio is an *Integrated Development Environment* for R, which is powerful yet easy to use. Throughout this book, you will use RStudio instead of R to learn R programming. Without further ado, let's get started with a quick tour of RStudio.
+RStudio is an *Integrated Development Environment* for R, which is powerful yet easy to use. Throughout this book, you will use RStudio instead of R to learn R programming. Without further ado, let's start with a quick tour of RStudio.
 
 ### RStudio Interface {#rstudio-interface}
 
@@ -20,19 +20,19 @@ After opening RStudio for the first time, you may find that the font and button 
 
 ***a. Customize appearance***
 
-On the RStudio menu bar, you can click *Tools*, and then click on *Global Options* as shown in the following figure.
+On the RStudio menu bar, you can click *Tools*, and then click on *Global Options* as shown below.
 
 ```{r font, results = TRUE, echo=FALSE, fig.align = 'center', fig.cap="Global Options", out.width = '90%'}
 knitr::include_graphics("pics/1font.PNG")
 ```
 
-Then, you will see a window pops up like Figure \@ref(fig:size). After clicking on *Appearance*, you can see several drop-down menus including *Zoom* and *Editor font size*, among other choices shown.
+Then, you will see a window popping up like Figure \@ref(fig:size). After clicking on *Appearance*, you can see several drop-down menus including *Zoom* and *Editor font size* among other choices shown.
 
-- *Zoom* controls the overall scale for all elements in RStudio interface, including the sizes of menu, buttons, as well as the fonts.
+- *Zoom* controls the overall scale for all elements in RStudio interface, including the sizes of the menu, buttons, as well as the fonts.
 
 - *Editor font size* controls the size of the font only in the code editor.
 
-After adjusting the appearance, you need to click on *Apply* to save our settings.
+Once done customizing the appearance, you need to click on *Apply* to save the adjustments.
 
 ```{r size, results=TRUE, echo=FALSE, fig.align = 'center', fig.cap="Zoom and Editor font size", out.width = '70%'}
 knitr::include_graphics("pics/1size.PNG")
@@ -42,7 +42,7 @@ Here, we change the *Zoom* to 150% and set the *Editor font size* to 18.
 
 ***b.  Four panels of RStudio***
 
-Now, the RStudio interface is clearer with bigger font size. Although RStudio has four panels, not all of them are visible to us at the beginning (Figure \@ref(fig:open)).
+Now, the RStudio interface is clearer with a bigger font size. Although RStudio has four panels, not all of them are visible to us at the beginning (Figure \@ref(fig:open)).
 
 ```{r open, results=TRUE, echo=FALSE, fig.align = 'center', fig.cap="Unfold panels", out.width = '100%'}
 knitr::include_graphics("pics/1open.PNG")
@@ -51,7 +51,7 @@ knitr::include_graphics("pics/1open.PNG")
 In Figure \@ref(fig:open), we have labeled three useful buttons as 1, 2, and 3. By clicking buttons 1 and 3, you can reveal the two hidden panels.
 
 ::: {.infobox .caution data-latex="{caution}"}
-Note that you may see different panels hidden when you  open RStudio for the first time, depending on the RStudio version. However, you can always reveal the hidden panels by clicking the corresponding buttons like Buttons 1 and 3 in Figure \@ref(fig:open).
+Note that you may see different panels hidden when you open RStudio for the first time, depending on the RStudio version. However, you can always reveal the hidden panels by clicking the corresponding buttons like Buttons 1 and 3 in Figure \@ref(fig:open).
 ::: 
 
 By clicking button 2, we can clear the content in the bottom left panel (Panel 2 in Figure \@ref(fig:four)) as shown in the following figure. 
@@ -62,13 +62,13 @@ knitr::include_graphics("pics/1four.PNG")
 
 Now, let's take a close look at all four panels, which are labeled as 1-4 in Figure \@ref(fig:four). You can change the size of each panel by dragging the two blue slides *up* or *down* and the green slide *left* or *right*.
 
--   Panels 1 and 2 are located to the left of the green line, and are collectively called the **Code Area**. We will introduce them in the following parts of this section.
+-   Located to the left of the green line, Panels 1 and 2 together compose the **Code Area**. We will introduce them in the following parts of this section.
 
--   Panels 3 and 4 are located to the right of the green line, and are collectively called **R Support Area**. We will introduce these two panels in later sections. 
+-   Located to the right of the green line, Panels 3 and 4 together make up the **R Support Area**. We will introduce these two panels in later sections. 
 
 ***c.  Console***
 
-Firstly, we will introduce the panel 2 in Figure \@ref(fig:four), which is usually called the **Console**.
+Firstly, we will introduce panel 2 in Figure \@ref(fig:four), which is usually called the **Console**.
 
 By clicking the mouse on the line after the `>` symbol, you can see a blinking cursor, indicating that R is ready to accept codes. Let's type `1 + 2` and press *Return* (on Mac) or *Enter* (on Windows).
 
@@ -92,11 +92,11 @@ The curious you may found that there is a `[1]` showing before the result `3`.  
 :::
 
 
-Although the console may work well for some quick calculations, you need to resort to the panel 1 in Figure \@ref(fig:four) (usually called the **Editor**) to save our work and run multiple lines of code at the same time.
+Although the console may work well for some quick calculations, you need to resort to the panel 1 in Figure \@ref(fig:four) (known as the **Editor**) to save our work and run multiple lines of code at once.
 
 ***d. Editor***
 
-The **Editor** panel is the go-to place to write complicated R codes, which you can save as R files for repeated use in the future. There are several kinds of files available in R. In particular, **R script**, **R Markdown** and **R Notebook** are 3 most common file formats. In order to let you get started better, we will start by R script since this is the simplest file format in R. In Section ？？ and ？？, we will introduce R Markdown and R Notebook in detail.
+The **Editor** panel is the go-to place to write complicated R codes, which you can save as R files for repeated use in the future. Several kinds of files are available in RStudio. In particular, **R script**, **R Markdown** and **R Notebook** are the three most common file formats. In order to let you get started better, we will start by R script since this is the simplest file format in R. In Section ？？ and ？？, we will introduce R Markdown and R Notebook in detail.
 
 In the editor panel, you may notice that RStudio has created a file by default (Figure \@ref(fig:P1)). The default file RStudio provided is **R script**.
  
@@ -117,9 +117,9 @@ You can also run multiple lines of code by selecting the lines and clicking the 
 knitr::include_graphics("pics/1mcodes.png")
 ```
 
-Here, three lines of codes are selected. After running these three lines of codes together, you can see that the console executes each line of code and you will get the corresponding answer one by one. So you can write any number of lines of codes in the script, and you can get the answer of each line in the console.
+Here, three lines of codes are selected. After running these three lines of codes together, you can see that the console executes each line of code and you will get the corresponding answer one by one. Therefore, you can write any number of lines of codes in the script, and you can get the answer of each line in the console.
 
-After finishing writing codes in the editor, there may be hundreds or more lines of codes in the script. Then you may be wondering do you need to write these codes again if you want to use the same codes next time? The answer is absolutely NO!!! One of the most important feature of R files is that R files can be saved for future use. So do R scripts! To do that, you can click the *Save* button as shown in the Figure \@ref(fig:save1). $The keyboard shortcut of saving files is Cmd+S on Mac or Ctrl+S on Windows.$
+After finishing writing codes in the editor, there may be hundreds or more lines of codes in the script. Now, you may wonder if you need to write these codes again when you want to use the same codes next time. The answer is absolutely NO!!! One of the most important feature of R files is that R files can be saved for future use. So do R scripts! To do that, you can click the *Save* button as shown in the Figure \@ref(fig:save1). $The keyboard shortcut of saving files is Cmd+S on Mac or Ctrl+S on Windows.$
 
 ```{r save1, results=TRUE, echo=FALSE, fig.align = 'center', fig.cap="Save (I)", out.width = '70%'}
 knitr::include_graphics("pics/1save1.PNG")
@@ -145,7 +145,7 @@ Lastly, if you want to create a new R script, you can click the `+` button on th
 knitr::include_graphics("pics/1new.PNG")
 ```
 
-Then you will see a new file created. 
+Consequently, you will see a new file created. 
 
 ```{r new2, results=TRUE, echo=FALSE, fig.align = 'center', fig.cap="create a new script (II)", out.width = '70%'}
 knitr::include_graphics("pics/1new2.PNG")
@@ -158,11 +158,11 @@ knitr::include_graphics("pics/1new2.PNG")
 
 ### Install and load R packages
 
-Now, you have had a basic understanding of RStudio, it is time to introduce **R packages**, which greatly extend the capabilities of base R. There are a large number of publicly available R packages. As of July 2021, there are more than 17K R packages on Comprehensive R Archive Network (CRAN), with many others located in Bioconductor, GitHub, and other repositories.  
+Now, you have had a basic understanding of RStudio, it is time to meet **R packages**, which greatly extend the capabilities of base R. There are a large number of publicly available R packages. As of July 2021, there are more than 17K R packages on Comprehensive R Archive Network (CRAN), with many others located in Bioconductor, GitHub, and other repositories.  
 
-To install an R package, you need to use a built-in R **function** , which is  `install.packages()`. A **function** takes in **arguments** (inputs) and performs a specific task. After the function name, we always need to put **a pair of parentheses** with the arguments inside. 
+To install an R package, you need to use a built-in R **function** , which is  `install.packages()`. A **function** takes in **arguments** (inputs) and performs a specific task accordingly. After the function name, we always need to put **a pair of parentheses** with the arguments inside. 
 
-While there are many built-in R functions, R packages usually contain many useful functions as well, and we can also write our own functions, which will be introduce in Chapter \@ref(write-code).  
+While there are many built-in R functions, R packages usually contain many useful functions as well, and we can also write our own functions, which will be introduced in Chapter \@ref(write-code).  
 
 With `install.packages()`, the argument is the package name with **a pair of quotation marks** around it. The task it performs is installing the specific package into R.  Here, you will install the companion package for this book, named `r02pro`, a.k.a. *R Zero to Pro*. The `r02pro` package contains several data sets that will be used throughout the book, and interactive exercises for each subsection.
 
@@ -171,7 +171,7 @@ install.packages("r02pro")
 ```
 
 ::: {.infobox .caution data-latex="{caution}"}
-If you miss the right parenthesis, R will show a plus on the next line (as shown in Figure \@ref(fig:right1)), waiting for more input to complete the command. If this happens, you can either enter the right parenthesis, or press ESC to escape this command. When you see a blinking cursor after the `>` symbol, you can write new codes again.
+If you miss the right parenthesis, R will return a plus in the next line (as shown in Figure \@ref(fig:right1)), waiting for more input to complete the command. If this happens, you can either enter the right parenthesis, or press ESC to escape this command. When you see a blinking cursor after the `>` symbol, you can write new codes again.
 :::
 
 ```{r right1, results=TRUE, echo=FALSE, fig.align = 'center', fig.cap="Miss the right parenthesis", out.width = '70%'}
@@ -197,12 +197,12 @@ install.packages(r02pro)
 
 ### Exercises
 
-1. Which of the following code using to install packages into R will cause an error?
+1. Which of the following code using to install packages into R will return an error?
 
 - `install.packages("r02pro")`
 - `install.packages(r02pro)`
 
-2. Write R code to load the package **r02pro**
+2. Write the R code to load the package **r02pro**
 
-3. Write R code to calculate `2 + 3`.
+3. Write the R code to calculate `2 + 3`.
 
