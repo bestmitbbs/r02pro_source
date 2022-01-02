@@ -21,7 +21,7 @@ Let's take a look at a concrete example. Say if you want to do the following thr
 (exp(3) / log(20,3) * 7) / 3 #division
 ```
 
-Using R as a fancy calculator (Section \@ref(Calculator)), you need to type the expression `exp(3) / log(20,3) * 7` three times, which is a bit cumbersome. In this section, you will learn how to do **object assignment**, which can avoid the need for typing the expression more than once. 
+Using R as a fancy calculator (Section \@ref(Calculator)), you need to type the expression `exp(3) / log(20,3) * 7` three times, which is a bit cumbersome. In this section, you will learn how to do **object assignment**, which can avoid the need for typing the same expression more than once. 
 
 ### What is an R Object?
 
@@ -29,7 +29,7 @@ Before we get into the details, let's first introduce **object**, which is perha
 
 If you run `5`, you will get one element of value 5 from the output. Similarly, if you run `1 + 2`, you will get one element of value 3 from the output. You can try to run `exp(3) / log(20,3) * 7` by yourself.  In these three examples, you can see that there is only one **element** in each object.
 
-However, an object can contain more than one elements, and each element has its own **value**, which are possibly different. And naturally, different objects can contain different values.
+However, an object can contain more than one elements, and each element has its own **value**, which is possibly different from that of another element. Naturally, different objects can contain different values.
 
 ### Assignment Operation with `<-` {#assignment}
 
@@ -43,7 +43,7 @@ The assignment operation has three components. From left to right，
 
 - the first component `x_num` is the **object name** of a new object, which has certain naming rules that will be discussed shortly in Section \@ref(Naming). 
 - The second component is the **assignment operator** `<-`, which is a combination of the less than sign `<` immediately followed by the minus sign `-`, with **no space** in between. 
-- The final component is the **value(s)** to be assigned to the name, which is 5 here. 
+- The final component is the object name's assigned **value(s)**, which is 5 here. 
 
 ::: {.infobox .caution data-latex="{caution}"}
 There is no space between `<` and `-` in the assignment operator `<-`. Note that although `=` may also appear to be working as the assignment operator, it is not recommended as `=` is usually reserved for specifying the value(s) of arguments in a function call, which will be introduced in Section \@ref(vector-patterns).
@@ -95,7 +95,7 @@ z_num2
 
 Clearly, using the object assignment, you can greatly simplify the code and avoid redundancy. 
 
-Note that R object names are **case-sensitive**. For example, you have defined `x_num`, but if you type `X_num`, you will get an error message as follow. 
+Note that R object names are **case-sensitive**. For example, you have defined `x_num`, but if you type `X_num`, the console will return an error message as follow. 
 
 ```{r, error = TRUE}
 X_num
@@ -107,17 +107,17 @@ X_num
 
 After creating new objects `x_num` and `y_num` (possibly also `z_num1` and `z_num2`), they will appear in the **Environment**, located in the top right panel (**panel3 in Figure \@ref(fig:four)**). You can check all the **named objects** and their values in this area. It is helpful to monitor the environment from time to time to make sure everything looks fine. Notice that objects without names will *not* be shown in the environment.
 
-You can also see the list of all the named objects using function `ls()`.
+You can also see the list of all the named objects using the built-in R function `ls()`.
 
 ```{r, results = TRUE}
 ls()
 ```
 
-All the objects shown in the environment or on the list are stored in the memory, so they are available for us in the subsequent codes. It is a good habit to do object assignments if you want to retrieve their values at a later time.
+All the objects shown in the environment or on the list are stored in the memory, so they are available for us in subsequent codes. It is a good habit to do object assignments if you want to retrieve their values at a later time.
 
 ### Object naming rule {#Naming}
 
-In general, R is very flexible in the name you can give to an object, however, there are three important rules you need to follow.
+In general, R is very flexible in the name you can give to an object. However, there are three important rules you need to follow.
 
 ***a. Must start with a letter or . (period)*** 
 
@@ -152,7 +152,7 @@ To get a complete list of reserved words, you can run the following code.
 
 ### Object types
 
-So far in this section, you have learned how to do object assignments. The values you assigned are all numbers, i.e. of numeric type. Actually, an object may contain more than one values. Also, the values it contains can be of other types than numeric, including character and logical. Depending on the **composition of values**, the object belongs to one particular type. 
+So far in this section, you have learned how to do object assignments. The values you assigned are all numbers, i.e. of numeric type. Actually, an object may contain more than one values. Also, an object may contain values other than numeric type, such like character and logical ones. Depending on the **composition of values**, the object belongs to one particular type. 
 
 
 
@@ -170,7 +170,7 @@ While some of the object types look more intuitive than others, you have nothing
 
 ### Exercises
 
-1. Write R code to assign the value 20 to the name `num_1`.
+1. Write the R code to assign the value 20 to the name `num_1`.
 
 2. Which of the following is a valid object name in R?
 
@@ -179,7 +179,7 @@ While some of the object types look more intuitive than others, you have nothing
 - `I_am_not_a_valid_name`
 - `I_am_a_Pretty#_name`
 
-3. Write R code to get the list of all objects in the environment.
+3. Write the R code to get the list of all objects in the environment.
 
 <<<<<<< HEAD
 =======
