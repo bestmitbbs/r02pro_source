@@ -103,18 +103,6 @@ X_num
 
 
 
-### Review objects in environment
-
-After creating new objects `x_num` and `y_num` (possibly also `z_num1` and `z_num2`), they will appear in the **Environment**, located in the top right panel (**panel3 in Figure \@ref(fig:four)**). You can check all the **named objects** and their values in this area. It is helpful to monitor the environment from time to time to make sure everything looks fine. Notice that objects without names will *not* be shown in the environment.
-
-You can also see the list of all the named objects using the built-in R function `ls()`.
-
-```{r, results = TRUE}
-ls()
-```
-
-All the objects shown in the environment or on the list are stored in the memory, so they are available for us in subsequent codes. It is a good habit to do object assignments if you want to retrieve their values at a later time.
-
 ### Object naming rule {#Naming}
 
 In general, R is very flexible in the name you can give to an object. However, there are three important rules you need to follow.
@@ -148,6 +136,20 @@ To get a complete list of reserved words, you can run the following code.
 ```{r, eval = FALSE}
 ?Reserved
 ```
+
+
+
+### Review objects in environment
+
+After creating new objects `x_num` and `y_num` (possibly also `z_num1` and `z_num2`), they will appear in the **Environment**, located in the top right panel (**panel3 in Figure \@ref(fig:four)**). You can check all the **named objects** and their values in this area. It is helpful to monitor the environment from time to time to make sure everything looks fine. Notice that objects without names will *not* be shown in the environment.
+
+You can also see the list of all the named objects using the built-in R function `ls()`.
+
+```{r, results = TRUE}
+ls()
+```
+
+All the objects shown in the environment or on the list are stored in the memory, so they are available for us in subsequent codes. It is a good habit to do object assignments if you want to retrieve their values at a later time.
 
 
 ### Object types
