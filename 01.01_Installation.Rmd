@@ -12,7 +12,7 @@ Download RStudio: <https://rstudio.com/products/rstudio/download/#download>
 <!-- For a step-by-step demonstration, you can refer to the YouTube video via the following **link**. -->
 <!-- ::: -->
 
-RStudio is an *Integrated Development Environment* for R, which is powerful yet easy to use. Throughout this book, you will use RStudio instead of R to learn R programming. Next, let's get started with a quick tour of RStudio.
+RStudio is an *Integrated Development Environment* for R, which is powerful yet easy to use. Throughout this book, you will use RStudio instead of R to learn R programming. Without further ado, let's get started with a quick tour of RStudio.
 
 ### RStudio Interface {#rstudio-interface}
 
