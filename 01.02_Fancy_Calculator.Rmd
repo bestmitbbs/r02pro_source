@@ -4,19 +4,19 @@ After learning how to run codes in R, we will introduce how to use R as a fancy 
 
 ### Add comments using "#"
 
-Before we get started, the first item we will cover is about adding comments for codes. In R, you can add comments by using the pound sign `#`. In each line, anything after `#` are comments, which will be ignored by R. Let's see an example,
+Before we get started, the first item we will cover is adding comments for codes. In R, you can add comments by using the hash character `#` at the start of a line, which will extends to the end of the physical line. In each line, anything after `#` are comments, which will be ignored by R. Let's see an example,
 
 ```{r results = TRUE}
-6 - 1 / 2 #first calculate 1/2=0.5, then 6-0.5=5.5
+6 - 1 / 2 # first calculate 1/2=0.5, then 6-0.5=5.5
 ```
 
-By running this line of code (either in the console or in the editor!), you will get the resulting value 5.5, and 5.5 is the answer of `6 - 1 / 2`. So R will not run things after the pound sign `#`. Things after `#` are comments or explanations which can make codes be more understandable. Here, the comment informs you the operation order of previous code: the division is calculated before the subtraction.
+By running this line of code (either in the console or in the editor!), you will get a value of 5.5, which is the answer of `6 - 1 / 2`. As demonstrated, R will not run syntax after the hash character `#`. Commands and strings after the `#` are notations or explanations that can make codes easier to understand. Here, the comment informs you the operation order of previous code: the division is calculated before the subtraction.
 
-In general, adding comments to codes is a very good practice, as it greatly increases readability and make collaboration easier. We will also add many comments in our codes to help you learn R.
+In general, adding comments to codes is a very good practice, as it greatly increases readability and make collaboration easier. We will also add necessary comments in our codes to help you learn R.
 
 ### Basic calculation
 
-Now let's start to use R as a calculator! Through the previous section, you must know that you can use R to do addition, subtraction, multiplication, division, and of course you can combine multiple basic operations. In addition to these simple calculations, you can also calculate the square root, absolute value and the sign of a number.
+Now let's start to use R as a calculator! In the previous section we introduced operations such as addition, subtraction, multiplication, division, as well as the combination of multiple basic operations. Additionally, you can also calculate the square root, absolute value and the sign of a number.
 
 ```{r results = TRUE, echo=FALSE}
 Operation  <- c("1 + 2", "1 - 2", "2 * 4", "2 / 4", "6 - 1 / 2", "sqrt(100)", "abs(-3)", "sign(-3)")
@@ -39,7 +39,7 @@ Sometimes, you may have no idea how a particular function works. Fortunately, R 
 
 ***a. Ask for help***
 
-Firstly, we will introduce how to ask for help in R. Usually people will use the following three ways to ask for help.
+First, we will introduce how to ask for help in R, and below are three common ways to seek for more information.
 
 - Use a question mark followed by the function name, e.g. `?sign`  
 - Use help function, e.g. `help(sign)`
@@ -73,7 +73,7 @@ The documentation of different functions can contain different parts, we will gi
 
 ### Approximation
 
-Next, let's move on to do approximation in R. When you do division, for example, when computing `7 / 3`, the answer is not a whole number since 7 is not divisible by 3. Under these circumstances, approximation operators are very handy to use. Let's take `7 / 3` as the example.
+Next, let's move on to the approximation in R. When computing `7 / 3`, the answer is not a whole number as 7 is not divisible by 3. Approximation will come in handy under such circumstances. Let's take `7 / 3` as the example.
 
 ***a. Get the integer part and the remainder***
 
@@ -136,7 +136,7 @@ Next, let's see `log2()`, the logarithm function with base *2*.
 log2(1024)  #log2(x) = log(x, 2)
 ```
 
-Before moving on to the natural logarithm, note that the natural number $e$ needs to be written as `exp(1)` in R. When you want to do power operations on $e$, you can simply change the argument in the function `exp()`, for example, `exp(3)` is $e$ to the power of 3.  Here, `log()` without specifying the `base` argument represents the logarithm function with base $e$.
+Before moving on to the natural logarithm, note that the natural number $e$ needs to be written as `exp(1)` in R. When you want to do power operations on $e$, you can simply change the argument in the function `exp()`. For example, `exp(3)` is $e$ to the power of 3.  Here, `log()` without specifying the `base` argument represents the logarithm function with base $e$.
 
 ```{r results = TRUE}
 exp(1)      
