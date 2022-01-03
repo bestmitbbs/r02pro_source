@@ -187,7 +187,7 @@ library(r02pro)
 Note that once a package is installed, you **don't need to** install it again on the same machine. However, when starting a new R session, you would need to load the package again.
 
 ::: {.infobox .caution data-latex="{caution}"}
-Quotation marks are necessary for installing R packages, but are not necessary for loading packages. If we install packages without quotation marks. We will see an error message, showing *object not found*.
+Quotation marks are necessary for installing R packages, but are not necessary for loading packages. When installing packages without quotation marks, you will see an error message, showing *object not found*.
 ```{r, eval=FALSE}
 install.packages(r02pro)
 ```
