@@ -68,7 +68,7 @@ Now, let's take a close look at all four panels, which are labeled as 1-4 in Fig
 
 ***c.  Console***
 
-Firstly, we will introduce panel 2 in Figure \@ref(fig:four), which is usually called the **Console**.
+Firstly, we will introduce panel 2 in Figure \@ref(fig:four), which is usually called the **Console**. The console window is the place for you to type in codes (i.e. the things you want R to do) and you will get the results immediately once you run the codes.
 
 By clicking the mouse on the line after the `>` symbol, you can see a blinking cursor, indicating that R is ready to accept codes. Let's type `1 + 2` and press *Return* (on Mac) or *Enter* (on Windows).
 
@@ -96,7 +96,7 @@ Although the console may work well for some quick calculations, you need to reso
 
 ***d. Editor***
 
-The **Editor** panel is the go-to place to write complicated R codes, which you can save as R files for repeated use in the future. Several kinds of files are available in RStudio. In particular, **R script**, **R Markdown**, and **R Notebook** are the three most common file formats. In order to let you get started better, we will start with R script since this is the simplest file format in R. In Section ？？ and ？？, we will introduce R Markdown and R Notebook in detail.
+The **Editor** panel is the go-to place to write complicated R codes, which you can save as R files for repeated use in the future. Several kinds of files are available in RStudio. In particular, **R script**, **R Markdown**, and **R Notebook** are the three most common file formats. In order to let you get started better, we will start with R script since this is the simplest file format in R. In Chapter 12 and ？？, we will introduce R Markdown and R Notebook in detail.
 
 In the editor panel, you may notice that RStudio has created a file by default (Figure \@ref(fig:P1)). The default file RStudio provided is **R script**.
  
@@ -105,7 +105,7 @@ knitr::include_graphics("pics/1P1.png")
 ```
 
 
-Next, we will introduce how to run codes in scripts. Let's go to the editor and type `1 + 2`. To run this line of code, you can select this line of code and click the *Run* button. $The keyboard shortcut of running this line of code is Cmd+Return on Mac or Ctrl+Enter on Windows$ RStudio will then send the line of code to the console and execute the code. 
+Next, we will introduce how to run codes in scripts. Let's go to the editor and type `1 + 2`. To run this line of code, you can select this line of code and click the *Run* button. The keyboard shortcut of running this line of code is Cmd+Return on Mac or Ctrl+Enter on Windows. RStudio will then send the line of code to the console and execute the code. 
 
 ```{r run, results=TRUE, echo=FALSE, fig.align = 'center', fig.cap="Run codes in script (I)", out.width = '70%'}
 knitr::include_graphics("pics/1run.PNG")
@@ -119,7 +119,7 @@ knitr::include_graphics("pics/1mcodes.png")
 
 Here, three lines of codes are selected. After running these three lines of code together, you can see that the console executes each line of code and you will get the corresponding answer one by one. Therefore, you can write any number of lines of codes in the script, and you can get the answer of each line in the console.
 
-After finishing writing codes in the editor, there may be hundreds or more lines of codes in the script. Now, you may wonder if you need to write these codes again when you want to use the same codes next time. The answer is absolutely NO!!! One of the most important features of R files is that R files can be saved for future use. So do R scripts! To do that, you can click the *Save* button as shown in Figure \@ref(fig:save1). $The keyboard shortcut of saving files is Cmd+S on Mac or Ctrl+S on Windows.$
+After finishing writing codes in the editor, there may be hundreds or more lines of codes in the script. Now, you may wonder if you need to write these codes again when you want to use the same codes next time. The answer is absolutely NO!!! One of the most important features of R files is that R files can be saved for future use. So do R scripts! To do that, you can click the *Save* button as shown in Figure \@ref(fig:save1). The keyboard shortcut of saving files is Cmd+S on Mac or Ctrl+S on Windows.
 
 ```{r save1, results=TRUE, echo=FALSE, fig.align = 'center', fig.cap="Save (I)", out.width = '70%'}
 knitr::include_graphics("pics/1save1.PNG")
@@ -139,7 +139,7 @@ knitr::include_graphics("pics/1save3.PNG")
 
 Then if you close this script and open it again, you would directly see the previous three lines of codes without writing them again.
 
-Lastly, if you want to create a new R script, you can click the `+` button on the menu, then select *R Script*. Note that there are quite a few other options including *R Markdown*, which will be introduced in Section \@ref(r-markdown). 
+Lastly, if you want to create a new R script, you can click the `+` button on the menu, then select *R Script*. Note that there are quite a few other options including *R Markdown*, which will be introduced in Chapter \@ref(r-markdown). 
 
 ```{r new, results=TRUE, echo=FALSE, fig.align = 'center', fig.cap="create a new script (I)", out.width = '70%'}
 knitr::include_graphics("pics/1new.PNG")
