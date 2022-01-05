@@ -79,7 +79,7 @@ y_num / 3
 ```
 
 ::: {.infobox .caution data-latex="{caution}"}
-Note that in the object assignment process, it is not the expression itself but rather the value(s) of the expression, that is assigned to a name. So you will not get the expression `exp(3) / log(20,3) * 7` from `y_num`. 
+Note that in the object assignment process, it is not the expression itself but rather the value(s) of the expression, that is assigned to a name. So you will not get the expression `exp(3) / log(20,3) * 7` by running `y_num`. 
 :::
 
 
@@ -100,7 +100,6 @@ Note that R object names are **case-sensitive**. For example, you have defined `
 ```{r, error = TRUE}
 X_num
 ```
-
 
 
 ### Object naming rule {#Naming}
@@ -138,7 +137,6 @@ To get a complete list of reserved words, you can run the following code.
 ```
 
 
-
 ### Review objects in environment
 
 After creating new objects `x_num` and `y_num` (possibly also `z_num1` and `z_num2`), they will appear in the **Environment**, located in the top right panel (**panel3 in Figure \@ref(fig:four)**). You can check all the **named objects** and their values in this area. It is helpful to monitor the environment from time to time to make sure everything looks fine. Notice that objects without names will *not* be shown in the environment.
@@ -150,6 +148,7 @@ ls()
 ```
 
 All the objects shown in the environment or on the list are stored in the memory, so they are available for us in subsequent codes. It is a good habit to do object assignments if you want to retrieve their values at a later time.
+
 
 
 ### Object types
