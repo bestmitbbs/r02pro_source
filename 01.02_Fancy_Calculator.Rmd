@@ -1,22 +1,22 @@
 ## Use R as a Fancy Calculator {#Calculator}
 
-While R is super powerful, it is, first of all, a very fancy calculator.
+After learning how to run codes in R, we will introduce how to use R as a fancy calculator.
 
 ### Add comments using "#"
 
-The first item we will cover is about adding comments. In R, you can add comments using the pound sign `#`. In each line, anything after `#` are comments, which will be ignored by R. Let's see an example,
+Before we get started, the first item we will cover is adding comments for codes. In R, you can use the hash character `#` at any position of a given line to initiate a comment, and anything after `#` will be ignored by R. Let's see an example,
 
 ```{r results = TRUE}
-6 - 1 / 2 #first calculate 1/2=0.5, then 6-0.5=5.5
+6 - 1 / 2 # first calculate 1/2=0.5, then 6-0.5=5.5
 ```
 
-Just looking at the resulting value 5.5, you may not know the detail of the calculation process. The comment informs you the operation order: the division is calculated before the subtraction.
+By running this line of code (either in the console or in the editor!), you will get a value of 5.5, which is the answer of `6 - 1 / 2`. As demonstrated, R will not run syntax after the hash character `#`. Commands and strings after the `#` are notations or explanations that can make codes easier to understand. Here, the comment informs you the operation order of previous code: the division is calculated before the subtraction.
 
-In general, adding comments to codes is a very good practice, as it greatly increases readability and make collaboration easier. We will also add many comments in our codes to help you learn R.
+In general, adding comments to codes is a very good practice, as it greatly increases readability and make collaboration easier. We will also add necessary comments in our codes to help you learn R.
 
 ### Basic calculation
 
-Now let's start to use R as a calculator! You can use R to do addition, subtraction, multiplication，division, and combine multiple basic operations. You can also calculate the square root, absolute value and the sign of a number.
+Now let's start to use R as a calculator! In the previous section we introduced operations such as addition, subtraction, multiplication, division, as well as the combination of multiple basic operations. Additionally, you can also calculate the square root, absolute value and the sign of a number.
 
 ```{r results = TRUE, echo=FALSE}
 Operation  <- c("1 + 2", "1 - 2", "2 * 4", "2 / 4", "6 - 1 / 2", "sqrt(100)", "abs(-3)", "sign(-3)")
@@ -25,8 +25,9 @@ d <- data.frame(Operation, Explanation)
 knitr::kable(d)
 ```
 
+### Get help in R
 
-While the first seven operations in the table look intuitive, you may be wondering, what does the `sign()` function mean here? Is it a stop sign?       
+While the first seven operations in the above table look intuitive, you may be wondering, what does the `sign()` function mean there? Is that a stop sign?       
 
 
 ```{r stop, results=TRUE, echo=FALSE, fig.align = 'center', out.width = '16%'}
@@ -34,7 +35,11 @@ knitr::include_graphics("pics/1stop.jpg")
 ```
 
 
-Sometimes, you may have no idea how a particular function works. Fortunately, R provides a detailed documentation for each function. There are three ways to ask for help in R.
+Sometimes, you may have no idea how a particular function works. Fortunately, R provides a detailed documentation for each function.
+
+***a. Ask for help***
+
+First, we will introduce how to ask for help in R, and below are three common ways to seek for more information.
 
 - Use a question mark followed by the function name, e.g. `?sign`  
 - Use help function, e.g. `help(sign)`
@@ -44,10 +49,31 @@ Sometimes, you may have no idea how a particular function works. Fortunately, R 
 knitr::include_graphics("pics/1help.PNG")
 ```
 
+***b. Documentation for functions***
+
+After using the above operations to ask for help in R, you can get the documentation of the function in the help window. The documentation consists of different parts, let's take the `sign()` function as an example (Figure \@ref(fig:d)),
+
+```{r d, results=TRUE, echo=FALSE, fig.align = 'center', fig.cap="Documentation for function", out.width = '70%'}
+knitr::include_graphics("pics/1d.PNG")
+```
+
+This documentation contains the following parts:
+
+- *Description*: Roughly describe how this function works in text format, including the input, the output and some notes of the function.
+- *Usage*: The way the function looks like.
+- *Arguments*: The detailed descriptions of the input.
+- *Details*: Detailed description of the function, including the background, some complicated usage and special cases of the function.
+- *See Also*: Some functions related to or similar to this function.
+- *Examples*: Some codes and their corresponding answers. You can simply copy codes in the *example* part and run them in the editor or in the console. Note that all words after `#` are comments and will be ignored by R.
+
+Here, from the documentation of the `sign()` function, you will know that the `sign()` function can return the signs of numbers, which means it can return 0 for zero, return 1 for positive numbers and return -1 for negative numbers.
+
+The documentation of different functions can contain different parts, we will give you the introduction of other functions in the following sections.
+
 
 ### Approximation
 
-After learning about doing basic calculations, let's move on to do approximation in R. When you do division, for example, when computing `7 / 3`, the answer is not a whole number since 7 is not divisible by 3. Under these circumstances, approximation operators are very handy to use. Let's take `7 / 3` as the example.
+Next, let's move on to the approximation in R. When computing `7 / 3`, the answer is not a whole number as 7 is not divisible by 3. Approximation will come in handy under such circumstances. Let's take `7 / 3` as the example.
 
 ***a. Get the integer part and the remainder***
 
@@ -94,23 +120,23 @@ Generally, you can use `^` to do power operations. For example, `10^5` will give
 \end{align}
 :::
 
-In mathematics, the *logarithmic operations* are inverse to the power operations. If **$b^y = x$** and you only know *$b$* and *$x$*, you can do logarithm operations to solve *$y$* using the general form **$y = \log(x, b)$**, which is called the logarithm of $x$ with base $b$. 
+In mathematics, the *logarithmic operations* are inverse to the power operations. If **$b^y = x$** and you only know *$b$* and *$x$*, you can do logarithmic operations to solve *$y$* using the general form **$y = \log(x, b)$**, which is called the logarithm of $x$ with base $b$. 
 
-In R, logarithm functions with base value of 10, 2, or the natural number $e$ have shortcuts `log10()`, `log2()`, and `log()`, respectively. Let's see an example of `log10()`, the logarithm function with base *10*.
+In R, logarithm functions with base value of 10, 2, or the natural number $e$ have shortcuts `log10()`, `log2()`, and `log()`, respectively. Let's see an example of `log10()`, the logarithm function with base *10*. Here, we have added a comment to help you have a better understanding of `log10()`.
 
 ```{r results = TRUE}
 10^6 
 log10(1e6) #log10(x) = log(x, 10)
 ```
 
-Next, let's see `log2()`, the logarithm function with base *2*.
+Next, let's see `log2()`, the logarithm function with base *2*. There is also a comment for `log2()` here.
 
 ```{r results = TRUE}
 2^10
 log2(1024)  #log2(x) = log(x, 2)
 ```
 
-Before moving on to the natural logarithm, note that the natural number $e$ needs to be written as `exp(1)` in R. When you want to do power operations on $e$, you can simply change the argument in the function `exp()`, for example, `exp(3)` is $e$ to the power of 3.  Here, `log()` without specifying the `base` argument represents the logarithm function with base $e$.
+Before moving on to the natural logarithm, note that the natural number $e$ needs to be written as `exp(1)` in R. When you want to do power operations on $e$, you can simply change the argument in the function `exp()`. For example, `exp(3)` is $e$ to the power of 3.  Here, `log()` without specifying the `base` argument represents the logarithm function with base $e$. You can see the general form of `log()` in the comment.
 
 ```{r results = TRUE}
 exp(1)      

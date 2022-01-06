@@ -79,7 +79,7 @@ y_num / 3
 ```
 
 ::: {.infobox .caution data-latex="{caution}"}
-Note that in the object assignment process, it is not the expression itself but rather the value(s) of the expression, that is assigned to a name. So you will not get the expression `exp(3) / log(20,3) * 7` from `y_num`. 
+Note that in the object assignment process, it is not the expression itself but rather the value(s) of the expression, that is assigned to a name. So you will not get the expression `exp(3) / log(20,3) * 7` by running `y_num`. 
 :::
 
 
@@ -101,11 +101,29 @@ Note that R object names are **case-sensitive**. For example, you have defined `
 X_num
 ```
 
+Sometimes, you may build an object based on another objects. Let's say we assign the object `a` and object `b` to the **value** 3 and 4, respectively. The object `c` is assigned to be the sum of `a` and `b`. Consequently, we should expect `c` to be the sum of 3 and 4, which is 7.
+
+```{r warning=TRUE}
+a <- 3
+b <- 4
+c <- a + b
+c
+```
+
+Now, you want to assign `a` new value to a from 3 to 7. However, if you run `c` again right after reassigning `a`, you can see the output is still 7. Indeed, an object won't be auto-updated when you reassign any objects it contains. To update the object `c` with the newly assigned `a`, you need to re-run the assignment operation, which will then give you 7 + 4, namely 11, as the value of `c`.
+
+```{r}
+a <- 7
+c
+c <- a + b
+c
+```
+
 
 
 ### Object naming rule {#Naming}
 
-In general, R is very flexible in the name you can give to an object. However, there are three important rules you need to follow.
+As you now see, the assignment operation in R is very straightforward. In general, R is very flexible in the name you can give to an object. However, there are three important rules you need to follow.
 
 ***a. Must start with a letter or . (period)*** 
 
@@ -138,10 +156,11 @@ To get a complete list of reserved words, you can run the following code.
 ```
 
 
-
 ### Review objects in environment
 
-After creating new objects `x_num` and `y_num` (possibly also `z_num1` and `z_num2`), they will appear in the **Environment**, located in the top right panel (**panel3 in Figure \@ref(fig:four)**). You can check all the **named objects** and their values in this area. It is helpful to monitor the environment from time to time to make sure everything looks fine. Notice that objects without names will *not* be shown in the environment.
+At this point, we've introduced the way to and rules of creating objects in R. Unless an error message is returned, we know an object is successfully created. Now, we can also confirm the success of object assignment by inspecting the **Environment**, located in the top right panel (**panel3 in Figure \@ref(fig:four)**). 
+
+If you exercised previous examples, you can find the newly assigned objects `x_num` and `y_num` (possibly also `z_num1` and `z_num2`) in your **Environment** Viewer. You may also notice that the object 'TRUE,' which we tried but failed to assign the value 12 to, doesn't appear in the **Environment**. You can check all the **named objects** and their values in this area. It is helpful to monitor the environment from time to time to make sure everything looks fine. Notice that objects without names will *not* be shown in the environment.
 
 You can also see the list of all the named objects using the built-in R function `ls()`.
 
@@ -150,6 +169,7 @@ ls()
 ```
 
 All the objects shown in the environment or on the list are stored in the memory, so they are available for us in subsequent codes. It is a good habit to do object assignments if you want to retrieve their values at a later time.
+
 
 
 ### Object types
