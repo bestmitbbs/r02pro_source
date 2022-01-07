@@ -59,14 +59,14 @@ knitr::include_graphics("pics/1d.PNG")
 
 This documentation contains the following parts:
 
-- *Description*: Roughly describe how this function works in text format, including the input, the output and some notes of the function.
+- *Description*: A text-format introduction of the function of interest. The introduction describes the function's mechanism, the acceptable input and output types, and some notes of the function.
 - *Usage*: The way the function looks like.
-- *Arguments*: The detailed descriptions of the input.
-- *Details*: Detailed description of the function, including the background, some complicated usage and special cases of the function.
-- *See Also*: Some functions related to or similar to this function.
-- *Examples*: Some codes and their corresponding answers. You can simply copy codes in the *example* part and run them in the editor or in the console. Note that all words after `#` are comments and will be ignored by R.
+- *Arguments*: A detailed description of the input.
+- *Details*: A detailed description of the function, including the background, some complicated usage, and special cases of the function.
+- *See Also*: Some functions related or similar to this function.
+- *Examples*: Sample codes and their corresponding answers. You can simply copy codes in the *Examples* part and run them in the editor or in the console. Note that all words after `#` are comments and will be ignored by R.
 
-Here, from the documentation of the `sign()` function, you will know that the `sign()` function can return the signs of numbers, which means it can return 0 for zero, return 1 for positive numbers and return -1 for negative numbers.
+Here, from the documentation of the `sign()` function, you will know that the `sign()` function can return the signs of numbers, which means it will return 0 for zero, return 1 for positive numbers, and return -1 for negative numbers.
 
 The documentation of different functions can contain different parts, we will give you the introduction of other functions in the following sections.
 
