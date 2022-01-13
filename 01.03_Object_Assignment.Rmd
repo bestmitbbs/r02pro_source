@@ -146,7 +146,7 @@ If you exercised previous examples, you can find the newly assigned objects `x_n
 knitr::include_graphics("pics/1en.PNG")
 ```
 
-From the picture above, you can see that the value of `x_num` is 5. Let's try to assign the value 6 to x_num and see what will happen next.
+From the picture above, you can see that the value of `x_num` is 5. In this case, let's try to assign the new value 6 to `x_num` and see what will happen next.
 
 ```{r results = TRUE}
 x_num <- 6
