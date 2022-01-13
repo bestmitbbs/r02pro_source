@@ -141,20 +141,35 @@ To get a complete list of reserved words, you can run the following code.
 
 At this point, we've introduced the rules of creating objects in R. Now, you can also confirm the success of object assignments by inspecting the **Environment**, located in the top right panel (**panel3 in Figure \@ref(fig:four) in Section \@ref(Installation)**). 
 
-If you exercised previous examples, you can find the newly assigned objects `x_num` and `y_num` (possibly also `z_num1` and `z_num2`) in your *Environment* Viewer. You may also notice that the name `TRUE`, which we tried but failed to assign the value 12 to, doesn't appear in the *Environment* (as shown in Figure \@ref(fig:en)). You can check all the **named objects** and their values in this area. It is helpful to monitor the environment from time to time to make sure everything looks fine. Notice that objects without names will *not* be shown in the environment.
+If you exercised previous examples, you can find the newly assigned objects `x_num` and `y_num` (possibly also `z_num1` and `z_num2`) in your *Environment* Viewer. You may also notice that the name `TRUE`, which we tried but failed to assign the value 12 to, doesn't appear in the *Environment* (as shown in Figure \@ref(fig:en)). You can check all the **named objects** and their values in this area. 
 
-```{r en, results=TRUE, echo=FALSE, fig.align = 'center', fig.cap="The environment", out.width = '70%'}
+```{r en, results=TRUE, echo=FALSE, fig.align = 'center', fig.cap="The environment (I)", out.width = '70%'}
 knitr::include_graphics("pics/1en.PNG")
 ```
 
-You can also see the list of all the named objects using the built-in R function `ls()`.
+From the picture above, you can see that the value of `x_num` is 5. Let's try to assign the value 6 to x_num and see what will happen next.
+
+```{r results = TRUE}
+x_num <- 6
+x_num  #check its value
+```
+
+Now you can see that the value of `x_num` has changed from 5 to 6. 所以如果assign different values to the same name, object的value会由最新一次的assignment operation决定，之前的value会被覆盖。Environment 中会显示the object和更新后的value。
+
+```{r en2, results=TRUE, echo=FALSE, fig.align = 'center', fig.cap="The environment (II)", out.width = '70%'}
+knitr::include_graphics("pics/1en2.PNG")
+```
+
+
+So it is helpful to monitor the environment from time to time to make sure everything looks fine. Notice that objects without names will *not* be shown in the environment.
+
+You can also see the list of all the named objects (just names without values) using the built-in R function `ls()`.
 
 ```{r, results = TRUE}
 ls()
 ```
 
 All the objects shown in the environment or on the list are stored in the memory, so they are available for us in subsequent codes. It is a good habit to do object assignments if you want to retrieve their values at a later time.
-
 
 
 ### Object types
