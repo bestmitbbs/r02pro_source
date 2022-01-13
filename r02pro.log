@@ -1,34 +1,34 @@
-This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021) (preloaded format=xelatex 2021.9.22)  29 SEP 2021 17:51
+This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021) (preloaded format=xelatex 2021.12.20)  13 JAN 2022 15:58
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
 **r02pro.tex
 (./r02pro.tex
-LaTeX2e <2021-06-01> patch level 1
-L3 programming layer <2021-08-27> (/Users/yangfeng/Library/TinyTeX/texmf-dist/t
+LaTeX2e <2021-11-15> patch level 1
+L3 programming layer <2021-11-22> (/Users/yangfeng/Library/TinyTeX/texmf-dist/t
 ex/latex/base/book.cls
-Document Class: book 2021/02/12 v1.4n Standard LaTeX document class
+Document Class: book 2021/10/04 v1.4n Standard LaTeX document class
 (/Users/yangfeng/Library/TinyTeX/texmf-dist/tex/latex/base/bk10.clo
-File: bk10.clo 2021/02/12 v1.4n Standard LaTeX file (size option)
+File: bk10.clo 2021/10/04 v1.4n Standard LaTeX file (size option)
 )
-\c@part=\count178
-\c@chapter=\count179
-\c@section=\count180
-\c@subsection=\count181
-\c@subsubsection=\count182
-\c@paragraph=\count183
-\c@subparagraph=\count184
-\c@figure=\count185
-\c@table=\count186
+\c@part=\count179
+\c@chapter=\count180
+\c@section=\count181
+\c@subsection=\count182
+\c@subsubsection=\count183
+\c@paragraph=\count184
+\c@subparagraph=\count185
+\c@figure=\count186
+\c@table=\count187
 \abovecaptionskip=\skip47
 \belowcaptionskip=\skip48
 \bibindent=\dimen138
 ) (/Users/yangfeng/Library/TinyTeX/texmf-dist/tex/latex/amsmath/amsmath.sty
-Package: amsmath 2021/04/20 v2.17j AMS math features
+Package: amsmath 2021/10/15 v2.17l AMS math features
 \@mathmargin=\skip49
 For additional information on amsmath, use the `?' option.
 (/Users/yangfeng/Library/TinyTeX/texmf-dist/tex/latex/amsmath/amstext.sty
-Package: amstext 2000/06/29 v2.01 AMS text
+Package: amstext 2021/08/26 v2.01 AMS text
 (/Users/yangfeng/Library/TinyTeX/texmf-dist/tex/latex/amsmath/amsgen.sty
 File: amsgen.sty 1999/11/30 v2.0 generic functions
 \@emptytoks=\toks16
@@ -37,15 +37,15 @@ File: amsgen.sty 1999/11/30 v2.0 generic functions
 Package: amsbsy 1999/11/29 v1.2d Bold Symbols
 \pmbraise@=\dimen140
 ) (/Users/yangfeng/Library/TinyTeX/texmf-dist/tex/latex/amsmath/amsopn.sty
-Package: amsopn 2016/03/08 v2.02 operator names
+Package: amsopn 2021/08/26 v2.02 operator names
 )
-\inf@bad=\count187
+\inf@bad=\count188
 LaTeX Info: Redefining \frac on input line 234.
-\uproot@=\count188
-\leftroot@=\count189
+\uproot@=\count189
+\leftroot@=\count190
 LaTeX Info: Redefining \overline on input line 399.
-\classnum@=\count190
-\DOTSCASE@=\count191
+\classnum@=\count191
+\DOTSCASE@=\count192
 LaTeX Info: Redefining \ldots on input line 496.
 LaTeX Info: Redefining \dots on input line 499.
 LaTeX Info: Redefining \cdots on input line 620.
@@ -54,15 +54,15 @@ LaTeX Info: Redefining \cdots on input line 620.
 \big@size=\dimen141
 LaTeX Font Info:    Redeclaring font encoding OML on input line 743.
 LaTeX Font Info:    Redeclaring font encoding OMS on input line 744.
-\macc@depth=\count192
-\c@MaxMatrixCols=\count193
+\macc@depth=\count193
+\c@MaxMatrixCols=\count194
 \dotsspace@=\muskip16
-\c@parentequation=\count194
-\dspbrk@lvl=\count195
+\c@parentequation=\count195
+\dspbrk@lvl=\count196
 \tag@help=\toks17
-\row@=\count196
-\column@=\count197
-\maxfields@=\count198
+\row@=\count197
+\column@=\count198
+\maxfields@=\count199
 \andhelp@=\toks18
 \eqnshift@=\dimen142
 \alignsep@=\dimen143
@@ -74,8 +74,8 @@ LaTeX Font Info:    Redeclaring font encoding OMS on input line 744.
 \multlinegap=\skip50
 \multlinetaggap=\skip51
 \mathdisplay@stack=\toks20
-LaTeX Info: Redefining \[ on input line 2923.
-LaTeX Info: Redefining \] on input line 2924.
+LaTeX Info: Redefining \[ on input line 2938.
+LaTeX Info: Redefining \] on input line 2939.
 ) (/Users/yangfeng/Library/TinyTeX/texmf-dist/tex/latex/amsfonts/amssymb.sty
 Package: amssymb 2013/01/14 v3.01 AMS font symbols
 (/Users/yangfeng/Library/TinyTeX/texmf-dist/tex/latex/amsfonts/amsfonts.sty
@@ -128,20 +128,20 @@ Package: ifluatex 2019/10/25 v1.5 ifluatex legacy package. Use iftex instead.
 )
 (/Users/yangfeng/Library/TinyTeX/texmf-dist/tex/latex/unicode-math/unicode-math
 .sty (/Users/yangfeng/Library/TinyTeX/texmf-dist/tex/latex/l3kernel/expl3.sty
-Package: expl3 2021-08-27 L3 programming layer (loader) 
+Package: expl3 2021-11-22 L3 programming layer (loader) 
 
 (/Users/yangfeng/Library/TinyTeX/texmf-dist/tex/latex/l3backend/l3backend-xetex
 .def
-File: l3backend-xetex.def 2021-08-04 L3 backend support: XeTeX
+File: l3backend-xetex.def 2021-12-14 L3 backend support: XeTeX
 (|extractbb --version)
-\c__kernel_sys_dvipdfmx_version_int=\count199
-\l__color_backend_stack_int=\count266
-\g__color_backend_stack_int=\count267
-\g__graphics_track_int=\count268
+\c__kernel_sys_dvipdfmx_version_int=\count266
+\l__color_backend_stack_int=\count267
+\g__color_backend_stack_int=\count268
+\g__graphics_track_int=\count269
 \l__pdf_internal_box=\box52
-\g__pdf_backend_object_int=\count269
-\g__pdf_backend_annotation_int=\count270
-\g__pdf_backend_link_int=\count271
+\g__pdf_backend_object_int=\count270
+\g__pdf_backend_annotation_int=\count271
+\g__pdf_backend_link_int=\count272
 ))
 Package: unicode-math 2020/01/31 v0.8q Unicode maths in XeLaTeX and LuaLaTeX
 
@@ -152,11 +152,11 @@ TeX
 
 (/Users/yangfeng/Library/TinyTeX/texmf-dist/tex/latex/l3packages/xparse/xparse.
 sty
-Package: xparse 2021-08-27 L3 Experimental document command parser
+Package: xparse 2021-11-12 L3 Experimental document command parser
 )
 (/Users/yangfeng/Library/TinyTeX/texmf-dist/tex/latex/l3packages/l3keys2e/l3key
 s2e.sty
-Package: l3keys2e 2021-08-27 LaTeX2e option processing using LaTeX3 keys
+Package: l3keys2e 2021-11-12 LaTeX2e option processing using LaTeX3 keys
 ) (/Users/yangfeng/Library/TinyTeX/texmf-dist/tex/latex/fontspec/fontspec.sty
 Package: fontspec 2020/02/21 v2.7i Font selection for XeLaTeX and LuaLaTeX
 
@@ -164,17 +164,17 @@ Package: fontspec 2020/02/21 v2.7i Font selection for XeLaTeX and LuaLaTeX
 ty
 Package: fontspec-xetex 2020/02/21 v2.7i Font selection for XeLaTeX and LuaLaTe
 X
-\l__fontspec_script_int=\count272
-\l__fontspec_language_int=\count273
-\l__fontspec_strnum_int=\count274
-\l__fontspec_tmp_int=\count275
-\l__fontspec_tmpa_int=\count276
-\l__fontspec_tmpb_int=\count277
-\l__fontspec_tmpc_int=\count278
-\l__fontspec_em_int=\count279
-\l__fontspec_emdef_int=\count280
-\l__fontspec_strong_int=\count281
-\l__fontspec_strongdef_int=\count282
+\l__fontspec_script_int=\count273
+\l__fontspec_language_int=\count274
+\l__fontspec_strnum_int=\count275
+\l__fontspec_tmp_int=\count276
+\l__fontspec_tmpa_int=\count277
+\l__fontspec_tmpb_int=\count278
+\l__fontspec_tmpc_int=\count279
+\l__fontspec_em_int=\count280
+\l__fontspec_emdef_int=\count281
+\l__fontspec_strong_int=\count282
+\l__fontspec_strongdef_int=\count283
 \l__fontspec_tmpa_dim=\dimen148
 \l__fontspec_tmpb_dim=\dimen149
 \l__fontspec_tmpc_dim=\dimen150
@@ -187,36 +187,36 @@ Package: fix-cm 2020/11/24 v1.1t fixes to LaTeX
 File: ts1enc.def 2001/06/05 v3.0e (jk/car/fm) Standard LaTeX file
 LaTeX Font Info:    Redeclaring font encoding TS1 on input line 47.
 ))
-\g__um_fam_int=\count283
-\g__um_fonts_used_int=\count284
-\l__um_primecount_int=\count285
+\g__um_fam_int=\count284
+\g__um_fonts_used_int=\count285
+\l__um_primecount_int=\count286
 \g__um_primekern_muskip=\muskip17
 
 (/Users/yangfeng/Library/TinyTeX/texmf-dist/tex/latex/unicode-math/unicode-math
 -table.tex))) (/Users/yangfeng/Library/TinyTeX/texmf-dist/tex/latex/xcolor/xcol
 or.sty
-Package: xcolor 2016/05/11 v2.12 LaTeX color extensions (UK)
+Package: xcolor 2021/10/31 v2.13 LaTeX color extensions (UK)
 (/Users/yangfeng/Library/TinyTeX/texmf-dist/tex/latex/graphics-cfg/color.cfg
 File: color.cfg 2016/01/02 v1.6 sample color configuration
 )
-Package xcolor Info: Driver file: xetex.def on input line 225.
+Package xcolor Info: Driver file: xetex.def on input line 227.
 (/Users/yangfeng/Library/TinyTeX/texmf-dist/tex/latex/graphics-def/xetex.def
 File: xetex.def 2021/03/18 v5.0k Graphics/color driver for xetex
 )
-Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1348.
-Package xcolor Info: Model `RGB' extended on input line 1364.
-Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1366.
-Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1367.
-Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1368.
-Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1369.
-Package xcolor Info: Model `Gray' substituted by `gray' on input line 1370.
-Package xcolor Info: Model `wave' substituted by `hsb' on input line 1371.
+Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1352.
+Package xcolor Info: Model `RGB' extended on input line 1368.
+Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1370.
+Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1371.
+Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1372.
+Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1373.
+Package xcolor Info: Model `Gray' substituted by `gray' on input line 1374.
+Package xcolor Info: Model `wave' substituted by `hsb' on input line 1375.
 (/Users/yangfeng/Library/TinyTeX/texmf-dist/tex/latex/graphics/dvipsnam.def
 File: dvipsnam.def 2016/06/17 v3.0m Driver-dependent file (DPC,SPQR)
 ) (/Users/yangfeng/Library/TinyTeX/texmf-dist/tex/latex/xcolor/svgnam.def
-File: svgnam.def 2016/05/11 v2.12 Predefined colors according to SVG 1.1 (UK)
+File: svgnam.def 2021/10/31 v2.13 Predefined colors according to SVG 1.1 (UK)
 ) (/Users/yangfeng/Library/TinyTeX/texmf-dist/tex/latex/xcolor/x11nam.def
-File: x11nam.def 2016/05/11 v2.12 Predefined colors according to Unix/X11 (UK)
+File: x11nam.def 2021/10/31 v2.13 Predefined colors according to Unix/X11 (UK)
 )) (/Users/yangfeng/Library/TinyTeX/texmf-dist/tex/latex/hyperref/hyperref.sty
 Package: hyperref 2021-06-07 v7.00m Hypertext links for LaTeX
 (/Users/yangfeng/Library/TinyTeX/texmf-dist/tex/generic/ltxcmds/ltxcmds.sty
@@ -258,8 +258,8 @@ Package: auxhook 2019-12-17 v1.6 Hooks for auxiliary files (HO)
 Package: kvoptions 2020-10-07 v3.14 Key value format for package options (HO)
 )
 \@linkdim=\dimen151
-\Hy@linkcounter=\count286
-\Hy@pagecounter=\count287
+\Hy@linkcounter=\count287
+\Hy@pagecounter=\count288
 (/Users/yangfeng/Library/TinyTeX/texmf-dist/tex/latex/hyperref/pd1enc.def
 File: pd1enc.def 2021-06-07 v7.00m Hyperref: PDFDocEncoding definition (HO)
 )
@@ -272,7 +272,7 @@ Package: intcalc 2019/12/15 v1.3 Expandable calculations with integers (HO)
 ) (/Users/yangfeng/Library/TinyTeX/texmf-dist/tex/generic/etexcmds/etexcmds.sty
 Package: etexcmds 2019/12/15 v1.7 Avoid name clashes with e-TeX commands (HO)
 )
-\Hy@SavedSpaceFactor=\count288
+\Hy@SavedSpaceFactor=\count289
 (/Users/yangfeng/Library/TinyTeX/texmf-dist/tex/latex/hyperref/puenc.def
 File: puenc.def 2021-06-07 v7.00m Hyperref: PDF Unicode definition (HO)
 )
@@ -284,7 +284,7 @@ Package hyperref Info: Plain pages OFF on input line 4207.
 Package hyperref Info: Backreferencing OFF on input line 4212.
 Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
 Package hyperref Info: Bookmarks ON on input line 4445.
-\c@Hy@tempcnt=\count289
+\c@Hy@tempcnt=\count290
 (/Users/yangfeng/Library/TinyTeX/texmf-dist/tex/latex/url/url.sty
 \Urlmuskip=\muskip18
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
@@ -299,7 +299,7 @@ ty
 Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO
 )
 ))
-\Fld@menulength=\count290
+\Fld@menulength=\count291
 \Field@Width=\dimen153
 \Fld@charsize=\dimen154
 Package hyperref Info: Hyper figures OFF on input line 6076.
@@ -315,9 +315,9 @@ LaTeX Info: Redefining \pageref on input line 6150.
 Package: atbegshi-ltx 2021/01/10 v1.0c Emulation of the original atbegshi
 package with kernel methods
 )
-\Hy@abspage=\count291
-\c@Item=\count292
-\c@Hfootnote=\count293
+\Hy@abspage=\count292
+\c@Item=\count293
+\c@Hfootnote=\count294
 )
 Package hyperref Info: Driver (autodetected): hxetex.
 (/Users/yangfeng/Library/TinyTeX/texmf-dist/tex/latex/hyperref/hxetex.def
@@ -328,17 +328,17 @@ Package: stringenc 2019/11/29 v1.12 Convert strings between diff. encodings (HO
 )
 )
 \pdfm@box=\box53
-\c@Hy@AnnotLevel=\count294
-\HyField@AnnotCount=\count295
-\Fld@listcount=\count296
-\c@bookmark@seq@number=\count297
+\c@Hy@AnnotLevel=\count295
+\HyField@AnnotCount=\count296
+\Fld@listcount=\count297
+\c@bookmark@seq@number=\count298
 
 (/Users/yangfeng/Library/TinyTeX/texmf-dist/tex/latex/rerunfilecheck/rerunfilec
 heck.sty
 Package: rerunfilecheck 2019/12/05 v1.9 Rerun checks for auxiliary files (HO)
 (/Users/yangfeng/Library/TinyTeX/texmf-dist/tex/latex/base/atveryend-ltx.sty
-Package: atveryend-ltx 2020/08/19 v1.0a Emulation of the original atvery packag
-e
+Package: atveryend-ltx 2020/08/19 v1.0a Emulation of the original atveryend pac
+kage
 with kernel methods
 )
 (/Users/yangfeng/Library/TinyTeX/texmf-dist/tex/generic/uniquecounter/uniquecou
@@ -352,12 +352,13 @@ Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 )
 Package hyperref Info: Option `colorlinks' set `true' on input line 47.
 (/Users/yangfeng/Library/TinyTeX/texmf-dist/tex/latex/fancyvrb/fancyvrb.sty
-Package: fancyvrb 2021/08/12 v3.8 verbatim text (tvz,hv)
-\FV@CodeLineNo=\count298
+Package: fancyvrb 2021/11/24\nobreakspace {} 4.1a\nobreakspace {}verbatim text 
+(tvz,hv)
+\FV@CodeLineNo=\count299
 \FV@InFile=\read2
 \FV@TabBox=\box54
-\c@FancyVerbLine=\count299
-\FV@StepNumber=\count300
+\c@FancyVerbLine=\count300
+\FV@StepNumber=\count301
 \FV@OutFile=\write3
 ) (/Users/yangfeng/Library/TinyTeX/texmf-dist/tex/latex/framed/framed.sty
 Package: framed 2011/10/22 v 0.96: framed or shaded text with page breaks
@@ -367,22 +368,22 @@ Package: framed 2011/10/22 v 0.96: framed or shaded text with page breaks
 \FrameRule=\dimen157
 \FrameSep=\dimen158
 ) (/Users/yangfeng/Library/TinyTeX/texmf-dist/tex/latex/tools/longtable.sty
-Package: longtable 2021-05-07 v4.16 Multi-page Table package (DPC)
+Package: longtable 2021-09-01 v4.17 Multi-page Table package (DPC)
 \LTleft=\skip54
 \LTright=\skip55
 \LTpre=\skip56
 \LTpost=\skip57
-\LTchunksize=\count301
+\LTchunksize=\count302
 \LTcapwidth=\dimen159
 \LT@head=\box55
 \LT@firsthead=\box56
 \LT@foot=\box57
 \LT@lastfoot=\box58
 \LT@gbox=\box59
-\LT@cols=\count302
-\LT@rows=\count303
-\c@LT@tables=\count304
-\c@LT@chunks=\count305
+\LT@cols=\count303
+\LT@rows=\count304
+\c@LT@tables=\count305
+\c@LT@chunks=\count306
 \LT@p@ftn=\toks22
 ) (/Users/yangfeng/Library/TinyTeX/texmf-dist/tex/latex/booktabs/booktabs.sty
 Package: booktabs 2020/01/12 v1.61803398 Publication quality tables
@@ -396,15 +397,15 @@ Package: booktabs 2020/01/12 v1.61803398 Publication quality tables
 \cmidrulesep=\dimen167
 \cmidrulekern=\dimen168
 \defaultaddspace=\dimen169
-\@cmidla=\count306
-\@cmidlb=\count307
+\@cmidla=\count307
+\@cmidlb=\count308
 \@aboverulesep=\dimen170
 \@belowrulesep=\dimen171
-\@thisruleclass=\count308
-\@lastruleclass=\count309
+\@thisruleclass=\count309
+\@lastruleclass=\count310
 \@thisrulewidth=\dimen172
 ) (/Users/yangfeng/Library/TinyTeX/texmf-dist/tex/latex/tools/array.sty
-Package: array 2021/04/20 v2.5e Tabular extension package (FMi)
+Package: array 2021/10/04 v2.5f Tabular extension package (FMi)
 \col@sep=\dimen173
 \ar@mcellbox=\box60
 \extrarowheight=\dimen174
@@ -414,29 +415,29 @@ Package: array 2021/04/20 v2.5e Tabular extension package (FMi)
 \ar@cellbox=\box61
 ) (/Users/yangfeng/Library/TinyTeX/texmf-dist/tex/latex/tools/calc.sty
 Package: calc 2017/05/25 v4.3 Infix arithmetic (KKT,FJ)
-\calc@Acount=\count310
-\calc@Bcount=\count311
+\calc@Acount=\count311
+\calc@Bcount=\count312
 \calc@Adimen=\dimen175
 \calc@Bdimen=\dimen176
 \calc@Askip=\skip60
 \calc@Bskip=\skip61
 LaTeX Info: Redefining \setlength on input line 80.
 LaTeX Info: Redefining \addtolength on input line 81.
-\calc@Ccount=\count312
+\calc@Ccount=\count313
 \calc@Cskip=\skip62
 ) (/Users/yangfeng/Library/TinyTeX/texmf-dist/tex/latex/etoolbox/etoolbox.sty
 Package: etoolbox 2020/10/05 v2.5k e-TeX tools for LaTeX (JAW)
-\etb@tempcnta=\count313
+\etb@tempcnta=\count314
 ) (/Users/yangfeng/Library/TinyTeX/texmf-dist/tex/latex/mdwtools/footnote.sty
 Package: footnote 1997/01/28 1.13 Save footnotes around boxes
 \fn@notes=\box62
 \fn@width=\dimen177
 ) (/Users/yangfeng/Library/TinyTeX/texmf-dist/tex/latex/graphics/graphicx.sty
-Package: graphicx 2020/12/05 v1.2c Enhanced LaTeX Graphics (DPC,SPQR)
+Package: graphicx 2021/09/16 v1.2d Enhanced LaTeX Graphics (DPC,SPQR)
 (/Users/yangfeng/Library/TinyTeX/texmf-dist/tex/latex/graphics/graphics.sty
 Package: graphics 2021/03/04 v1.4d Standard LaTeX Graphics (DPC,SPQR)
 (/Users/yangfeng/Library/TinyTeX/texmf-dist/tex/latex/graphics/trig.sty
-Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
+Package: trig 2021/08/11 v1.11 sin cos tan (DPC)
 )
 (/Users/yangfeng/Library/TinyTeX/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
 File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
@@ -458,8 +459,8 @@ Package: caption3 2020/10/21 v2.2e caption3 kernel (AR)
 \caption@hangindent=\dimen186
 Package caption Info: Standard document class detected.
 )
-\c@caption@flags=\count314
-\c@continuedfloat=\count315
+\c@caption@flags=\count315
+\c@continuedfloat=\count316
 Package caption Info: hyperref package is loaded.
 Package caption Info: longtable package is loaded.
 (/Users/yangfeng/Library/TinyTeX/texmf-dist/tex/latex/caption/ltcaption.sty
@@ -476,7 +477,7 @@ sers/yangfeng/Library/TinyTeX/texmf-dist/tex/generic/xkeyval/xkvutils.tex
 \XKV@toks=\toks24
 \XKV@tempa@toks=\toks25
 )
-\XKV@depth=\count316
+\XKV@depth=\count317
 File: xkeyval.tex 2014/12/03 v2.7a key=value parser (HA)
 ))
 Requested font "[Alegreya-Regular.otf]/OT" at 9.99997pt
@@ -1148,7 +1149,7 @@ uage=dflt;"
 (fontspec)             - 'bold italic small caps'  (b/scit) with NFSS spec.: 
 
 ) (/Users/yangfeng/Library/TinyTeX/texmf-dist/tex/latex/base/makeidx.sty
-Package: makeidx 2014/09/29 v1.0m Standard LaTeX package
+Package: makeidx 2021/10/04 v1.0m Standard LaTeX package
 )
 \@indexfile=\write4
 \openout4 = `r02pro.idx'.
@@ -1165,137 +1166,40 @@ Package: amsthm 2020/05/29 v2.20.6
 \thm@postskip=\skip64
 \thm@headsep=\skip65
 \dth@everypar=\toks31
-) (/Users/yangfeng/Library/TinyTeX/texmf-dist/tex/latex/multirow/multirow.sty
-Package: multirow 2021/03/15 v2.8 Span multiple rows of a table
-\multirow@colwidth=\skip66
-\multirow@cntb=\count317
-\multirow@dima=\skip67
-\bigstrutjot=\dimen187
-) (/Users/yangfeng/Library/TinyTeX/texmf-dist/tex/latex/wrapfig/wrapfig.sty
-\wrapoverhang=\dimen188
-\WF@size=\dimen189
-\c@WF@wrappedlines=\count318
-\WF@box=\box63
-\WF@everypar=\toks32
-Package: wrapfig 2003/01/31  v 3.6
-) (/Users/yangfeng/Library/TinyTeX/texmf-dist/tex/latex/float/float.sty
-Package: float 2001/11/08 v1.3d Float enhancements (AL)
-\c@float@type=\count319
-\float@exts=\toks33
-\float@box=\box64
-\@float@everytoks=\toks34
-\@floatcapt=\box65
-) (/Users/yangfeng/Library/TinyTeX/texmf-dist/tex/latex/colortbl/colortbl.sty
-Package: colortbl 2020/01/04 v1.0e Color table columns (DPC)
-\everycr=\toks35
-\minrowclearance=\skip68
-) (/Users/yangfeng/Library/TinyTeX/texmf-dist/tex/latex/pdflscape/pdflscape.sty
-Package: pdflscape 2019/12/05 v0.12 Display of landscape pages in PDF (HO)
-(/Users/yangfeng/Library/TinyTeX/texmf-dist/tex/latex/graphics/lscape.sty
-Package: lscape 2020/05/28 v3.02 Landscape Pages (DPC)
-)
-Package pdflscape Info: Auto-detected driver: dvipdfm (xetex) on input line 98.
-
-) (/Users/yangfeng/Library/TinyTeX/texmf-dist/tex/latex/tabu/tabu.sty
-Package: tabu 2019/01/11 v2.9 - flexible LaTeX tabulars (FC+tabu-fixed)
-(/Users/yangfeng/Library/TinyTeX/texmf-dist/tex/latex/varwidth/varwidth.sty
-Package: varwidth 2009/03/30 ver 0.92;  Variable-width minipages
-\@vwid@box=\box66
-\sift@deathcycles=\count320
-\@vwid@loff=\dimen190
-\@vwid@roff=\dimen191
-)
-\c@taburow=\count321
-\tabu@nbcols=\count322
-\tabu@cnt=\count323
-\tabu@Xcol=\count324
-\tabu@alloc=\count325
-\tabu@nested=\count326
-\tabu@target=\dimen192
-\tabu@spreadtarget=\dimen193
-\tabu@naturalX=\dimen194
-\tabucolX=\dimen195
-\tabu@Xsum=\dimen196
-\extrarowdepth=\dimen197
-\abovetabulinesep=\dimen198
-\belowtabulinesep=\dimen199
-\tabustrutrule=\dimen256
-\tabu@thebody=\toks36
-\tabu@footnotes=\toks37
-\tabu@box=\box67
-\tabu@arstrutbox=\box68
-\tabu@hleads=\box69
-\tabu@vleads=\box70
-\tabu@cellskip=\skip69
-)
-(/Users/yangfeng/Library/TinyTeX/texmf-dist/tex/latex/threeparttable/threepartt
-able.sty
-Package: threeparttable 2003/06/13  v 3.0
-\@tempboxb=\box71
-)
-(/Users/yangfeng/Library/TinyTeX/texmf-dist/tex/latex/threeparttablex/threepart
-tablex.sty
-Package: threeparttablex 2013/07/23 v0.3 by daleif
-(/Users/yangfeng/Library/TinyTeX/texmf-dist/tex/latex/environ/environ.sty
-Package: environ 2014/05/04 v0.3 A new way to define environments
-
-(/Users/yangfeng/Library/TinyTeX/texmf-dist/tex/latex/trimspaces/trimspaces.sty
-Package: trimspaces 2009/09/17 v1.1 Trim spaces around a token list
-))
-\TPTL@width=\skip70
-) (/Users/yangfeng/Library/TinyTeX/texmf-dist/tex/generic/ulem/ulem.sty
-\UL@box=\box72
-\UL@hyphenbox=\box73
-\UL@skip=\skip71
-\UL@hook=\toks38
-\UL@height=\dimen257
-\UL@pe=\count327
-\UL@pixel=\dimen258
-\ULC@box=\box74
-Requested font "lasy6" scaled 1000
- -> /Users/yangfeng/Library/TinyTeX/texmf-dist/fonts/tfm/public/latex-fonts/las
-y6.tfm
-Package: ulem 2019/11/18
-\ULdepth=\dimen259
-) (/Users/yangfeng/Library/TinyTeX/texmf-dist/tex/latex/makecell/makecell.sty
-Package: makecell 2009/08/03 V0.1e Managing of Tab Column Heads and Cells
-\rotheadsize=\dimen260
-\c@nlinenum=\count328
-\TeXr@lab=\toks39
 ) (/Users/yangfeng/Library/TinyTeX/texmf-dist/tex/latex/natbib/natbib.sty
 Package: natbib 2010/09/13 8.31b (PWD, AO)
-\bibhang=\skip72
-\bibsep=\skip73
+\bibhang=\skip66
+\bibsep=\skip67
 LaTeX Info: Redefining \cite on input line 694.
-\c@NAT@ctr=\count329
+\c@NAT@ctr=\count318
 )
 No file r02pro.aux.
 \openout1 = `r02pro.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 213.
-LaTeX Font Info:    ... okay on input line 213.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 213.
-LaTeX Font Info:    ... okay on input line 213.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 213.
-LaTeX Font Info:    ... okay on input line 213.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 213.
-LaTeX Font Info:    ... okay on input line 213.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 213.
-LaTeX Font Info:    ... okay on input line 213.
-LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 213.
-LaTeX Font Info:    ... okay on input line 213.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 213.
-LaTeX Font Info:    ... okay on input line 213.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 213.
-LaTeX Font Info:    ... okay on input line 213.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 213.
-LaTeX Font Info:    ... okay on input line 213.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 213.
-LaTeX Font Info:    ... okay on input line 213.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 199.
+LaTeX Font Info:    ... okay on input line 199.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 199.
+LaTeX Font Info:    ... okay on input line 199.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 199.
+LaTeX Font Info:    ... okay on input line 199.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 199.
+LaTeX Font Info:    ... okay on input line 199.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 199.
+LaTeX Font Info:    ... okay on input line 199.
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 199.
+LaTeX Font Info:    ... okay on input line 199.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 199.
+LaTeX Font Info:    ... okay on input line 199.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 199.
+LaTeX Font Info:    ... okay on input line 199.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 199.
+LaTeX Font Info:    ... okay on input line 199.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 199.
+LaTeX Font Info:    ... okay on input line 199.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
-(Font)                  OT1/lmss/m/n --> TU/lmss/m/n on input line 213.
+(Font)                  OT1/lmss/m/n --> TU/lmss/m/n on input line 199.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  OT1/lmss/bx/n --> TU/lmss/b/n on input line 213.
+(Font)                  OT1/lmss/bx/n --> TU/lmss/b/n on input line 199.
 Requested font "[latinmodern-math.otf]/OT" at 9.99997pt
  -> /Users/yangfeng/Library/TinyTeX/texmf-dist/fonts/opentype/public/lm-math/la
 tinmodern-math.otf
@@ -1349,16 +1253,16 @@ latinmodern-math.otf]/OT:script=math;language=dflt;+ssty=1;"
 (fontspec)             - 'bold small caps'  (b/sc) with NFSS spec.: 
 
 LaTeX Font Info:    Encoding `OT1' has changed to `TU' for symbol font
-(Font)              `operators' in the math version `normal' on input line 213.
+(Font)              `operators' in the math version `normal' on input line 199.
 
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
 (Font)                  OT1/lmr/m/n --> TU/latinmodern-math.otf(1)/m/n on input
- line 213.
+ line 199.
 LaTeX Font Info:    Encoding `OT1' has changed to `TU' for symbol font
-(Font)              `operators' in the math version `bold' on input line 213.
+(Font)              `operators' in the math version `bold' on input line 199.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
 (Font)                  OT1/lmr/bx/n --> TU/latinmodern-math.otf(1)/b/n on inpu
-t line 213.
+t line 199.
 
 Package fontspec Info: latinmodern-math scale = 1.0001.
 
@@ -1429,15 +1333,15 @@ uage=dflt;"
 (fontspec)             \fontdimen 21\font =0pt\relax 
 
 LaTeX Font Info:    Encoding `OMS' has changed to `TU' for symbol font
-(Font)              `symbols' in the math version `normal' on input line 213.
+(Font)              `symbols' in the math version `normal' on input line 199.
 LaTeX Font Info:    Overwriting symbol font `symbols' in version `normal'
 (Font)                  OMS/lmsy/m/n --> TU/latinmodern-math.otf(2)/m/n on inpu
-t line 213.
+t line 199.
 LaTeX Font Info:    Encoding `OMS' has changed to `TU' for symbol font
-(Font)              `symbols' in the math version `bold' on input line 213.
+(Font)              `symbols' in the math version `bold' on input line 199.
 LaTeX Font Info:    Overwriting symbol font `symbols' in version `bold'
 (Font)                  OMS/lmsy/b/n --> TU/latinmodern-math.otf(2)/b/n on inpu
-t line 213.
+t line 199.
 
 Package fontspec Info: latinmodern-math scale = 0.9999.
 
@@ -1490,18 +1394,18 @@ uage=dflt;"
 (fontspec)             =6.0pt\relax \fontdimen 13\font =0pt\relax 
 
 LaTeX Font Info:    Encoding `OMX' has changed to `TU' for symbol font
-(Font)              `largesymbols' in the math version `normal' on input line 2
-13.
+(Font)              `largesymbols' in the math version `normal' on input line 1
+99.
 LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `normal'
 (Font)                  OMX/lmex/m/n --> TU/latinmodern-math.otf(3)/m/n on inpu
-t line 213.
+t line 199.
 LaTeX Font Info:    Encoding `OMX' has changed to `TU' for symbol font
-(Font)              `largesymbols' in the math version `bold' on input line 213
+(Font)              `largesymbols' in the math version `bold' on input line 199
 .
 LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `bold'
 (Font)                  OMX/lmex/m/n --> TU/latinmodern-math.otf(3)/b/n on inpu
-t line 213.
-Package hyperref Info: Link coloring ON on input line 213.
+t line 199.
+Package hyperref Info: Link coloring ON on input line 199.
 (/Users/yangfeng/Library/TinyTeX/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2021-04-02 v2.47 Cross-referencing by name of section
 (/Users/yangfeng/Library/TinyTeX/texmf-dist/tex/latex/refcount/refcount.sty
@@ -1511,11 +1415,11 @@ Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
 string.sty
 Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
-\c@section@level=\count330
+\c@section@level=\count319
 )
-LaTeX Info: Redefining \ref on input line 213.
-LaTeX Info: Redefining \pageref on input line 213.
-LaTeX Info: Redefining \nameref on input line 213.
+LaTeX Info: Redefining \ref on input line 199.
+LaTeX Info: Redefining \pageref on input line 199.
+LaTeX Info: Redefining \nameref on input line 199.
 \@outlinefile=\write5
 \openout5 = `r02pro.out'.
 
@@ -1523,18 +1427,15 @@ LaTeX Info: Redefining \nameref on input line 213.
 Package hyperref Warning: Rerun to get /PageLabels entry.
 
 Package caption Info: Begin \AtBeginDocument code.
-Package caption Info: float package is loaded.
-Package caption Info: threeparttable package is loaded.
-Package caption Info: wrapfig package is loaded.
 Package caption Info: End \AtBeginDocument code.
 LaTeX Font Info:    Font shape `TU/Alegreya(0)/m/n' will be
-(Font)              scaled to size 17.28pt on input line 215.
+(Font)              scaled to size 17.28pt on input line 201.
 Requested font "[Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum
 ;mapping=tex-text;" at 17.28pt
  -> /Users/yangfeng/Library/TinyTeX/texmf-dist/fonts/opentype/huerta/alegreya/A
 legreya-Regular.otf
 LaTeX Font Info:    Font shape `TU/Alegreya(0)/m/n' will be
-(Font)              scaled to size 12.0pt on input line 215.
+(Font)              scaled to size 12.0pt on input line 201.
 Requested font "[Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum
 ;mapping=tex-text;" at 12.0pt
  -> /Users/yangfeng/Library/TinyTeX/texmf-dist/fonts/opentype/huerta/alegreya/A
@@ -1551,7 +1452,7 @@ t 6.0pt
  -> /Users/yangfeng/Library/TinyTeX/texmf-dist/fonts/opentype/public/lm-math/la
 tinmodern-math.otf
 LaTeX Font Info:    Trying to load font information for OML+lmm on input line 2
-15.
+01.
 (/Users/yangfeng/Library/TinyTeX/texmf-dist/tex/latex/lm/omllmm.fd
 File: omllmm.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
@@ -1562,42 +1463,42 @@ Requested font "lmmi8" at 8.0pt
 Requested font "lmmi6" at 6.0pt
  -> /Users/yangfeng/Library/TinyTeX/texmf-dist/fonts/tfm/public/lm/lmmi6.tfm
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 12.00128pt on input line 215.
+(Font)              scaled to size 12.00128pt on input line 201.
 Requested font "[latinmodern-math.otf]/OT:script=math;language=dflt;" at 12.001
 28pt
  -> /Users/yangfeng/Library/TinyTeX/texmf-dist/fonts/opentype/public/lm-math/la
 tinmodern-math.otf
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 8.00085pt on input line 215.
+(Font)              scaled to size 8.00085pt on input line 201.
 Requested font "[latinmodern-math.otf]/OT:script=math;language=dflt;+ssty=0;" a
 t 8.00085pt
  -> /Users/yangfeng/Library/TinyTeX/texmf-dist/fonts/opentype/public/lm-math/la
 tinmodern-math.otf
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 6.00064pt on input line 215.
+(Font)              scaled to size 6.00064pt on input line 201.
 Requested font "[latinmodern-math.otf]/OT:script=math;language=dflt;+ssty=0;" a
 t 6.00064pt
  -> /Users/yangfeng/Library/TinyTeX/texmf-dist/fonts/opentype/public/lm-math/la
 tinmodern-math.otf
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 11.99872pt on input line 215.
+(Font)              scaled to size 11.99872pt on input line 201.
 Requested font "[latinmodern-math.otf]/OT:script=math;language=dflt;" at 11.998
 72pt
  -> /Users/yangfeng/Library/TinyTeX/texmf-dist/fonts/opentype/public/lm-math/la
 tinmodern-math.otf
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 7.99915pt on input line 215.
+(Font)              scaled to size 7.99915pt on input line 201.
 Requested font "[latinmodern-math.otf]/OT:script=math;language=dflt;+ssty=0;" a
 t 7.99915pt
  -> /Users/yangfeng/Library/TinyTeX/texmf-dist/fonts/opentype/public/lm-math/la
 tinmodern-math.otf
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 5.99936pt on input line 215.
+(Font)              scaled to size 5.99936pt on input line 201.
 Requested font "[latinmodern-math.otf]/OT:script=math;language=dflt;+ssty=0;" a
 t 5.99936pt
  -> /Users/yangfeng/Library/TinyTeX/texmf-dist/fonts/opentype/public/lm-math/la
 tinmodern-math.otf
-LaTeX Font Info:    Trying to load font information for U+msa on input line 215
+LaTeX Font Info:    Trying to load font information for U+msa on input line 201
 .
 (/Users/yangfeng/Library/TinyTeX/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
@@ -1611,7 +1512,7 @@ s/msam10.tfm
 Requested font "msam7" at 6.0pt
  -> /Users/yangfeng/Library/TinyTeX/texmf-dist/fonts/tfm/public/amsfonts/symbol
 s/msam7.tfm
-LaTeX Font Info:    Trying to load font information for U+msb on input line 215
+LaTeX Font Info:    Trying to load font information for U+msb on input line 201
 .
 (/Users/yangfeng/Library/TinyTeX/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
@@ -1625,6 +1526,77 @@ s/msbm10.tfm
 Requested font "msbm7" at 6.0pt
  -> /Users/yangfeng/Library/TinyTeX/texmf-dist/fonts/tfm/public/amsfonts/symbol
 s/msbm7.tfm
+LaTeX Font Info:    Font shape `TU/Alegreya(0)/m/n' will be
+(Font)              scaled to size 8.0pt on input line 201.
+Requested font "[Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum
+;mapping=tex-text;" at 8.0pt
+ -> /Users/yangfeng/Library/TinyTeX/texmf-dist/fonts/opentype/huerta/alegreya/A
+legreya-Regular.otf
+LaTeX Font Info:    Font shape `TU/Alegreya(0)/m/n' will be
+(Font)              scaled to size 9.0pt on input line 201.
+Requested font "[Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum
+;mapping=tex-text;" at 9.0pt
+ -> /Users/yangfeng/Library/TinyTeX/texmf-dist/fonts/opentype/huerta/alegreya/A
+legreya-Regular.otf
+Requested font "[latinmodern-math.otf]/OT:script=math;language=dflt;" at 9.0pt
+ -> /Users/yangfeng/Library/TinyTeX/texmf-dist/fonts/opentype/public/lm-math/la
+tinmodern-math.otf
+Requested font "[latinmodern-math.otf]/OT:script=math;language=dflt;+ssty=1;" a
+t 5.0pt
+ -> /Users/yangfeng/Library/TinyTeX/texmf-dist/fonts/opentype/public/lm-math/la
+tinmodern-math.otf
+Requested font "lmmi9" at 9.0pt
+ -> /Users/yangfeng/Library/TinyTeX/texmf-dist/fonts/tfm/public/lm/lmmi9.tfm
+Requested font "lmmi5" at 5.0pt
+ -> /Users/yangfeng/Library/TinyTeX/texmf-dist/fonts/tfm/public/lm/lmmi5.tfm
+LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
+(Font)              scaled to size 9.00096pt on input line 201.
+Requested font "[latinmodern-math.otf]/OT:script=math;language=dflt;" at 9.0009
+6pt
+ -> /Users/yangfeng/Library/TinyTeX/texmf-dist/fonts/opentype/public/lm-math/la
+tinmodern-math.otf
+LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
+(Font)              scaled to size 5.00053pt on input line 201.
+Requested font "[latinmodern-math.otf]/OT:script=math;language=dflt;+ssty=1;" a
+t 5.00053pt
+ -> /Users/yangfeng/Library/TinyTeX/texmf-dist/fonts/opentype/public/lm-math/la
+tinmodern-math.otf
+LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
+(Font)              scaled to size 8.99904pt on input line 201.
+Requested font "[latinmodern-math.otf]/OT:script=math;language=dflt;" at 8.9990
+4pt
+ -> /Users/yangfeng/Library/TinyTeX/texmf-dist/fonts/opentype/public/lm-math/la
+tinmodern-math.otf
+LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
+(Font)              scaled to size 4.99947pt on input line 201.
+Requested font "[latinmodern-math.otf]/OT:script=math;language=dflt;+ssty=1;" a
+t 4.99947pt
+ -> /Users/yangfeng/Library/TinyTeX/texmf-dist/fonts/opentype/public/lm-math/la
+tinmodern-math.otf
+Requested font "msam10" at 9.0pt
+ -> /Users/yangfeng/Library/TinyTeX/texmf-dist/fonts/tfm/public/amsfonts/symbol
+s/msam10.tfm
+Requested font "msam5" at 5.0pt
+ -> /Users/yangfeng/Library/TinyTeX/texmf-dist/fonts/tfm/public/amsfonts/symbol
+s/msam5.tfm
+Requested font "msbm10" at 9.0pt
+ -> /Users/yangfeng/Library/TinyTeX/texmf-dist/fonts/tfm/public/amsfonts/symbol
+s/msbm10.tfm
+Requested font "msbm5" at 5.0pt
+ -> /Users/yangfeng/Library/TinyTeX/texmf-dist/fonts/tfm/public/amsfonts/symbol
+s/msbm5.tfm
+LaTeX Font Info:    Font shape `TU/Alegreya(0)/m/n' will be
+(Font)              scaled to size 6.0pt on input line 201.
+Requested font "[Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum
+;mapping=tex-text;" at 6.0pt
+ -> /Users/yangfeng/Library/TinyTeX/texmf-dist/fonts/opentype/huerta/alegreya/A
+legreya-Regular.otf
+LaTeX Font Info:    Font shape `TU/SourceCodePro(0)/m/n' will be
+(Font)              scaled to size 7.20003pt on input line 201.
+Requested font "[SourceCodePro-Regular.otf]/OT:script=latn;language=dflt;" at 7
+.20003pt
+ -> /Users/yangfeng/Library/TinyTeX/texmf-dist/fonts/opentype/adobe/sourcecodep
+ro/SourceCodePro-Regular.otf
 [1
 
 
@@ -1633,9 +1605,9 @@ s/msbm7.tfm
 LaTeX Font Info:    Font shape `TU/Alegreya(0)/m/sl' in size <10> not available
 
 (Font)              Font shape `TU/Alegreya(0)/m/it' tried instead on input lin
-e 219.
+e 205.
 LaTeX Font Info:    Font shape `TU/Alegreya(0)/m/it' will be
-(Font)              scaled to size 10.0pt on input line 219.
+(Font)              scaled to size 10.0pt on input line 205.
 Requested font "[Alegreya-Italic.otf]/OT:script=latn;language=dflt;+pnum;+lnum;
 mapping=tex-text;" at 10.0pt
  -> /Users/yangfeng/Library/TinyTeX/texmf-dist/fonts/opentype/huerta/alegreya/A
@@ -1644,13 +1616,13 @@ legreya-Italic.otf
 
 ]
 LaTeX Font Info:    Font shape `TU/Alegreya(0)/m/n' will be
-(Font)              scaled to size 24.88pt on input line 219.
+(Font)              scaled to size 24.88pt on input line 205.
 Requested font "[Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum
 ;mapping=tex-text;" at 24.88pt
  -> /Users/yangfeng/Library/TinyTeX/texmf-dist/fonts/opentype/huerta/alegreya/A
 legreya-Regular.otf
 LaTeX Font Info:    Font shape `TU/Alegreya(0)/b/n' will be
-(Font)              scaled to size 24.88pt on input line 219.
+(Font)              scaled to size 24.88pt on input line 205.
 Requested font "[Alegreya-Bold.otf]/OT:script=latn;language=dflt;+pnum;+lnum;ma
 pping=tex-text;" at 24.88pt
  -> /Users/yangfeng/Library/TinyTeX/texmf-dist/fonts/opentype/huerta/alegreya/A
@@ -1662,7 +1634,7 @@ legreya-Bold.otf
 
 ]
 LaTeX Font Info:    Font shape `TU/Alegreya(0)/b/n' will be
-(Font)              scaled to size 10.0pt on input line 227.
+(Font)              scaled to size 10.0pt on input line 213.
 Requested font "[Alegreya-Bold.otf]/OT:script=latn;language=dflt;+pnum;+lnum;ma
 pping=tex-text;" at 10.0pt
  -> /Users/yangfeng/Library/TinyTeX/texmf-dist/fonts/opentype/huerta/alegreya/A
@@ -1670,33 +1642,14 @@ legreya-Bold.otf
 [5] [6
 
 ]
-
-LaTeX Warning: Reference `Installation' on page vii undefined on input line 232
-.
-
-
-LaTeX Warning: Reference `Calculator' on page vii undefined on input line 232.
-
-LaTeX Font Info:    Font shape `TU/Alegreya(0)/m/n' will be
-(Font)              scaled to size 14.4pt on input line 235.
-Requested font "[Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum
-;mapping=tex-text;" at 14.4pt
- -> /Users/yangfeng/Library/TinyTeX/texmf-dist/fonts/opentype/huerta/alegreya/A
-legreya-Regular.otf
 LaTeX Font Info:    Font shape `TU/Alegreya(0)/b/n' will be
-(Font)              scaled to size 14.4pt on input line 235.
-Requested font "[Alegreya-Bold.otf]/OT:script=latn;language=dflt;+pnum;+lnum;ma
-pping=tex-text;" at 14.4pt
- -> /Users/yangfeng/Library/TinyTeX/texmf-dist/fonts/opentype/huerta/alegreya/A
-legreya-Bold.otf
-LaTeX Font Info:    Font shape `TU/Alegreya(0)/b/n' will be
-(Font)              scaled to size 12.0pt on input line 238.
+(Font)              scaled to size 12.0pt on input line 222.
 Requested font "[Alegreya-Bold.otf]/OT:script=latn;language=dflt;+pnum;+lnum;ma
 pping=tex-text;" at 12.0pt
  -> /Users/yangfeng/Library/TinyTeX/texmf-dist/fonts/opentype/huerta/alegreya/A
 legreya-Bold.otf
 LaTeX Font Info:    Font shape `TU/SourceCodePro(0)/m/n' will be
-(Font)              scaled to size 8.00003pt on input line 242.
+(Font)              scaled to size 8.00003pt on input line 225.
 Requested font "[SourceCodePro-Regular.otf]/OT:script=latn;language=dflt;" at 8
 .00003pt
  -> /Users/yangfeng/Library/TinyTeX/texmf-dist/fonts/opentype/adobe/sourcecodep
@@ -1705,50 +1658,32 @@ Requested font "[latinmodern-math.otf]/OT:script=math;language=dflt;+ssty=0;" a
 t 7.0pt
  -> /Users/yangfeng/Library/TinyTeX/texmf-dist/fonts/opentype/public/lm-math/la
 tinmodern-math.otf
-Requested font "[latinmodern-math.otf]/OT:script=math;language=dflt;+ssty=1;" a
-t 5.0pt
- -> /Users/yangfeng/Library/TinyTeX/texmf-dist/fonts/opentype/public/lm-math/la
-tinmodern-math.otf
 Requested font "lmmi10" at 10.0pt
  -> /Users/yangfeng/Library/TinyTeX/texmf-dist/fonts/tfm/public/lm/lmmi10.tfm
 Requested font "lmmi7" at 7.0pt
  -> /Users/yangfeng/Library/TinyTeX/texmf-dist/fonts/tfm/public/lm/lmmi7.tfm
-Requested font "lmmi5" at 5.0pt
- -> /Users/yangfeng/Library/TinyTeX/texmf-dist/fonts/tfm/public/lm/lmmi5.tfm
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 10.00107pt on input line 242.
+(Font)              scaled to size 10.00107pt on input line 225.
 Requested font "[latinmodern-math.otf]/OT:script=math;language=dflt;" at 10.001
 07pt
  -> /Users/yangfeng/Library/TinyTeX/texmf-dist/fonts/opentype/public/lm-math/la
 tinmodern-math.otf
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 7.00075pt on input line 242.
+(Font)              scaled to size 7.00075pt on input line 225.
 Requested font "[latinmodern-math.otf]/OT:script=math;language=dflt;+ssty=0;" a
 t 7.00075pt
  -> /Users/yangfeng/Library/TinyTeX/texmf-dist/fonts/opentype/public/lm-math/la
 tinmodern-math.otf
-LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 5.00053pt on input line 242.
-Requested font "[latinmodern-math.otf]/OT:script=math;language=dflt;+ssty=1;" a
-t 5.00053pt
- -> /Users/yangfeng/Library/TinyTeX/texmf-dist/fonts/opentype/public/lm-math/la
-tinmodern-math.otf
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 9.99893pt on input line 242.
+(Font)              scaled to size 9.99893pt on input line 225.
 Requested font "[latinmodern-math.otf]/OT:script=math;language=dflt;" at 9.9989
 3pt
  -> /Users/yangfeng/Library/TinyTeX/texmf-dist/fonts/opentype/public/lm-math/la
 tinmodern-math.otf
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 6.99925pt on input line 242.
+(Font)              scaled to size 6.99925pt on input line 225.
 Requested font "[latinmodern-math.otf]/OT:script=math;language=dflt;+ssty=0;" a
 t 6.99925pt
- -> /Users/yangfeng/Library/TinyTeX/texmf-dist/fonts/opentype/public/lm-math/la
-tinmodern-math.otf
-LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 4.99947pt on input line 242.
-Requested font "[latinmodern-math.otf]/OT:script=math;language=dflt;+ssty=1;" a
-t 4.99947pt
  -> /Users/yangfeng/Library/TinyTeX/texmf-dist/fonts/opentype/public/lm-math/la
 tinmodern-math.otf
 Requested font "msam10" at 10.0pt
@@ -1757,27 +1692,78 @@ s/msam10.tfm
 Requested font "msam7" at 7.0pt
  -> /Users/yangfeng/Library/TinyTeX/texmf-dist/fonts/tfm/public/amsfonts/symbol
 s/msam7.tfm
-Requested font "msam5" at 5.0pt
- -> /Users/yangfeng/Library/TinyTeX/texmf-dist/fonts/tfm/public/amsfonts/symbol
-s/msam5.tfm
 Requested font "msbm10" at 10.0pt
  -> /Users/yangfeng/Library/TinyTeX/texmf-dist/fonts/tfm/public/amsfonts/symbol
 s/msbm10.tfm
 Requested font "msbm7" at 7.0pt
  -> /Users/yangfeng/Library/TinyTeX/texmf-dist/fonts/tfm/public/amsfonts/symbol
 s/msbm7.tfm
-Requested font "msbm5" at 5.0pt
- -> /Users/yangfeng/Library/TinyTeX/texmf-dist/fonts/tfm/public/amsfonts/symbol
-s/msbm5.tfm
+LaTeX Font Info:    Font shape `TU/Alegreya(0)/m/n' will be
+(Font)              scaled to size 7.0pt on input line 225.
+Requested font "[Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum
+;mapping=tex-text;" at 7.0pt
+ -> /Users/yangfeng/Library/TinyTeX/texmf-dist/fonts/opentype/huerta/alegreya/A
+legreya-Regular.otf
+LaTeX Font Info:    Font shape `TU/SourceCodePro(0)/m/n' will be
+(Font)              scaled to size 6.40002pt on input line 225.
+Requested font "[SourceCodePro-Regular.otf]/OT:script=latn;language=dflt;" at 6
+.40002pt
+ -> /Users/yangfeng/Library/TinyTeX/texmf-dist/fonts/opentype/adobe/sourcecodep
+ro/SourceCodePro-Regular.otf
 
-Overfull \hbox (0.13101pt too wide) in paragraph at lines 244--245
+Underfull \hbox (badness 10000) in paragraph at lines 233--233
+[][][][][]$[][][][][] [] [] [] [][][][] [] [][][][][][] [] [][][] [] [][][][][]
+ [] [] [] [] [] [][][][][][][][][][][][][][][][][][][][][][] [][] [][][][][][][
+][] [] [][][][][][][][][][][][][][] []
+ []
+
+[7] [8
+
+] [9] [10
+
+]
+LaTeX Font Info:    Font shape `TU/SourceCodePro(0)/m/it' will be
+(Font)              scaled to size 8.00003pt on input line 253.
+Requested font "[SourceCodePro-RegularIt.otf]/OT:script=latn;language=dflt;" at
+ 8.00003pt
+ -> /Users/yangfeng/Library/TinyTeX/texmf-dist/fonts/opentype/adobe/sourcecodep
+ro/SourceCodePro-RegularIt.otf
+[11] [12
+
+]
+
+LaTeX Warning: Reference `Installation' on page xiii undefined on input line 28
+7.
+
+
+LaTeX Warning: Reference `Calculator' on page xiii undefined on input line 287.
+
+
+
+LaTeX Warning: Reference `Object-Assignment' on page xiii undefined on input li
+ne 287.
+
+LaTeX Font Info:    Font shape `TU/Alegreya(0)/m/n' will be
+(Font)              scaled to size 14.4pt on input line 290.
+Requested font "[Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum
+;mapping=tex-text;" at 14.4pt
+ -> /Users/yangfeng/Library/TinyTeX/texmf-dist/fonts/opentype/huerta/alegreya/A
+legreya-Regular.otf
+LaTeX Font Info:    Font shape `TU/Alegreya(0)/b/n' will be
+(Font)              scaled to size 14.4pt on input line 290.
+Requested font "[Alegreya-Bold.otf]/OT:script=latn;language=dflt;+pnum;+lnum;ma
+pping=tex-text;" at 14.4pt
+ -> /Users/yangfeng/Library/TinyTeX/texmf-dist/fonts/opentype/huerta/alegreya/A
+legreya-Bold.otf
+
+Overfull \hbox (0.13101pt too wide) in paragraph at lines 299--300
 []\TU/Alegreya(0)/m/n/10 Download RStudio: [][]$[][][][][] [] [] [] [][][][][][
 ][] [] [][][] [] [][][][][][][][] [] [][][][][][][] [] [][][][][][][][] [] [][]
 [][][][][][][]$[][] 
  []
 
 LaTeX Font Info:    Font shape `TU/Alegreya(0)/b/it' will be
-(Font)              scaled to size 10.0pt on input line 253.
+(Font)              scaled to size 10.0pt on input line 308.
 Requested font "[Alegreya-BoldItalic.otf]/OT:script=latn;language=dflt;+pnum;+l
 num;mapping=tex-text;" at 10.0pt
  -> /Users/yangfeng/Library/TinyTeX/texmf-dist/fonts/opentype/huerta/alegreya/A
@@ -1785,71 +1771,75 @@ legreya-BoldItalic.otf
 File: pics/1font.png Graphic file (type bmp)
 <pics/1font.png>
 
-LaTeX Warning: Reference `fig:size' on page vii undefined on input line 266.
+LaTeX Warning: Reference `fig:size' on page xiii undefined on input line 321.
 
-[7]
+[13]
 File: pics/1size.png Graphic file (type bmp)
 <pics/1size.png>
-[8]
+[14]
 
-LaTeX Warning: Reference `fig:open' on page ix undefined on input line 290.
+LaTeX Warning: Reference `fig:open' on page xv undefined on input line 345.
 
 File: pics/1open.png Graphic file (type bmp)
 <pics/1open.png>
 
-LaTeX Warning: Reference `fig:open' on page ix undefined on input line 301.
+LaTeX Warning: Reference `fig:open' on page xv undefined on input line 356.
 
-LaTeX Font Info:    Font shape `TU/Alegreya(0)/m/n' will be
-(Font)              scaled to size 7.0pt on input line 301.
-Requested font "[Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum
-;mapping=tex-text;" at 7.0pt
- -> /Users/yangfeng/Library/TinyTeX/texmf-dist/fonts/opentype/huerta/alegreya/A
-legreya-Regular.otf
-LaTeX Font Info:    Font shape `TU/Alegreya(0)/m/n' will be
-(Font)              scaled to size 8.0pt on input line 301.
-Requested font "[Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum
-;mapping=tex-text;" at 8.0pt
- -> /Users/yangfeng/Library/TinyTeX/texmf-dist/fonts/opentype/huerta/alegreya/A
-legreya-Regular.otf
-LaTeX Font Info:    Font shape `TU/Alegreya(0)/m/n' will be
-(Font)              scaled to size 6.0pt on input line 301.
-Requested font "[Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum
-;mapping=tex-text;" at 6.0pt
- -> /Users/yangfeng/Library/TinyTeX/texmf-dist/fonts/opentype/huerta/alegreya/A
-legreya-Regular.otf
-LaTeX Font Info:    Font shape `TU/Alegreya(0)/b/n' will be
-(Font)              scaled to size 8.0pt on input line 301.
-Requested font "[Alegreya-Bold.otf]/OT:script=latn;language=dflt;+pnum;+lnum;ma
-pping=tex-text;" at 8.0pt
- -> /Users/yangfeng/Library/TinyTeX/texmf-dist/fonts/opentype/huerta/alegreya/A
-legreya-Bold.otf
+File: pics/caution.jpg Graphic file (type bmp)
+<pics/caution.jpg>
 
-LaTeX Warning: Reference `fig:open' on page ix undefined on input line 301.
+LaTeX Warning: Reference `fig:open' on page xv undefined on input line 359.
+
+
+LaTeX Warning: Reference `fig:four' on page xv undefined on input line 363.
 
 File: pics/1four.png Graphic file (type bmp)
 <pics/1four.png>
 
-LaTeX Warning: Reference `fig:four' on page ix undefined on input line 313.
+LaTeX Warning: Reference `fig:four' on page xv undefined on input line 374.
 
 
-LaTeX Warning: Reference `fig:four' on page ix undefined on input line 324.
+LaTeX Warning: Reference `fig:four' on page xv undefined on input line 385.
 
-[9]
+[15]
 File: pics/caution.jpg Graphic file (type bmp)
 <pics/caution.jpg>
 File: pics/1code.png Graphic file (type bmp)
 <pics/1code.png>
 File: pics/1answer.png Graphic file (type bmp)
 <pics/1answer.png>
+[16]
+File: pics/caution.jpg Graphic file (type bmp)
+<pics/caution.jpg>
 
-LaTeX Warning: Reference `fig:four' on page x undefined on input line 353.
+LaTeX Warning: Reference `r-objects' on page xvii undefined on input line 415.
 
-[10]
+
+LaTeX Warning: Reference `fig:four' on page xvii undefined on input line 419.
+
+Missing character: There is no ？ (U+FF1F) in font [Alegreya-Regular.otf]/OT:scr
+ipt=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ？ (U+FF1F) in font [Alegreya-Regular.otf]/OT:scr
+ipt=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
+
+LaTeX Warning: Reference `fig:P1' on page xvii undefined on input line 425.
+
+File: pics/1P1.png Graphic file (type bmp)
+<pics/1P1.png>
+[17]
 File: pics/1run.png Graphic file (type bmp)
 <pics/1run.png>
 
-LaTeX Warning: Reference `fig:save1' on page xi undefined on input line 372.
+LaTeX Warning: Reference `fig:mcodes' on page xviii undefined on input line 447
+.
 
+File: pics/1mcodes.png Graphic file (type bmp)
+<pics/1mcodes.png>
+
+LaTeX Warning: Reference `fig:save1' on page xviii undefined on input line 460.
+
+
+[18]
 File: pics/1save1.png Graphic file (type bmp)
 <pics/1save1.png>
 File: pics/1save2.png Graphic file (type bmp)
@@ -1857,116 +1847,149 @@ File: pics/1save2.png Graphic file (type bmp)
 File: pics/1save3.png Graphic file (type bmp)
 <pics/1save3.png>
 
-LaTeX Warning: Reference `r-markdown' on page xi undefined on input line 405.
+LaTeX Warning: Reference `r-markdown' on page xix undefined on input line 495.
 
 File: pics/1new.png Graphic file (type bmp)
 <pics/1new.png>
-[11]
-Underfull \hbox (badness 1810) in paragraph at lines 421--422
+File: pics/1new2.png Graphic file (type bmp)
+<pics/1new2.png>
+[19]
+Underfull \hbox (badness 2503) in paragraph at lines 522--523
 []\TU/Alegreya(0)/m/n/10 To install an R package, you need to use a built-in R 
-\TU/Alegreya(0)/b/n/10 function \TU/Alegreya(0)/m/n/10 , which is \TU/SourceCod
-ePro(0)/m/n/10 in-
+\TU/Alegreya(0)/b/n/10 function\TU/Alegreya(0)/m/n/10 , which is \TU/SourceCode
+Pro(0)/m/n/10 in-
  []
 
 
-LaTeX Warning: Reference `write-code' on page xii undefined on input line 423.
+LaTeX Warning: Reference `write-code' on page xx undefined on input line 524.
 
+[20]
 File: pics/caution.jpg Graphic file (type bmp)
 <pics/caution.jpg>
 
-LaTeX Warning: Reference `fig:right1' on page xii undefined on input line 434.
+LaTeX Warning: Reference `fig:right1' on page xxi undefined on input line 535.
 
-[12]
 File: pics/1right.png Graphic file (type bmp)
 <pics/1right.png>
 File: pics/caution.jpg Graphic file (type bmp)
 <pics/caution.jpg>
-[13]
-LaTeX Font Info:    Font shape `TU/SourceCodePro(0)/m/it' will be
-(Font)              scaled to size 8.00003pt on input line 508.
-Requested font "[SourceCodePro-RegularIt.otf]/OT:script=latn;language=dflt;" at
- 8.00003pt
- -> /Users/yangfeng/Library/TinyTeX/texmf-dist/fonts/opentype/adobe/sourcecodep
-ro/SourceCodePro-RegularIt.otf
-Missing character: There is no ， (U+FF0C) in font [Alegreya-Regular.otf]/OT:scr
-ipt=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
+[21] [22]
 File: pics/1stop.jpg Graphic file (type bmp)
 <pics/1stop.jpg>
-[14]
-Underfull \hbox (badness 10000) in paragraph at lines 553--555
+
+Underfull \hbox (badness 10000) in paragraph at lines 661--663
 
  []
 
 
-LaTeX Warning: Reference `fig:help' on page xv undefined on input line 557.
+LaTeX Warning: Reference `fig:help' on page xxiii undefined on input line 665.
 
 
-LaTeX Warning: Reference `fig:four' on page xv undefined on input line 557.
+LaTeX Warning: Reference `fig:four' on page xxiii undefined on input line 665.
 
 
-LaTeX Warning: Reference `Installation' on page xv undefined on input line 557.
-
+LaTeX Warning: Reference `Installation' on page xxiii undefined on input line 6
+65.
 
 File: pics/1help.png Graphic file (type bmp)
 <pics/1help.png>
-[15]
+
+LaTeX Warning: Reference `fig:d' on page xxiii undefined on input line 679.
+
+File: pics/1d.png Graphic file (type bmp)
+<pics/1d.png>
+[23] [24] [25]
 File: pics/caution.jpg Graphic file (type bmp)
 <pics/caution.jpg>
 LaTeX Font Info:    Font shape `TU/Alegreya(1)/m/n' will be
-(Font)              scaled to size 10.0pt on input line 627.
+(Font)              scaled to size 10.0pt on input line 774.
 LaTeX Font Info:    Font shape `TU/Alegreya(1)/m/n' will be
-(Font)              scaled to size 7.0pt on input line 627.
+(Font)              scaled to size 7.0pt on input line 774.
 LaTeX Font Info:    Font shape `TU/Alegreya(1)/m/n' will be
-(Font)              scaled to size 5.0pt on input line 627.
+(Font)              scaled to size 5.0pt on input line 774.
 Requested font "[Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum
 ;mapping=tex-text;" at 5.0pt
  -> /Users/yangfeng/Library/TinyTeX/texmf-dist/fonts/opentype/huerta/alegreya/A
 legreya-Regular.otf
-[16] [17] [18]
+[26] [27]
+
+LaTeX Warning: Reference `Calculator' on page xxviii undefined on input line 88
+1.
+
+[28]
 LaTeX Font Info:    Font shape `TU/SourceCodePro(0)/b/n' will be
-(Font)              scaled to size 9.60004pt on input line 736.
+(Font)              scaled to size 9.60004pt on input line 893.
 Requested font "[SourceCodePro-Bold.otf]/OT:script=latn;language=dflt;" at 9.60
 004pt
  -> /Users/yangfeng/Library/TinyTeX/texmf-dist/fonts/opentype/adobe/sourcecodep
 ro/SourceCodePro-Bold.otf
-[19
-
-]
 Missing character: There is no ， (U+FF0C) in font [Alegreya-Regular.otf]/OT:scr
 ipt=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
 
-LaTeX Warning: Reference `Naming' on page xx undefined on input line 751.
+LaTeX Warning: Reference `Naming' on page xxix undefined on input line 908.
 
 File: pics/caution.jpg Graphic file (type bmp)
 <pics/caution.jpg>
 
-LaTeX Warning: Reference `vector-patterns' on page xx undefined on input line 7
-59.
+LaTeX Warning: Reference `vector-patterns' on page xxix undefined on input line
+ 916.
 
 
-LaTeX Warning: Reference `fig:noa' on page xx undefined on input line 763.
+LaTeX Warning: Reference `fig:noa' on page xxix undefined on input line 920.
 
 File: pics/2noa.png Graphic file (type bmp)
 <pics/2noa.png>
-[20] [21]
+[29] [30]
 File: pics/caution.jpg Graphic file (type bmp)
 <pics/caution.jpg>
+LaTeX Font Info:    Font shape `TU/SourceCodePro(0)/b/it' will be
+(Font)              scaled to size 8.00003pt on input line 998.
+Requested font "[SourceCodePro-BoldIt.otf]/OT:script=latn;language=dflt;" at 8.
+00003pt
+ -> /Users/yangfeng/Library/TinyTeX/texmf-dist/fonts/opentype/adobe/sourcecodep
+ro/SourceCodePro-BoldIt.otf
+[31]
 
-! LaTeX Error: Not in outer par mode.
+LaTeX Warning: Reference `fig:four' on page xxxii undefined on input line 1044.
+
+
+
+LaTeX Warning: Reference `Installation' on page xxxii undefined on input line 1
+044.
+
+
+LaTeX Warning: Reference `fig:en' on page xxxii undefined on input line 1046.
+
+File: pics/1en.png Graphic file (type bmp)
+<pics/1en.png>
+[32]
+
+LaTeX Warning: Reference `r-objects' on page xxxiii undefined on input line 109
+1.
+
+
+LaTeX Warning: Reference `r-objects-other-types' on page xxxiii undefined on in
+put line 1091.
+
+[33] [34
+
+]
+
+! LaTeX Error: Environment VF undefined.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.834 
-       
+l.1129 \begin{quote}
+                     
 Here is how much of TeX's memory you used:
- 20733 strings out of 478492
- 373890 string characters out of 5861016
- 849017 words of memory out of 5000000
- 40614 multiletter control sequences out of 15000+600000
- 410371 words of font info for 129 fonts, out of 8000000 for 9000
+ 20216 strings out of 478256
+ 381892 string characters out of 5855040
+ 830021 words of memory out of 5000000
+ 40376 multiletter control sequences out of 15000+600000
+ 411250 words of font info for 137 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 87i,9n,114p,466b,460s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 86i,11n,115p,1073b,536s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on r02pro.pdf (21 pages).
+Output written on r02pro.pdf (34 pages).
