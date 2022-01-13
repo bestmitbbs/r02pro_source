@@ -113,7 +113,6 @@ In addition, if starting with period, the second character can't be a number.
 
 One recommended naming style is to use lowercase letters and numbers, and use underscore to separate words within a name. So you can use relatively longer names that is more readable. For example, `this_is_name_6` and `super_rich_88` are great names.
 
-
 ***c. Can not use special keywords as names.***
 
 For example, `TRUE <- 12` is not permitted as `TRUE` is a special keyword in R. You can see from the following that this assignment operation leads to an error message. 
@@ -154,7 +153,7 @@ x_num <- 6
 x_num  #check its value
 ```
 
-Now you can see that the value of `x_num` has changed from 5 to 6. 所以如果assign different values to the same name, object的value会由最新一次的assignment operation决定，之前的value会被覆盖。Environment 中会显示the object和更新后的value。
+Now you can see that the value of `x_num` has changed from 5 to 6. Generally, when assigning a new value to an object, R will update the object's value, and the previous value will no longer be stored. You can verify the result by inspecting the Environment tab, where only the new value of the object will be displayed.
 
 ```{r en2, results=TRUE, echo=FALSE, fig.align = 'center', fig.cap="The environment (II)", out.width = '70%'}
 knitr::include_graphics("pics/1en2.PNG")
