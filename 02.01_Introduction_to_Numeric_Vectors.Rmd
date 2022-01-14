@@ -177,8 +177,7 @@ my_dbl <- c(3, 4)
 typeof(my_dbl)         #check the internal storage type
 ```
 
-Here, `my_dbl` 只包含了数字3和4。And the storage type of `my_dbl` is still double. 
-但你们能发现，`my_num`中有一个value有小数点，而`my_dbl`中的所有value都是整数。When all values of a numeric vector are integers, 你可以将这个vector的内部存储方式改为**integer type** by converting this numeric vector as an **integer vector** (integer vector也属于numeric vector). Here, you only need to put an "L" after each integer in the vector. Let's create a new integer vector and check its storage type as well as its class. 
+Different from `my_num` which contains a non-integer (1.5), all elements in `my_dbl` are integers. However, the storage type of `my_dbl` is still double, same as `my_num`. When all values of a numeric vector are integers (such as `my_dbl`), you can store it as an **integer vector**, which is also a numeric vector. To do this, you only need to put an "L" after each integer in the vector. Let's create an integer vector and check its storage type as well as its class. 
 
 ```{r, results=TRUE}
 my_int <- c(3L, 4L)
@@ -186,7 +185,7 @@ typeof(my_int)
 class(my_int)
 ```
 
-You can see that `my_int` is indeed of `integer` type, with the `class` of it being `integer` as well. It is also worth noting that the displaying value of `my_double` and `my_int` are the same.
+You can see that internal storage type of `my_int` is indeed of `integer` type, with the `class` of it being `integer` as well. It is also worth noting that the displaying value of `my_double` and `my_int` are the same.
 
 ```{r, results=TRUE}
 my_double
@@ -227,19 +226,29 @@ Despite the differences between integers and doubles, you can usually ignore the
 
 ### Printing {#printing}
 
-Now, you have already learned the definition of numeric vectors are their possible storage types. In this part, let's start with `pi`, which is a mathematical constant you may be familiar with. `pi` is also an internal numeric vector available for use in R. 
+Now, you have learned numeric vectors along with their possible storage types. In this part, let's discuss how you can control the output of a number via printing. Let's start with `pi`, which is a mathematical constant you may be familiar with. `pi` is also an internal numeric vector available for use in R. 
 
 ```{r, results=TRUE}
 pi
 ```
 
-As you can see from the output, R prints out 7 significant digits by default, though in fact we need infinitely many digits to faithfully represent `pi`. To print out an object with a customized significant digit number, you can use the `print()` function that contains useful argument called `digits`, which controls the overall digit numbers (小数点前加小数点后). If you put a numeric vector with several values as the first argument, R will show the digits you want after the decimal point of each value.Let's see the following examples.
+As you can see from the output, R prints out 7 **significant digits** by default, though in fact we need infinitely many digits to faithfully represent `pi`. To print out an object with a customized significant digit number, you can use the `print()` function that contains useful argument called `digits`, which controls the number of significant digits. Let's see the following examples. Note that the `round()` function also has an argument `digits`, which has a **different** meaning, representing the number of digits after the decimal point. You can try the following examples.
 
 ```{r, results = TRUE}
 print(pi, digits = 3)           #print pi for 3 significant digits
 print(pi, digits = 4)           #print pi for 4 significant digits
-print(c(pi, exp(1), log(2)), digits = 4)
+round(pi, digits = 4)           #round pi to 4 decimal places
 ```
+
+When you print a vector with many than one elements, the same number of decimal places is used for all elements. In this case, the `digits` parameter represents the **minimum** number of significant digits,  and that at least one element will be encoded with that minimum number. 
+
+```{r, results = TRUE}
+print(c(pi, exp(1), log(2)), digits = 4)
+print(c(pi, exp(1), log(2), exp(-5)), digits = 4)
+print(c(20000, 1.2, 2.34), digits = 3)
+print(c(20000, 1.2, 2.34), digits = 4)
+```
+
 
 As you can imagine, the `print()` function will be very useful in creating tables that look more streamlined.
 
