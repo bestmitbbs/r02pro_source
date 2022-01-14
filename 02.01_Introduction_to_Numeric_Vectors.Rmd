@@ -235,7 +235,7 @@ pi
 As you can see from the output, R prints out 7 **significant digits** by default, though in fact we need infinitely many digits to faithfully represent `pi`. To print out an object with a customized significant digit number, you can use the `print()` function that contains useful argument called `digits`, which controls the number of significant digits. Let's see the following examples. Note that the `round()` function also has an argument `digits`, which has a **different** meaning, representing the number of digits after the decimal point. You can try the following examples.
 
 ```{r, results = TRUE}
-print(pi, digits = 3)           #print pi for 3 significant digits
+print(pi, digits = 20)          #print pi for 20 significant digits
 print(pi, digits = 4)           #print pi for 4 significant digits
 round(pi, digits = 4)           #round pi to 4 decimal places
 ```
