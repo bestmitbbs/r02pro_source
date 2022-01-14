@@ -232,21 +232,40 @@ Now, you have learned numeric vectors along with their possible storage types. I
 pi
 ```
 
-As you can see from the output, R prints out 7 **significant digits** by default, though in fact we need infinitely many digits to faithfully represent `pi`. To print out an object with a customized significant digit number, you can use the `print()` function that contains useful argument called `digits`, which controls the number of significant digits. Let's see the following examples. Note that the `round()` function also has an argument `digits`, which has a **different** meaning, representing the number of digits after the decimal point. You can try the following examples.
+As you can see from the output, R prints out 7 **significant digits** by default, though in fact we need infinitely many digits to faithfully represent `pi`. To print out an object with a customized significant digit number, you can use the `print()` function that contains useful argument called `digits`, which controls the number of significant digits to be printed. Let's see the following examples.
+
+You can try the following examples.
 
 ```{r, results = TRUE}
 print(pi, digits = 20)          #print pi for 20 significant digits
 print(pi, digits = 4)           #print pi for 4 significant digits
-round(pi, digits = 4)           #round pi to 4 decimal places
 ```
 
-When you print a vector with many than one elements, the same number of decimal places is used for all elements. In this case, the `digits` parameter represents the **minimum** number of significant digits,  and that at least one element will be encoded with that minimum number. 
+
+
+::: {.infobox .caution data-latex="{caution}"}
+Note that the `round()` function also has an argument `digits`, which has a **different** meaning, representing the number of digits after the decimal point. 
+```{r, results = TRUE}
+print(pi, digits = 4)           #print pi for 4 significant digits
+round(pi, digits = 4)           #round pi to 4 decimal places
+```
+::: 
+
+
+You may be wondering whether happens if `digits` is larger than the number of the actual significant digits of a number. Let's try the following example.
+
+```{r, results = TRUE}
+print(1.2, digits = 5)
+```
+
+Clearly, the `print()` function will print out at most the significant digits of the number. 
+
+When you print a vector with many than one elements, the same number of decimal places is printed for all elements. In this case, the `digits` parameter represents the **minimum** number of significant digits,  and that at least one element will be encoded with that minimum number. 
 
 ```{r, results = TRUE}
 print(c(pi, exp(1), log(2)), digits = 4)
 print(c(pi, exp(1), log(2), exp(-5)), digits = 4)
 print(c(20000, 1.2, 2.34), digits = 3)
-print(c(20000, 1.2, 2.34), digits = 4)
 ```
 
 
