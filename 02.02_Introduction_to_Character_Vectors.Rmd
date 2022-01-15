@@ -1,0 +1,120 @@
+## Introduction to Character Vectors {#intro-cha-vector} 
+
+上一节课介绍了numeric vector, 在这个section中介绍atomic vector的另一种：character vector.
+
+### Creation, class and storage type{#create-character-vector} 
+
+```{r, include = FALSE, echo=FALSE}
+rm(list=ls())
+```
+
+```{r, include=FALSE}
+knitr::opts_chunk$set(
+  comment = "#>", echo = TRUE, eval = TRUE, results = FALSE, error = TRUE, fig.width = 6, warning = FALSE, collapse = TRUE)
+```
+
+A **character vector** is another type of atomic vector (where all elements are of the same type). In a character vector, the value of each element is of character type, which means each element is a string. A string is a sequence of characters (including letters, numbers, or symbols) surrounded by a pair of double quotes ("") or single quotes (''). To be consistent, we will stick with double quotes in this book.
+
+The first example: if the word sheep is surrounded by a pair of double quotes, then it is a string and `"sheep"` is a character vector with length 1. The value of `"sheep"` is the string itself. Notice that here `"sheep"` is a vector **without** the name since you did not assign its value to a name. You can then verify the number of strings in this vector by using `length()` and verify the vector type by using `class()`.
+
+```{r}
+"sheep" 
+length("sheep")
+class("sheep")
+```
+
+Now the `class()` function will return `character`, which shows that `"sheep` is a character vector.
+
+After assigning the value to the name sheepstudio, you have created a new character vector `sheepstudio` with "sheep" as the value. 
+
+```{r}
+sheepstudio <- "sheep" 
+sheepstudio
+class(sheepstudio)
+```
+
+
+::: {.infobox .caution data-latex="{caution}"}
+Double quotes need to be paired in strings. If you miss the right double quote, R will show a plus on the next line, waiting for you to finish the command. If this happens, you can either enter the matching double quote, or press ESC to escape this command.
+
+```{r quo, results=TRUE, echo=FALSE, fig.align = 'center', fig.cap="Miss the right quotation mark", out.width = '70%'}
+knitr::include_graphics("pics/2quo.PNG")
+```
+:::
+
+Next, let's create a numeric vector `num_vec` with number 708. After adding a pair of double quotes around the number 708, "708" has converted to a string now. You can assign the value of "708" to a name and then you will create a new character vector `char_vec`. Don't forget to check the vectoe type by using `class()` if you are not sure.
+
+```{r}
+num_vec <- 708
+char_vec <- "708" 
+class(num_vec)
+class(char_vec)
+```
+
+Also, strings can contain symbols. For example, you can create a character vector with "gph&708" as its value.
+
+```{r}
+char_vec2 <- "gph&708"
+class(char_vec2)
+```
+
+In conclusion, if characters (including letters, numbers, symbols) are surrounded by a pair of double quotes, 就是一个string。The value of a string is itself.
+
+Similar to a numeric vector, you can have several strings in a character vector, and you can use the `c()` function to combine several strings. You can verify the number of **strings** in the character vector by using `length()`, and `nchar()` can help you get the number of **characters** in each string.
+
+```{r}
+animals <- c("sheep%29", "lion$29", "monkey")
+animals
+length(animals)
+nchar(animals)
+```
+
+Here, you can see that you have three strings in `animals`, and there are 8 characters in the string "sheep%29" (including 5 letters, 1 symbol and 2 numbers). There are 7 characters for "lion$29" and 6 characters for "monkey".
+
+Same as the numeric vector, you can use the `typeof()` function to find the internal storage type of a character vector. All the character vectors will be stored as the **character** in R. You can check the stotrage type of some character vectors you've created before.
+
+```{r}
+typeof(sheepstudio)
+typeof(char_vec)
+typeof(animals)
+```
+
+### Change case{#case}
+
+In character vectors, each string can contain both uppercase and lowercase letters. You can unify the cases of all letters inside a vector. Let's review the character vector `four_strings` at first,
+
+```{r results=TRUE}
+four_strings <- c("This", "is", "Sheep%29", "$Studio")
+four_strings
+```
+
+Here you can see that in the string "Thing", letter T is in uppercase and the other four letters are in lowercase. In "is", al letters are in lowercase. In "Sheep%29", only letter S is in uppercase and the remaining letters in this string are in lowercase. In "$Studio", letter S is in uppercase and the other four letters are in lowercase. (这里比较重复) So it is obvious to see that some strings contain uppercase and some not. 
+
+In order to convert all letters in each string to lowercase, you can use the `tolower()` function. Of course you can assign convert后的values to a names, then you will get a character vector with string里的每个letter in lowercase.
+
+```{r results=TRUE}
+lower_strings <- tolower(four_strings)
+lower_strings
+```
+
+The opposite function of `tolower()` is `toupper()`, which converts all letters in the vector to upper case.
+
+```{r results=TRUE}
+upper_strings <- toupper(four_strings)
+upper_strings
+```
+
+##########cat()
+##########environment
+
+### Exercises
+
+1. Write R code to create a numeric vector named `vec_1` with values `7 24 8 26`, get its length, and find out its type.
+
+2. Write R code to create a character vector named `char_1` with values `"I"`, `"am"`, `"learning"`, `"R!"`, get its length, find out its type, and concatenate the vector into a single string with space as the separator.
+
+3. For the `char_1` defined in Q2, find the number of characters in each string, and convert each string to upper case.
+
+4. Create a length-2 logical vector representing whether `vec_1` and `char_1` are of character type.
+
+
