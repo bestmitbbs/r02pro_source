@@ -198,9 +198,9 @@ You can also check the vector type and values in the environment. (as shown in F
 knitr::include_graphics("pics/2en3.PNG")
 ```
 
-From the picture above, you can see that the values of `my_int` are still 3 and 4, which are the same as those of `my_dbl`. The difference between these two vectors is that `my_int` is an integer class since its internal storage type is integer, and such a storage type offers great *memory savings* compared to doubles.
+From the picture above, you can see that the values of `my_int` are still 3 and 4, which are the same as those of `my_dbl`. The difference between these two vectors is that `my_int` is an integer vector since its internal storage type is integer, and such a storage type offers great *memory savings* compared to doubles.
 
-Notice that a numeric vector's internal storage type is consistent. Say if you assign multiple numeric values to an object, even when you assign an "L" to most values, as long as the object obtains at least one decimal value, the vector will be stored in R as double. This rule also implies that any numeric vector containing at least one decimal cannot be transformed to the integer class.
+Notice that a numeric vector's internal storage type is consistent. Say if you assign multiple numeric values to an object, even when you assign an "L" to most values, as long as the object obtains at least one decimal value, the vector will be stored in R as double. This rule also implies that any numeric vector containing at least one decimal value cannot be transformed to an integer vector.
 
 
 ```{r, results=TRUE}
