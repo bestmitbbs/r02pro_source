@@ -10,9 +10,9 @@ knitr::opts_chunk$set(
   comment = "#>", echo = TRUE, eval = TRUE, results = FALSE, error = TRUE, fig.width = 6, warning = FALSE, collapse = TRUE)
 ```
 
-A **logical vector** is an atomic vector containing only **logical values**, namely `TRUE` and `FALSE`. Logical vectors are most often encountered when we want to check whether a comparison statement is true or false. 
+A **logical vector** is an atomic vector containing only **logical values**, namely `TRUE` and `FALSE`. Logical vectors are most omnipresent when we check whether a comparison statement is true or false. 
 
-If two vectors are of the same length, the comparison is done elementwisely, just like the arithmetic operations in Section \@ref(operation-recycling). 
+For two length-1 vector, the comparison is simply done between the only element of each vector. If two same-length vectors contain more than 1 element, the comparison is done elementwisely, just like the arithmetic operations in Section \@ref(operation-recycling). 
 
 Let's create a numeric vector `x` with value `3`, and then compare it with 2 and 1. 
 
@@ -32,11 +32,11 @@ x <= 2     #less than or equal to
 x > 1      #bigger than
 x >= 1     #bigger than or equal to
 x == 3     #equal to
-#x = 3     #assignment operator, NOT comparison
+#x = 3     #another assignment operator in addition to `<-`, NOT comparison
 x != 3     #not equal to
 ```
 
-Note that if you want to check whether two vectors are equal, you have to use **two equal signs** (with no space in-between) as a single operator, which is `==`, to do comparisons. If only one equal sign is used, it would work as an assignment operator.  In addition, you can use an exclamation mark together with a equal sign, which is `!=`, to find out whether two vectors are not equal.
+Note that if you want to check whether two vectors are equal, you have to use **two equal signs** (with no space in-between) as a single operator, which is `==`, to do comparisons. If only one equal sign is used, it would work as an assignment operator.  In addition, you can use an exclamation mark together with one equal sign, which is `!=`, to find out whether two vectors are not equal.
  
 
 For any of the comparisons, you can check its class, length, and storage type, just like numeric and character vectors. In addition, you can assign it to a name for future use. Let's take `x > 1` for example.
@@ -55,7 +55,7 @@ It is clear that `x > 1` and `big_1` are both logical vectors with length one.
 
 In addition to making comparisons involving vectors of length 1, you can also do it with vectors containing more than 1 elements. 
 
-When we make comparisons between two vectors of more than 1 elements, R will make an **element-wise** comparison just like the arithmetic operations between two numeric vectors.
+When we make comparisons between two vectors that contain more than 1 elements, R will make an **element-wise** comparison just like the arithmetic operations between two numeric vectors.
 
 ```{r, results = TRUE}
 x2 <- c(1, 2, 6)
@@ -86,7 +86,7 @@ typeof(logi_3)
 
 
 ::: {.infobox .caution data-latex="{caution}"}
-It is worth emphasizing that if you put quotation marks around `TRUE` or `FALSE`, you will create a character vector instead. 
+It is worth emphasizing that, in creating numeric vectors and logical vectors, quotation marks aren't necessary like they are in creating character vectors. If you put quotation marks around `TRUE` or `FALSE`, you will create a character vector instead. 
 ```{r, results = TRUE}
 char_1 <- c("TRUE", "FALSE", "TRUE")
 char_1
@@ -98,7 +98,7 @@ class(char_1)
 
 ### Logical vectors: test for types
 
-In addition to comparison operations, another situation that you can come across logical vectors is when we test whether an object belong to certain type.
+In addition to comparison operations, another situation that you will encounter logical vectors is when we test whether an object belongs to certain type.
 
 First of all, you can use `is.numeric()` to check whether an object is numeric, i.e. can be interpreted as numbers. It will return  `TRUE` if the object is numeric, and will otherwise return `FALSE`. Note that both double vectors and integer vectors (Section \@ref(storage-type)) are numeric since they can both be interpreted as numbers. To further differentiate between double vectors and integer vectors, you can use `is.double()` and `is.integer()`. 
 
@@ -131,10 +131,10 @@ We can see that all results from those check functions are logical values and th
 
 ### Exercises
 
-Write R code to complete the following tasks.
+Write the R code to complete the following tasks.
 
-1. Suppose we have `x1 <- c(1, 2, 3)`, create a logical vector with name `logi_1` that represent whether each element of `x1` is less than or equal to its square.
+1. Suppose we have `x1 <- c(1, 2, 3)`, create a logical vector with name `logi_1` that represents whether each element of `x1` is less than or equal to its square.
 
-2. Suppose we have `logi_2 <- c(TRUE, TRUE, FALSE)`. Creat a logical vector of length 4 with name `logi_3` with elements representing whether `logi_2` is of integer type, double type, character type, and logical type, respectively.
+2. Suppose we have `logi_2 <- c(TRUE, TRUE, FALSE)`. Create a logical vector of length 4 with name `logi_3` with elements representing whether `logi_2` is of integer type, double type, character type, and logical type, respectively.
 
 
