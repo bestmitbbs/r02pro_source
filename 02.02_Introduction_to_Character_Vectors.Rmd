@@ -1,6 +1,6 @@
-## Introduction to Character Vectors {#intro-cha-vector} 
+## Introduction to Character Vectors {#intro-char-vector} 
 
-上一节课介绍了numeric vector, 在这个section中介绍atomic vector的另一种：character vector.
+Having learned numeric vectors in Section \@ref(intro-num-vector), we will introduce another member of the atomic vector family: character vectors. 
 
 ### Creation, class and storage type{#create-character-vector} 
 
@@ -104,7 +104,8 @@ upper_strings <- toupper(four_strings)
 upper_strings
 ```
 
-##########cat()
+
+
 ##########environment
 
 ### Exercises
