@@ -15,22 +15,22 @@ knitr::opts_chunk$set(
 
 A **character vector** is another type of atomic vector (where all elements are of the same type). In a character vector, the value of each element is of character type, which means each element is a string. A string is a sequence of characters (including letters, numbers, or symbols) surrounded by a pair of double quotes ("") or single quotes (''). To be consistent, we will stick with double quotes in this book.
 
-The first example: if the word sheep is surrounded by a pair of double quotes, then it is a string and `"sheep"` is a character vector with length 1. The value of `"sheep"` is the string itself. Notice that here `"sheep"` is a vector **without** the name since you did not assign its value to a name. You can then verify the number of strings in this vector by using `length()` and verify the vector type by using `class()`.
+The first example: if the word book is surrounded by a pair of double quotes, then it is a string and `"book"` is a character vector with length 1. The value of `"book"` is the string itself. Notice that here `"book"` is a vector **without** the name since you did not assign its value to a name. You can then verify the number of strings in this vector by using `length()` and verify the vector type by using `class()`.
 
 ```{r}
-"sheep" 
-length("sheep")
-class("sheep")
+"book" 
+length("book")
+class("book")
 ```
 
-Now the `class()` function will return `character`, which shows that `"sheep` is a character vector.
+Now the `class()` function will return `character`, which shows that `"book` is a character vector.
 
-After assigning the value to the name sheepstudio, you have created a new character vector `sheepstudio` with "sheep" as the value. 
+After assigning the value to the name r02pro, you have created a new character vector `r02pro`` with "book" as the value. 
 
 ```{r}
-sheepstudio <- "sheep" 
-sheepstudio
-class(sheepstudio)
+r02pro <- "book" 
+r02pro
+class(r02pro)
 ```
 
 
@@ -63,15 +63,15 @@ In conclusion, if characters (including letters, numbers, symbols) are surrounde
 Similar to a numeric vector, you can have several strings in a character vector, and you can use the `c()` function to combine several strings. You can verify the number of **strings** in the character vector by using `length()`, and `nchar()` can help you get the number of **characters** in each string.
 
 ```{r}
-animals <- c("sheep%29", "lion$29", "monkey")
+animals <- c("sheep%29", "bear$29", "monkey")
 animals
 length(animals)
 nchar(animals)
 ```
 
-Here, you can see that you have three strings in `animals`, and there are 8 characters in the string "sheep%29" (including 5 letters, 1 symbol and 2 numbers). There are 7 characters for "lion$29" and 6 characters for "monkey".
+Here, you can see that you have three strings in `animals`, and there are 8 characters in the string "sheep%29" (including 5 letters, 1 symbol and 2 numbers). There are 7 characters for "bear$29" and 6 characters for "monkey".
 
-Same as the numeric vector, you can use the `typeof()` function to find the internal storage type of a character vector. All the character vectors will be stored as the **character** in R. You can check the stotrage type of some character vectors you've created before.
+Same as the numeric vector, you can use the `typeof()` function to find the internal storage type of a character vector. All the character vectors will be stored as the **character** in R. You can check the storage type of some character vectors you've created before.
 
 ```{r}
 typeof(sheepstudio)
@@ -84,11 +84,11 @@ typeof(animals)
 In character vectors, each string can contain both uppercase and lowercase letters. You can unify the cases of all letters inside a vector. Let's review the character vector `four_strings` at first,
 
 ```{r results=TRUE}
-four_strings <- c("This", "is", "Sheep%29", "$Studio")
+four_strings <- c("This", "is", "R02#", "$Pro")
 four_strings
 ```
 
-Here you can see that in the string "Thing", letter T is in uppercase and the other four letters are in lowercase. In "is", al letters are in lowercase. In "Sheep%29", only letter S is in uppercase and the remaining letters in this string are in lowercase. In "$Studio", letter S is in uppercase and the other four letters are in lowercase. (这里比较重复) So it is obvious to see that some strings contain uppercase and some not. 
+Here you can see that in the string "Thing", letter T is in uppercase and the other four letters are in lowercase. In "is", all letters are in lowercase. In "R02#", the only letter R is in uppercase. In "$Pro", letter P is in uppercase and the left two letters are in lowercase. (这里比较重复) So it is obvious to see that some strings contain uppercase and some not. 
 
 In order to convert all letters in each string to lowercase, you can use the `tolower()` function. Of course you can assign convert后的values to a names, then you will get a character vector with string里的每个letter in lowercase.
 
@@ -104,9 +104,51 @@ upper_strings <- toupper(four_strings)
 upper_strings
 ```
 
+### Review of getting help in R
 
+In Section \@ref(get-help), we have introduced the way to get help in R, which can help you know how a particular function works. In this part, we will help you review the way to get help by taking `toupper` and `tolower` as examples.
 
-##########environment
+Firstly, there are three common ways to ask for help in R. (详细步骤参考1.2.3)
+
+- Use a question mark followed by the function name
+- Use help function
+- Use the help window in RStudio
+
+Different from the documentation of the `sign()` function, you will find that you get the documentation named "Character Translation and Casefolding" (Figure \@ref(fig:help1)). 如果你直接看 *usage* part, you will see that there are several functions (including the `tolower` and `toupper` function) in these parts, which means 这个documentation会解释这些function的用法。 That's because if several functions 有同样的用法，会被合并在同一个documentation中. Let's go through the example here.
+
+```{r help1, results=TRUE, echo=FALSE, fig.align = 'center', fig.cap="Help (I)", out.width = '70%'}
+knitr::include_graphics("pics/2help1.PNG")
+```
+- The *description* part describes the function's mechanism. So all functions introduced in this documentation have the function of translating characters (from upper to lower case or vice versa).
+- The *Usage* part shows the examples (including the input) of all the functions this documentation will introduce. You can see that the `chartr` function needs three arguments, which is `old`,`new` and `x` respectively. But `tolower` and `toupper` functions 都只需要一个argument `x`.
+- The *Arguments* part shows the explanations of the arguments of functions above. You can focus on the explanation of `x` since `tolower` and `toupper` functions 都只需要这一个argument. Then you will know that character vectors can be the input of these two functions.
+
+Next, let's move to the *Details* part,
+
+```{r help2, results=TRUE, echo=FALSE, fig.align = 'center', fig.cap="Help (II)", out.width = '70%'}
+knitr::include_graphics("pics/2help2.PNG")
+```
+
+- In the *Details* part, you will see the detailed descriptions of the functions you want to learn.
+- The *Value* part shows the result after using the functions above. For `tolower` and `toupper` functions, since you only covert the cases of characters in the vector, 所以convert后的character vector 确实和之前的有同样的length.
+
+```{r help3, results=TRUE, echo=FALSE, fig.align = 'center', fig.cap="Help (III)", out.width = '70%'}
+knitr::include_graphics("pics/2help3.PNG")
+```
+
+In the last part of the documentation, you can see the notes in the *Note* part and some functions related to functions introduced in the *See Also* part. Remember to try some sample codes in the *Examples* part.
+
+At the end of this section, let's environment panel里有啥. You can see all the character vectors **with names** in this section. Notice that now the vector type has been changed to *chr* (here *chr* is short for character). 
+
+```{r char, results=TRUE, echo=FALSE, fig.align = 'center', fig.cap="Character vectors", out.width = '70%'}
+knitr::include_graphics("pics/2char.PNG")
+```
+
+You can also see the list of all the named objects by using `ls()` function.
+
+```{r, results = TRUE}
+ls()
+```
 
 ### Exercises
 
