@@ -133,7 +133,7 @@ We can see that all results from those check functions are logical values and th
 
 Write R code to complete the following tasks.
 
-1.  Suppose we have `x1 <- c(1, 2, 3)`, create a logical vector with name `logi_1` that represent whether each element of `x1` is less than or equal to its square.
+1. Suppose we have `x1 <- c(1, 2, 3)`, create a logical vector with name `logi_1` that represent whether each element of `x1` is less than or equal to its square.
 
 2. Suppose we have `logi_2 <- c(TRUE, TRUE, FALSE)`. Creat a logical vector of length 4 with name `logi_3` with elements representing whether `logi_2` is of integer type, double type, character type, and logical type, respectively.
 
