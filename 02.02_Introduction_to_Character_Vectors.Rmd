@@ -143,7 +143,7 @@ knitr::include_graphics("pics/2help3.PNG")
 In the last part of the documentation, you can see the notes in the *Note* part and some functions related to functions introduced in the *See Also* part. Remember to try some sample codes in the *Examples* part, and implement your own codes with the help of the examples.
 
 
-At the end of this section, let's environment panel里有啥. You can see all the character vectors **with names** in this section. Notice that now the vector type has been changed to *chr* (here *chr* is short for character). 
+At the end of this section, let us review the environment panel. You can see all the character vectors **with names** in this section. Notice that now the vector type has been changed to *chr* (here *chr* is short for character). 
 
 ```{r char, results=TRUE, echo=FALSE, fig.align = 'center', fig.cap="Character vectors", out.width = '70%'}
 knitr::include_graphics("pics/2char.PNG")
