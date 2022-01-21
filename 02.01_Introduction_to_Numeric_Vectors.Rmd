@@ -160,7 +160,6 @@ y2 - x1
 
 
 
-
 ### Storage types (doubles and intergers) {#storage-type}
 
 Now, it is time to learn how numeric vectors are stored in R. To find the **internal storage type** of an R object, you can use the `typeof()` function.
