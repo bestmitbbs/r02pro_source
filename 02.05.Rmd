@@ -1,4 +1,4 @@
-## Vector Subsetting and Modifying Values
+## Vector Subsetting and Modifying Values {#subsetting-and-modify-values}
 
 So far, we've learned fundamental knowledge of \@ref(intro-num-vector), \@ref(intro-char-vector), and \@ref(intro-logi-vector). （加transition）
 
@@ -127,7 +127,7 @@ h #let's refresh ourself with what elements h contains
 h[c(2,4)]  #return values of the 2nd and 4th elements of h
 ```
 
-As it shows, the values of the 2nd and 4th elements in `h` are returned. In that sense, the numeric vector inside the `[ ]` represents relative indices instead of actual numeric values. If you add a minus sign `-` before the numeric vector, you will get all elements except the 2nd and 4th ones in `h`.
+As it shows, the values of the 2nd and 4th elements in `h` are returned. Notice that, in R, the first element in a vector has index 1, whereas other programming languages may have different indexing fashion. In that sense, the numeric vector inside the `[ ]` represents relative indices instead of actual numeric values. If you add a minus sign `-` before the numeric vector, you will get all elements except the 2nd and 4th ones in `h`.
 
 ```{r results=TRUE}
 h[-c(2,4)]  #return values except the 2nd and 4th elements of h
@@ -167,16 +167,27 @@ For a named vector, we can also use character vectors consisting of the names as
 x_w_name <- c(height = 165, weight = 60, BMI = 22)
 x_w_name["height"]
 x_w_name[c("weight", "BMI")]
-x_w_name[c(1,3)] # c("weight", "BMI") and c(1, 3) refer to the same elements, so the last two lines will have the same output
+x_w_name[c(1,3)] # c("weight", "BMI") and c(1, 3) refer to the same elements, so the last two lines lead to the same output
 ```
 
 
 
+###Access and modify values in vectors and sub-vectors
 
-###Extract and update values in vectors and sub-vectors
+We'll end this section by learning the way to access and modify values in a vector. This is a fairly basic data manipulation, and the reason we wait until now to introduce it is because we use the same ways to access and modify values in atomic vectors that we presented in previous sections.
+
+Let's begin with extracting one element from a vector. To access a specific element, you can apply vector indexing by using the index of the element with a pair of square brackets `[ ]` surrounding it following by the vector name. After accessing an element, you can also update its value by using the assignment operator with the extraction expression on the left and the new value on the right. Let's say you want to access the third element of `y1`  and update its value to 100.
+
+```{r}
+y1 <- c(1, 3, 3, 5, 5)
+y1
+y1[3]
+y1[3] <- 100
+y1
+```
 
 
-In Section \@ref(numeric-vector), we have learned how to update one element in a vector using the assignment operator. For example, `x[ind] <- new_value` will update the `ind`-th element of `x` to the `new_value`. It turns out we can update the values of multiple elements of a vector in a similarly way. 
+It is as straightforward as it looks like! From the result, you can see that you've updated the third element's value is updated to 100. Now, if you did look through the first half of this section, at this point you may find that accessing a vector's element(s) is completed similarly compared to vector subsetting. It turns out we can update the values of multiple elements of a vector in a similarly way. 
 
 ***a. Change all values in subsets of vectors***
 
@@ -187,7 +198,7 @@ h <- c(3,1,4,2,90)
 h[c(2,4)]
 ```
 
-Obviously, you will get a numeric vector with `1` and `2` as the values. Let's see how to change values just for a subset of `h`, which is actually a very important usage of doing vector subsetting. You just need to assign new values to the subset, then you can verify the values of `h`. Let's see an example,
+Obviously, you will get a numeric vector with `1` and `2` as the values. Let's see how to change values for a subset of `h`. You just need to assign new values to the subset, then you can verify the values of `h`. Let's see an example,
 
 ```{r results=TRUE}
 h[c(2,4)] <- c(10, 20)
@@ -196,7 +207,7 @@ h[c(2,4)] <- 10         #recycling rule applies
 h
 ```
 
-From the result, you can see that only `1` and `2` have been changed to `10`, which means you have successfully change parts of `h`!
+In the first two lines, you can see that you have changed `1` and `2` to `10` and `20`, respectively. In the last two lines, however, since you assign multiple values to one new value, R will apply recycling rule to complete the value updating process. In both cases, you have successfully change parts of `h`!
 
 ***b. Define the vector again***
 
@@ -208,20 +219,20 @@ h <- c(3,1,4,2,90)
 ```
 
 
-In Section \@ref(Object-Assignment), you have learned about checking all the named objects and their values in the environment. So let's review values of vector `h` from this panel together.
+From Section \@ref(Object-Assignment), you learned that you can check all objects you assigned and their values in the **environment panel**. So let's review values of vector `h` from this panel together.
 
 ```{r h1, results=TRUE, echo=FALSE, fig.align = 'center', fig.cap="Values of h (1)", out.width = '70%'}
 knitr::include_graphics("pics/2h1.PNG")
 ```
 
-Now we all know that `h` is a numeric vector with 5 values. Then let's try to do an object assignment again, this time you can assign different values to `h` and see what will happen to `h`.  
+We should agree that `h` is a numeric vector with 5 values Then let's try to do an object assignment again, this time you can assign different values to `h` and see what will happen to `h`.  
 
 ```{r results=TRUE}
 h <- c(1,2,3,4,5)
 h
 ```
 
-Then you can see that the values of `h` have been changed to the new ones! Another easier way to verify values of `h` is from the environment, so it is a good habit to monitor the environment from time to time to make sure everything look fine.
+Then you can see that the values of `h` have been changed to the new ones! Another easier way to verify values of `h` is from the environment, so it is a good habit to monitor the environment from time to time to make sure everything looks fine.
 
 ```{r h2, results=TRUE, echo=FALSE, fig.align = 'center', fig.cap="Values of h (2)", out.width = '70%'}
 knitr::include_graphics("pics/2h2.PNG")
@@ -239,7 +250,7 @@ knitr::include_graphics("pics/2h3.PNG")
 
 ::: {.infobox .caution data-latex="{caution}"}
 
-If you assign values of a subvector to a name, you will create a new named vector. Now `hs` is not the subset of `h`, it is a vector with the same value as the subset. If you assign different value(s) to `hs`, there will be no change on `h`.
+If you assign values of a subvector to a name, you will create a new vector. Now `hs` is not the subset of `h`, it is a vector with the same value as the subset. If you assign different value(s) to `hs`, there will be no change on `h`.
 
 ```{r, eval=FALSE }
 h <- c(3,1,4,2,90)

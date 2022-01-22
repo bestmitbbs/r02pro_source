@@ -99,7 +99,6 @@ knitr::include_graphics("pics/2en2.PNG")
 ```
 
 
-
 ### Operations and recycling rule{#operation-recycling}
 
 Since numeric vectors are purely made of numbers, you can do **arithmetic operations** between them, just like the fancy calculator in Section \@ref(Calculator). If two or more vectors are of the **same length**, the operation is done **element-wisely**. In other words, R will perform the operation between elements in the same index of different vectors. First, let's create another vector `x2` of length 1 and compute the sum of `x1` and `x2`. Also recall that we've previously created a length-1 numeric vector `x1` with value 6.
