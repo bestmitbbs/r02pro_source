@@ -3,12 +3,11 @@
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-*from 2.2.3* 
 ### General Vector Application and the Coercion Rule
 
 At this point, we have introduced three types of atomic vectors: numeric, character, and logical vectors. You may wonder what if we have a vector with a mix of different types of values, and that is the question we are going to answer in this section. Before that, there are a couple useful functions that we would like to introduce first. 
 
-### Vector creation and string concatenation
+### Vector creation with c() and vector()
 
 Let's first review some basic properties of a vector, with the `c()` function. 
 
@@ -24,13 +23,6 @@ is.character(some_char)
 typeof(some_char)
 ```
 
-Nested c() will collapse into a single vector recursively. 
-
-```{r}
-some_g <- c(c(1, 2), 3, 4, c(7, c(5, 6)))
-some_g
-```
-
 Note that function `vector()` can be used to create empty vector with specified storage type. This will come in handy later in this book. 
 
 ```{r}
@@ -41,129 +33,58 @@ some_y <- vector("character", 10)
 some_y 
 ```
 
-### Strings Concatenation with paste() and cat()
-
-paste()
-*from 2.1.2 b*
-
-Next, we will introduce how to concatenate several strings into a single string. To do this, you can use the paste() function. First, let’s create a character vector with four elements,
-
-```{r}
-four_strings <- c("This", "is", "Sheep@29", "$Studio")
-length(four_strings) #verify the number of strings
-```
-
-Then use paste() instead of c(),
-
-```{r}
-one_long_string <- paste("This", "is", "Sheep@29", "$Studio")
-one_long_string
-#> [1] "This is Sheep@29 $Studio"
-```
-
-```{r}
-class(one_long_string)
-length(one_long_string) #verify the number of strings
-```
-
-As one could observe, that one_long_string is a character vector with length 1, and the value of one_long_string is a single string with space between the individual strings.
-
-You may notice that in paste(), the default separator between the individual strings is space. Actually you can change the separator by setting the sep argument in paste(). For example, you can separate the individual strings with comma,
-
-```{r}
-comma <- paste("This", "is", "Sheep@29", "$Studio", sep = ",") 
-comma
-#> [1] "This,is,Sheep@29,$Studio"
-```
-
-If you don’t want to use a separator, you can use the paste0() function.
-
-```{r}
-nosep <- paste0("This", "is", "Sheep@29", "$Studio") 
-nosep
-#> [1] "ThisisSheep@29$Studio"
-```
-
-If you would like to concatenate the strings of a vector into a longer string, you need to specify the collapse argument as the separator instead of sep in the paste() function.
-
-```{r}
-paste(four_strings, collapse = "")
-#> [1] "ThisisSheep@29$Studio"
-paste(four_strings, collapse = ",")
-#> [1] "This,is,Sheep@29,$Studio"
-paste(four_strings)                 ##doesn't work without the collapse argument
-#> [1] "This"     "is"       "Sheep@29" "$Studio"
-```
-
-In addition to paste several strings into one long string, you can also use the paste() function paste two character vectors, where the pair of strings will be pasted elementwisely.
-
-```{r}
-paste(c("July", "August"),  c("2007", "2008"))
-#> [1] "July 2007"   "August 2008"
-```
-
-cat()
-Concatenating strings with the function `cat()`, and by default strings are separated with a single space, which can be changed to any separator with the `sep =` argument. It is worth mentioning that unlike `paste()`, `cat()` will return `NULL` if you are trying to save the concatenated result.  
-
-```{r}
-cat("Hello", "World")
-cat("Hello", "World", sep = "")
-
-c_result <- cat("Hello", "World")
-c_result
-```
-
-
-?print()
-*I'm not sure if we are to introduce print() here, or we just introduce cat() as a method of concatenation, not printing.*
-
-
 Now let's talk about the coercion rule. R will unify all values into the most complex one from the given vector, and this converting process is usually called the coercion rule. Specifically, R uses the following order of complexity: logical < numeric < char
 
 ### Inmplicit Coercion
 
-
-*Converting between TRUE = 1 and FALSE = 0*
-*Coercion applying on operators*
-*Coercion in other function: paste(), sample(), runif(), more of the recycling*
-*Subsetting? Is this in 2.5 now?*
-
-Comparison between different types
-*from 2.6.2*
-
-When comparing vectors of differnt types, the coercion rule will apply. Take the following vectors as example: 
+The first example demonstrates the coercion rule between logical and numeric values. 
 
 ```{r}
-a <- c(-1, 0, 1)
-b <- c(TRUE, FALSE, TRUE)
-a == b
-#> [1] FALSE  TRUE  TRUE
+mix_1 <- c(TRUE, 3, 4, FALSE)
+mix_1
+# [1] 1 3 4 0
+typeof(mix_1)
+# [1] "double"
+class(mix_1)
+# [1] "numeric"
 ```
 
-When we are trying to figure out if a is equal to b, we get a length-3 logical vector. Elements in b is first converted into 1 and 0 based on the coercion rule we previously introduced, which is TRUE = 1 and FALSE = 0, and the result will be c(1, 0, 1). Thus, a comparison between a logical and a numeric vector is changed into comparing two numeric vectors. 
+You can see that when logical values are combined with numbers in the same vector, in particular, TRUE will be converted to 1 and FALSE will be converted to 0, because numbers are more complex than logical values, and R will unify all values into the most complex one. The result of coercion can be confirmed with the `typeof()` and the `class()` function. This is one of the most commonly used coercion rule in R.
 
-lexicographical ordering (diction ordering)
-symbols "+", ",", "-", digits, and letters
-a. ordering rules
-symbols < digits < letters
-digits: 0 < 1 < 2 < ... < 9
-letters: a < A < b < B < c < C < ... < z < Z
+Another example of implicit coercion is between characters and numbers, as shown in the example: 
 
 ```{r}
-letters
-LETTERS
-all_letters <- c(letters, LETTERS)
-all_letters
-sort(all_letters)
+mix_2 <- c(8, "happy", 26, "string")
+mix_2 
+#> [1] "8"      "happy"  "26"     "string"
+typeof(mix_2)
+#> [1] "character"
+class(mix_2)
+#> [1] "character"
 ```
 
+You can see that both 8 and 26 are converted into strings since strings are more complex than numbers. Then mix_2 will be a character vector. 
 
-*from 2.5.3*, logical converted to numerical when applying function 
+Next, we will introduce coercion rule in functions. You may noticed that when creating a vector with `c()`, we already used this function to achieve coercion. Other function like `paste()` would do the same when you bring numbers, characters, and logical values together. 
 
 ```{r}
-a <- c(TRUE, TRUE, FALSE, FALSE, TRUE)
-sum(a)
-mean(a)
+mix_3 <- c(16, TRUE, "truth")
+mix_3
+#> [1] "16"   "TRUE" "truth"
+class(mix_3)
+#> [1] "character"
+mix_4 <- paste(16, TRUE, "truth")
+mix_4
+#> [1] "16 TRUE truth"
+class(mix_4)
+#> [1] "character"
+```
+
+What if you put multiple `c()` together to create a single vector? Nested c() will collapse into a single vector recursively. However, if you create another vector mix_4, you first have c(16, TRUE) which will be converted to c(16, 1) since numbers are more complex than logical values. Then, c(16, 1) will be converted to c("16", "1") when you combine it with "truth", leading to the results of mix_4.
+
+```{r}
+mix_5 <- c(c(1, TRUE), 3, "truth")
+mix_5
 ```
 
 ### Explicit Coercion
@@ -179,12 +100,26 @@ as.logical(c("TRUE", "FALSE"))
 #> [1]  TRUE FALSE
 ```
 
+### Comparision between differnt types
 
+When comparing vectors of different types, the coercion rule will apply. Take the following vectors as example:
 
+```{r}
+a <- c(-1, 0, 1)
+b <- c(TRUE, FALSE, TRUE)
+a == b
+#> [1] FALSE  TRUE  TRUE
+```
 
-### Coercion, but on future materials
+When we are trying to figure out if a is equal to b, we get a length-3 logical vector. Elements in b is first converted into 1 and 0 based on the coercion rule we previously introduced, which is TRUE = 1 and FALSE = 0, and the result will be c(1, 0, 1). Thus, a comparison between a logical and a numeric vector is changed into comparing two numeric vectors. 
 
-coercion in data frame from 3.3
-coercion on list from 3.5
+You can make comparisons between vectors of other types, the following example shows that the classic transitive property in math (a = b and b = c imply a = c) doesn't hold in R. 
 
-
+```{r}
+1 == TRUE
+#> [1] TRUE
+TRUE == "TRUE"   
+#> [1] TRUE
+1 == "TRUE"
+#> [1] FALSE
+```
