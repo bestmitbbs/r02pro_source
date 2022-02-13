@@ -1,10 +1,10 @@
 ## Vector Subsetting and Modifying Values {#subsetting-and-modify-values}
 
-So far, we've learned fundamental knowledge of \@ref(intro-num-vector), \@ref(intro-char-vector), and \@ref(intro-logi-vector). （加transition）
+So far, we've learned fundamental knowledge of \@ref(intro-num-vector), \@ref(intro-char-vector), and \@ref(intro-logi-vector). In this section, we'll start with how to create named vectors. Heads up, the process of creating a named vector is different from object assignment, and you'll see the difference immediately.
 
 ### Named Vectors
 
-Remember in Section \@ref(Object-Assignment), we learned to give a name to an object by using the **assignment operator** `<-`. Depending on what name you assign to an object, it may provide a broad but unspecified explanation of the element(s) the object contains. In other words, when necessary, we need a way to label each element of an object to have a concrete idea on what each element refers to. To do so, We can turn an vector into an **named vector**, and there are two ways to complete this task. 
+Remember in Section \@ref(Object-Assignment), we learned to give a name to an object by using the **assignment operator** `<-`. Depending on what name you assign to an object, it may provide a broad but unspecified explanation of the element(s) the object contains. When necessary, we need a way to label each element of an object to have a concrete idea on what each element refers to. To do so, We can turn an vector into an **named vector**, and there are two ways to complete this task. 
 
 ***a. Using the equal sign whilst creating the vector***
 
