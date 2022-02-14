@@ -10,12 +10,12 @@ rm(list=ls())
 
 ```{r, include=FALSE}
 knitr::opts_chunk$set(
-  comment = "#>", echo = TRUE, eval = TRUE, results = FALSE, error = TRUE, fig.width = 6, warning = FALSE, collapse = TRUE)
+  comment = "#>", echo = TRUE, eval = TRUE, results = TRUE, error = TRUE, fig.width = 6, warning = FALSE, collapse = TRUE)
 ```
 
-A **character vector** is another type of atomic vector (where all elements are of the same type). In a character vector, the value of each element is of character type, which means each element is a string. A string is a sequence of characters (including letters, numbers, or symbols) delimited by the double quotes ("") or single quotes (''). For consistency, we will stick with double quotes in this book.
+A **character vector** is another type of atomic vector (where all elements are of the same type). In a character vector, the value of each element is of character type, which means each element is a string. A string is a sequence of characters (including letters, numbers, or symbols) surrounded by the double quotes ("") or single quotes (\'\'). For consistency, we will stick with double quotes in this book.
 
-The first example: if the word book is surrounded by a pair of double quotes, then it is a string, and `"book"` is a character vector with length 1. The value of `"book"` is the string itself. Notice that here `"book"` is a vector **without** the name since we have not assigned its value to a name, which will be introduced shortly. You can then verify the number of strings in this vector by using `length()` and verify the vector type by using `class()`.
+The first example: if the word book is surrounded by a pair of double quotes, then it is a string, and `"book"` is a character vector with length 1. The value of `"book"` is the string itself. Notice that here `"book"` is a vector **without** a name since we have not assigned its value to a name, which will be introduced shortly. You can then verify the number of strings in this vector by using `length()` and verify the vector type by using `class()`.
 
 ```{r}
 "book" 
@@ -42,7 +42,7 @@ knitr::include_graphics("pics/2quo.PNG")
 ```
 :::
 
-Next, let's create a numeric vector `num_vec` with number 708. After adding a pair of double quotes around the number 708, "708" has converted to a string now. You can assign the value of "708" to a name and then you will create a new character vector `char_vec`. Don't forget to check the vector type by using `class()` if you are not sure.
+Next, let's create a numeric vector `num_vec` with number 708. After adding a pair of double quotes around the number 708, "708" has converted to a string now. You can assign the value "708" to a name (say char_vec), which will create a new character vector named `char_vec`. Don't forget to check the vector type by using `class()` if you are not sure.
 
 ```{r}
 num_vec <- 708
@@ -58,25 +58,24 @@ char_vec2 <- "gph&708"
 class(char_vec2)
 ```
 
-In conclusion, if characters (including letters, numbers, and symbols) are delimited by double quotes, it will be interpreted as a string by the R language. 
+In conclusion, if characters (including letters, numbers, and symbols) are surrounded by double quotes, it will be interpreted as a string by the R language. 
 
-Similar to a numeric vector, you can have multiple elements in a character vector, by using the `c()` function to combine several strings into a single vector. You can verify the number of elements in a vector by using the  `length()` function. 
+Similar to a numeric vector, you can have multiple elements in a character vector, using the `c()` function to combine several strings into a single vector. You can verify the number of elements in a vector by using the  `length()` function. 
 
 Now we know how to obtain the length of a vector, but what about the length of a single element within a given vector? Function `nchar()` can help us with that, as you will get the number of **characters** in a string.
 
 ```{r}
-animals <- c("sheep%29", "bear$29", "monkey")
+animals <- c("sheep%29", "bear$11", "monkey@66")
 animals
 length(animals)
 nchar(animals)
 ```
 
-As shown in the example, we can see that there are three elements in the `animals` vector, and string "sheep%29" has a length of 8 (including 5 characters, 1 symbol and 2 numbers). Similarly, "bear$29" and "monkey" have a length of 7 and 6, and you can check it by yourself with the `nchar()` function. 
+As shown in the example, we can see that there are three elements in the `animals` vector, and string "sheep%29" has a length of 8 (including 5 characters, 1 symbol, and 2 numbers). Similarly, "bear$11" and "monkey@66" have a length of 7 and 9, and you can check it by yourself with the `nchar()` function. 
 
 Same as the numeric vector, you can use the `typeof()` function to find the internal storage type of a character vector. All the character vectors will be stored as the **character** in R. You can check the storage type of some character vectors we created before.
 
 ```{r}
-typeof(sheepstudio)
 typeof(char_vec)
 typeof(animals)
 ```
