@@ -26,13 +26,17 @@ sort(x, decreasing = TRUE)
 
 ### Get ranks in vectors with `rank()`
 
-Next, let's talk about ranks in a vector. The `rank()` function gives the **ranks** for each element of the vector, namely the corresponding positions in the **ascending order**.
+Next, let's talk about ranks in a vector. The `rank()` function gives the **ranks** for each element of the vector, namely the corresponding positions in the **ascending order**. It is worth mentioning that, in R, indexes start at 1 - the 1st element of is at index 1, and the following indexes will count as normal.
 
 ```{r results = TRUE}
 rank(x)
 ```
 
-If you check the values of `x`, you can see that the smallest value of `x` is 0, which corresponds to the fourth element. Thus, the fourth element has rank 1. The second smallest value of `x` is 2, which is shared across the first and the third elements, resulting a **tie** (elements with the same value will result in a tie). Normally, these two elements would have ranks 2 and 3. To break the tie, by default, the `rank()` function assigns all the elements involving in the tie (the first and third elements in this example) the same rank, which is the **average** of all their (potential) ranks (the average of 2 and 3). In addition to this default behavior for handling ties, `rank()` also provides other options by setting the `ties.method` argument. 
+If you check the values of `x`, you can see that the smallest value of `x` is 0, which corresponds to the  element at the fourth position of the original `x` vector. Thus, a rank of 1 will be assigned to the fourth position of the rank vector. 
+
+The second smallest value of `x` is 2, which appears twice at the first and the third positions, resulting a **tie** (elements with the same value will result in a tie). Normally, these two elements would have ranks 2 and 3, respectively. To break the tie, the `rank()` function assigns the **average** of the ranks for all elements within a tie situation, by default. For our example, the average of 2 and 3 is 2.5, and will be assigned to the first and the third position of the rank vector. In addition to this default behavior for handling ties, `rank()` also provides other options by setting the `ties.method` argument. 
+
+The third smallest value of `x` is 3, with a rank of 4 at the second position, thus a 4.0 will appear at the second position in the rank vector. The rest of the ranks is assigned in the same fashion. 
 
 If you set `ties.method = "min"`, all the tied elements will have the *minimum rank* instead of the average rank. In this case, the minimum rank is 2. 
 
@@ -68,6 +72,7 @@ sort(x)
 ```
 
 From the result, you can see that the `order()` function returns **indices** for the elements in the **ascending** order, namely from the smallest to the largest. For example, the first output is 4, since the 4th element in `x` is the smallest. The second output is 1, since the 1st element in `x` is the second smallest. In other words, `order()` returns a **permutation** which rearranges the vector `x` into ascending order, which is shown in the following example.
+
 ```{r}
 x[order(x)]
 ```
@@ -87,7 +92,7 @@ In this section, we have covered `sort()`, `rank()`, and `order()` functions for
 
 - The `sort()` function sorts elements in vectors in ascending/descending order. 
 - The `rank()` function produces ranks for each element of the vector.
-- The `order()` function returns the corresponding indices in  ascending/descending order for the elements.
+- The `order()` function returns the corresponding indices in ascending/descending order for the elements.
 
 
 
