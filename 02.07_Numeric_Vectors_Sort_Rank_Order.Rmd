@@ -59,7 +59,7 @@ sort(-x)
 
 
 
-### Get the ordering permutation via `order()***
+### Get the ordering permutation via `order()
 
 The next item we want to introduce is the `order()` function. Note that the function name **order** could be a bit misleading since ordering elements also has the same meaning of sorting. However, although it is related to sorting, `order()` is a very *different* function from `sort()`.  
 
