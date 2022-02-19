@@ -11,7 +11,7 @@ h #check the value of h
 
 Next, we will divide statistical functions into several groups, and introduce them one by one.
 
-***Group A: minimum and maximum***
+### Minimum and Maximum
 
 ```{r}
 min(h) 
@@ -49,7 +49,7 @@ In addition to calculating the minimum value of all elements, you can also use t
 
 Note that once we reach the minimum value of the original vector, the remaining elements of the cumulative minimum function will always equal to the minimum value. There is also a corresponding function for computing the cumulative maximums, called `cummax()`.
 
-***Group B: sum and product***
+### Sum and Product
 
 ```{r}
 sum(h)
@@ -75,7 +75,7 @@ diff(h)
 It is worth noting that the `diff()` function doesn't work the same way as the `sum()` function. Specifically, `diff()` returns the **difference between consecutive elements** in a numeric vector. In `h`, the difference between the first and the second elements (`3` and `2`) is `-1`, whereas that between the second and the third elements (`2` and `75`) is `73`. In other words, the computations in done by subtracting the former element from the latter one in a consecutive pair.  
 
 
-***Group C: mean and median***
+### Mean and median
 
 
 ```{r}
@@ -96,7 +96,7 @@ median(g)
 Recall `g` with values of `2`, `2`, `1`, `1`. After sorting, you will see that `1` and `2` are in the middle. The median is then defined as the average of these two elements, namely 1.5.
 ::: 
 
-***Group D: quantiles***
+### Quantiles
 
 ```{r results=TRUE}
 quantile(h)
@@ -130,7 +130,7 @@ In addition, the second argument can be a vector of probabilities, which will pr
 quantile(h, probs = c(0.1, 0.2, 0.99))
 ```
 
-***Group E: summary statistics***
+### Summary statistics
 
 ```{r results=TRUE}
 summary(h)
