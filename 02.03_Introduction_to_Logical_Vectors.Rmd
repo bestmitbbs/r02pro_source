@@ -102,7 +102,19 @@ class(char_1)
 ```
 :::
 
-Do we need to emphasize the cases of values in logical vectors?
+
+It is worth mentioning that, R is case-sensitive in terms of the expression of `TRUE` and `FALSE`. Any expression other than `TRUE`, `FALSE`, `T`, or `F` will be recognized as character values or name of an object in R, not logical values. Please see the example below. 
+
+```{r, error = TRUE, results = TRUE}
+# Valid Expression 
+class(c(TRUE, T))
+
+# Invalid Expression
+class(true)
+class(True)
+class("true")
+```
+
 
 ### Logical vectors: creation when testing for types
 
