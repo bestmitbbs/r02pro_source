@@ -1,6 +1,6 @@
 ## Character Vectors, Factors & Ordered Factors {#factors}
 
-Having learned various aspects of character vectors, we will introduce a very important class of objects in this section, named **factors**. First, let's create a character vector to be used in this section.
+Having learned various aspects of character vectors, we will introduce a very important class of objects in this section, named **factors**. First, let's create a character vector to be used in this section. 
 
 ```{r}
 animals <- c("sheep", "pig", "monkey", "sheep", "sheep", "pig")
