@@ -10,7 +10,7 @@ An equally-spaced numeric vector is a numeric vector with the same distance betw
 pattern1 <- c(1, 2, 3, 4, 5)
 ```
 
-However, when the number of elements changes from 5 consecutive integers to 100 consecutive integers, manually typing in would be really time-consuming and inefficient. In R, you can  use the colon operator `:` to create equally-spaced numeric vectors. Note that you don't need to use `:` together with `c()`.
+However, when the number of elements changes from 5 consecutive integers to 100 consecutive integers, manually typing in would be really time-consuming and inefficient. In R, you can use the colon operator `:` to create equally-spaced numeric vectors. Note that you don't need to use `:` together with `c()`.
 
 ```{r}
 pattern2 <- 1:5
