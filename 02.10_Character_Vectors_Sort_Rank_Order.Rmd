@@ -1,6 +1,6 @@
 ## Character Vectors: Sort, Rank, Order {#character-sort-rank-order}
 
-In Section \@ref(numeric-sort-rank-order), you learned `sort()`, `rank()``, and `order()` to sort numeric vectors and get their elements' ranks and indices. These three functions can be used in a similar manner for character vectors. Similar to numeric vectors, let's first prepare a character vector.
+In Section \@ref(numeric-sort-rank-order), you learned `sort()`, `rank()``, and `order()` to sort numeric vectors and get their elements' ranks and indices. These three functions can be used in a similar manner for character vectors. Similar to numeric vectors, let's first prepare a character vector. 
 
 ```{r}
 char_vec <- c("a", "A", "B", "b", "aB","ac", "1c", ".a", "1a","2a",".a","&u","3","_4")
