@@ -10,13 +10,13 @@ Just like numeric vectors, you can also create character vectors with **repetiti
 rep("sheep", 5)
 ```
 
-If the first argument is of length larger than 1, and the second argument is a single integer, the `rep()` function will **repeat** the whole vector the corresponding number of times. 
+If the first argument is of length larger than 1, and the second argument is a single integer, the `rep()` function will **repeat** the first vector the corresponding times that is specified by the integer. 
 
 ```{r}
 rep(c("sheep", "monkey"), 3)
 ```
 
-Another option is the specify the second element as a numeric vector of the same length as the vector to be repeated. In this case, each value of the character vector will be sequentially repeated the corresponding number of times. Please see the following examples. 
+Another option is to specify the second argument as a numeric vector of the same length as the vector to be repeated. In this case, each element of the character vector will be sequentially repeated the corresponding number of times. Please see the following examples. 
 
 ```{r}
 rep(c("sheep", "monkey"), rep(3, 2))
@@ -49,7 +49,7 @@ length(one_long_string) #verify the number of strings
 
 From the results, you can see that `one_long_string` is a character vector with length 1, and the value of `one_long_string` is a single string with spaces between the individual strings.
 
-In `paste()`, the default **separator** between the individual strings is space. In fact, you can change the separator by setting the `sep` argument as a string in `paste()`. For example, you can separate the individual strings with comma or `!&!`.
+In `paste()`, the default **separator** between the individual strings is space. Take a look at the documentation of the `paste()` function with any form of getting help (Section \@ref(Calculator)) that we previously introduced. What does the `sep = " "` argument mean? In fact, you can change the separator by setting the `sep` argument as a string in `paste()`. For example, you can separate the individual strings with comma or `!&!`.
 
 ```{r results=TRUE}
 comma <- paste("I", "love", "r02pro", "!", sep = ",") 
@@ -57,14 +57,14 @@ comma
 paste("I", "love", "r02pro", "!", sep = "!&!") 
 ```
 
-If you don't want to use a separator, you can set `sep = "` or use the `paste0()` function.
+If you don't want to use a separator, you can set `sep = ""` or use the `paste0()` function. 
 
 ```{r results=TRUE}
 paste("I", "love", "r02pro", "!", sep = "")
 paste0("I", "love", "r02pro", "!") 
 ```
 
-If you would like to concatenate the elements of a vector into a longer string, you need to specify the `collapse` argument as the separator instead of `sep` in the `paste()` function. 
+You may noticed the next argument for `paste()` is `collapse = NULL` in the documentation. If you would like to concatenate the elements of a vector into a longer string, you need to specify the `collapse` argument as the separator instead of `sep` in the `paste()` function. 
 
 ```{r, results=TRUE}
 paste(four_strings, collapse = "")
@@ -73,7 +73,7 @@ paste(four_strings)                 ##doesn't work without the collapse argument
 ```
 
 
-In addition to paste several strings into one long string, you can also use the `paste()` function to concatenate two or more character vectors, where the pair of strings will be pasted elementwisely.
+In addition to paste several strings into one long string, you can also use the `paste()` function to concatenate two or more character vectors, where the pair of strings will be pasted elementwisely. 
 ```{r, results=TRUE}
 paste(c("July", "August"),  c("2007", "2008"))
 ```
