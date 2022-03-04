@@ -1,6 +1,6 @@
 ## Logical Vectors: Logical Operators{#logical_operators}
 
-In Section \@ref(subsetting-and-modify-values), you learned how to do vector subsetting, which yields a subvector of the original vector. Let's take a numeric vector `x <- 1:5` as an example. To get a subvector of `x` with values bigger than 3, you can create a **logical vector**,  and then use it as the index to do vector subsetting. 
+In Section \@ref(subsetting-and-modify-values), you learned how to do vector subsetting, which yields a subvector of the original vector. Let's take a numeric vector `x <- 1:5` as an example. To get a subvector of `x` with values greater than 3, you can create a **logical vector**, and then use it as the index to do vector subsetting. 
 
 ```{r results=TRUE}
 x <- 1:5
@@ -17,9 +17,9 @@ set2 <- x[xs4]
 set2
 ```
 
-Sometimes, you may want to get a subvector containing elements that satisfy more than one conditions. For example, how can we find the subvector of `x` with values larger than 3 and less than or equal to 4? In this section, we will introduce several **logical operators** and use them to get subvectors.  Here, we only introduce how to apply these operators on logical vectors.
- 
-Before we get started, let's create another numeric vector `y`, and compare it to `8` and `9` separately. Then you will get two logical vectors with the same values as `xb3` and `xs4`.
+Sometimes, you may want to get a subvector containing elements that satisfy more than one conditions. For example, how can we find the subvector of `x` with values larger than 3 and less than or equal to 4? In this section, we will introduce several **logical operators** and use them to get subvectors. Here, we will focusing on applying logical operators on logical vectors, but keep in mind that many of the example here could be used to express complex arguments in R.
+
+Before we get started, let's create another numeric vector `y`, and compare it to `8` and `9`, separately. Then you will get two logical vectors with the same values as `xb3` and `xs4`.
 
 ```{r}
 y <- 6:10
@@ -56,7 +56,11 @@ set3 <- x[!xb3]
 set3
 ```
 
-Of course, the resulting numeric vector `set3` will have  `1 2 3` as values! As a result, `set1` and `set3` are complements of each other from the whole vector `x`. 
+Of course, the resulting numeric vector `set3` will have `1 2 3` as values! As a result, `set1` and `set3` are complements of each other from the whole vector `x`. We can actually get back `x` with `xb3` alone, with some help of vector subsetting and vector concatenation introduced in previous sections.
+
+```{r}
+c(x[!xb3], x[xb3]) == x
+```
 
 
 ### AND operator by `&`
@@ -136,6 +140,7 @@ knitr::kable(d)
 ```
 
 Let's try another example on length > 1 vectors and compare the result with that when we use the AND operator `&`. 
+
 ```{r results=TRUE}
 c(FALSE, FALSE, FALSE, TRUE, TRUE) | c(TRUE, TRUE, FALSE, TRUE, FALSE)
 c(FALSE, FALSE, FALSE, TRUE, TRUE) & c(TRUE, TRUE, FALSE, TRUE, FALSE)
@@ -146,6 +151,7 @@ You also get a length-5 logical vector with an elementwise OR operation `|`, whi
 Naturally, you can also use `xb3 | xs4` to do vector subsetting, leading to another length-5 logical vector. 
 
 ```{r results=TRUE}
+xb3 | xs4
 x[xb3 | xs4]
 ```
 
