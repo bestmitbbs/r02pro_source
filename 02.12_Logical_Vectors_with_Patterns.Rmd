@@ -30,7 +30,7 @@ logic
 ```
 
 
-### Statistical Functions on Logical Vectors
+### Statistical Functions on Logical Vectors {#functions-logi}
 
 Before we end our study of logical vectors with logical operators in next section, we will take a look at how some previously introduced summary functions can be used on logical vectors.
 
