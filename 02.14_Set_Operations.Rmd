@@ -94,7 +94,7 @@ In the first example above, the output is a logical vector of length-5, the same
 
 Even if the first value of `num2` is not `1`, as long as `1` appears somewhere in `num2`, the first element of the output would still be `TRUE`. In other words, `is.element()` and `%in%` don't take the values' indices into consideration.  
 
-###Applicance of the coercion rule
+### Applicance of the coercion rule
 
 At the beginning of this section, we've stressed that set operations are performed on two vectors of the **same type**. What about set operations on two vectors of different types? Are such operations achievable?
 
