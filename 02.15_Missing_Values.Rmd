@@ -1,24 +1,51 @@
 ## Missing Values (`NA`) {#missing-values}
 
-So far, we have been working with the ideal case that the vector is fully observed. In most applications, you may encounter the situation where some values are missing in the data set for certain variables. In this scenario, R uses `NA` to represent those values, indicating they are **not available**. Let's see the following example. 
+So far, we have been working with the ideal case that the vector is fully observed. In most applications, you may encounter the situation where some values are **missing** or **undefined** in the data set for certain variables, and such values can be resulted from one of the below situations:
+
+a) the observer fails to record the data, meaning the value is not available
+b) the data is impossible or undefined, meaning the value cannot be generated, such as dividing by 0.
+
+In two scenarios, R uses a) `NA`, indicating they are **not available**, and b) `NaH`, indicating they are **not a number** to present those values, respectively. Let's see the following example. 
 
 ```{r, results = TRUE}
 a <- 1:10
 a[11]
 ```
 
-Since you have defined `a` as a vector of length 10, there are 10 values in `a`. If you try to access the 11-th element of `a`, it is not available, hence you will see `NA` as the result. 
+Here, you have defined `a` as a length-10 numeric vector with 10 values in it. If you try to access the 11-th element of `a`, it is not available, hence you will see `NA` as the result. 
 
-Sometimes, the values of some elements in a vector are missing, then you can use `NA` for these elements. Here is an example containing `NA`s in values. If you want to get values of the 2nd and 4th elements in `b`, you will get `NA NA` as the result.
+
+Sometimes, the values of some elements in a vector are missing, then you can use `NA` for these elements. Here is an example containing `NA`s as some values. If you want to get values of the 2nd and 4th elements in `b`, you will get `NA NA` as the result.
+
 ```{r, results = TRUE}
 b <- c(1, NA, 2, NA, 3)
 b
 b[c(2,4)]
 ```
 
-Now you have had a basic understanding of `NA`. In the following parts of this section, we want to introduce several properties of `NA`. Let's start with the fact that `NA` is **contagious**. 
+Let's see another example.
 
-### `NA` is contagious
+```{r}
+b <- 0/0
+```
+
+If you look at the environment panel, you will see that `b` has a value of `NaH`, because arithmetically you cannot divide a number by 0.
+
+```{r}
+c <- c(NA, NA)
+class(b)
+typeof(b)
+class(c)
+typeof(c)
+```
+
+By running the above codes, you can notice that `NA` is stored as a logical type, whereas `NaH` is stored as a numeric type.
+
+Now you have had a basic understanding of `NA` and `NaH`. In the following parts of this section, we want to introduce several properties of them. Let's start with the fact that `NA` is **contagious**. 
+
+### `NA` and `NaH` are contagious
+
+***a. `NA` ***
 
 `NA` implies that the underlying value is not available, in other words, there is uncertainty with the value. As a result, for most operations associated with `NA`, the results will also be `NA`, showing that `NA` is **contagious**. 
 
@@ -47,9 +74,6 @@ It is again `NA`, which may be confusing at a first thought. However, keep in mi
 - Answer 1. For any $x$, we have $1^x = \exp(\log (1^x)) = \exp(x \log 1) = \exp(x \cdot 0) = 1$. Since there is no uncertainty regarding the expression, the value of 1^NA^ is 1 
 - Answer 2. We have $0^0 = \lim_{x\to 0}x^x =\exp[\lim_{x\to 0} x\log(x)]=\exp[0] = 1$, and $0^1 = 0$. Since `NA` represents uncertainty values, it can be 0 or 1 or other numbers. So 0^NA^ is not deterministic because it can take different values according to the exponent. Hence, the value of 0^NA^ is also `NA`.
 ::: 
-
-
-
 
 
 Now, let's talk about what impact the `NA` values make when we apply statistical functions. Let's create a vector containing `NA` values, and apply some functions on it.
@@ -83,9 +107,31 @@ Interesting, the `summary()` function will deal with the `NA` values automatical
 summary(x) 
 ```
 
+***b. `NaH` ***
+
+```{r}
+b * 3
+b + 3
+```
+
+Similar to `NA`, `NaH` is also contagious, because numeric calculations on undefined values are also undefined.
+
+```{r}
+d <- c(1, 2, 3, 0/0)
+d
+sum(d) 
+mean(d)
+sd(d)
+sum(d, na.rm = TRUE) 
+mean(d, na.rm = TRUE)
+sd(d, na.rm = TRUE)
+```
+
+Moreover, if a vector consists undefined values, applying statistical functions on it will also result in `NaH`, and you can still use `na.rm` to remove `NaH` before applying the functions.
+
 ### Work with `NA` values
 
-When there are `NA` values in our vector, there is nothing to be afraid of as there are many useful tools we can use. 
+Since `NA` is far more common in real-life applications, we'll focus this section on `NA` values. When there are `NA` values in our vector, there is nothing to be afraid of as there are many useful tools we can use. 
 
 Let's use `x <- c(1, NA, 3, 4, NA, 2)` throughout this part. 
 
@@ -98,7 +144,7 @@ x == NA
 
 You get a vector of all values equaling `NA`! This is actually not surprising for the following reason. Given that the `NA` you are comparing can take any unknown value, any comparison with it will result in an `NA` value due to the lack of information.
 
-Instead of using `==` for finding missing values, the correct way is to use the `is.na()` function, which returns a logical vector representing whether the value of each element is missing or not. Then, you can use the `which()` function which can return the locations of all `TRUE` values to find the indices for the `NA` values. Here, the `sum()` function on the logical vector `x_na` returns the number of `NA` values in the vector, following the cocercion rule described in Section \@ref(functions-logi). 
+Instead of using `==` for finding missing values, the correct way is to use the `is.na()` function, which returns a logical vector representing whether the value of each element is missing or not. Then, you can use the `which()` function which can return the locations of all `TRUE` values to find the indices for the `NA` values. Here, the `sum()` function on the logical vector `x_na` returns the number of `NA` values in the vector, following the coercion rule described in Section \@ref(functions-logi). 
 ```{r, results=TRUE}
 x_na <- is.na(x)        #logical vector     
 x_na
