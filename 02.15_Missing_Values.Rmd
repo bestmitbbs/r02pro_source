@@ -1,9 +1,9 @@
 ## Missing Values (`NA`) {#missing-values}
 
-So far, we have been working with the ideal case that the vector is fully observed. In most applications, you may encounter the situation where some values are **missing** or **undefined** in the data set for certain variables, and such values can be resulted from one of the below situations:
+So far, we have been working with the ideal case that the vector is fully observed without any missing values. However, in most applications, you may encounter the situation, where some values like `NA` or `NaH`, which are **missing** or **undefined** in the data set for certain variables, and such values can be resulted from one of the below situations:
 
-a) the observer fails to record the data, meaning the value is not available
-b) the data is impossible or undefined, meaning the value cannot be generated, such as dividing by 0.
+a) the observer fails to record the data, meaning the value is not available at the given position of a vector or a data frame, or 
+b) the data is impossible or undefined, meaning the value is resulted from an error or logical contradiction, such as dividing by 0.
 
 In two scenarios, R uses a) `NA`, indicating they are **not available**, and b) `NaH`, indicating they are **not a number** to present those values, respectively. Let's see the following example. 
 
@@ -188,13 +188,13 @@ In `x_impute`, values of the 2nd and 5th elements are replaced by 2.5, the avera
 
 ***d. Replace non-standard missing values with `NA` in the vector***
 
-Sometimes, the data we collected may not use `NA` to indicate missingness. For example, in the following vector `x3`, the value `999` represents the corresponding element is missing.
+Sometimes, the data we collected may not use `NA` to indicate that a value is missing. For example, in the following vector `x3`, the value `999` represents the corresponding element that is missing.
 
 ```{r}
 x3 <- c(4, 999, 1, 999, 3, 999, 999)
 ```
 
-It is highly recommended to convert the values into `NA` before carrying out any analysis. 
+It is highly recommended to convert these values into `NA` before carrying out any analysis. 
 ```{r, results=TRUE}
 x3[x3 == 999] <- NA
 x3
