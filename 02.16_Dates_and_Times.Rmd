@@ -25,7 +25,7 @@ This may look a bit surprising to you. Indeed, dates objects are stored as numer
 as.numeric(today)
 ```
 
-Storing the dates as numbers make it handy to perform additions and subtractions. For example, you can use `today - 1` to get the date of yesterday, and use `today + 1` to get the date of tomorrow. 
+Storing the dates as numbers makes it handy to perform additions and subtractions. For example, you can use `today - 1` to get the date of yesterday, and use `today + 1` to get the date of tomorrow. 
 ```{r, results=TRUE}
 today - 1
 today + 1
@@ -65,7 +65,7 @@ d <- data.frame(Code, Name, Example)
 knitr::kable(d)
 ```
 
-Then, for a Date class object, we can create a **format string** that containing any number of the **conversion specifications** in the previous table. The working mechanism of `format()` is that it will scan through the **format string**, look for all the conversion specifications, and convert the conversion specifications into their corresponding values for the given date. Any character in the format string which is not part of a conversion specification is interpreted literally (and `%%` gives `%`).  Let's see an example.
+Then, for a Date class object, we can create a **format string** that contains any number of the **conversion specifications** in the previous table. The working mechanism of `format()` is that, it will scan through the **format string**, look for all the conversion specifications, and convert the conversion specifications into their corresponding values for the given date. Any character in the format string that is not part of a conversion specification is interpreted literally (and `%%` gives `%`).  Let's see an example.
 ```{r, results = TRUE}
 format(today, "Today is %A (%a for short), %b %d, %Y. It is also %m/%d/%Y")
 ```
@@ -77,7 +77,6 @@ You can also specify the `tryFormats` argument, which contains a character vecto
 Aug <- as.Date("08-01-2021", format = "%m-%d-%Y")
 Aug
 class(Aug)
-
 ```
 
 Here, the value of `format` corresponds to each part in string. `%m` corresponds to `08`, which is the month of the date. `%d` corresponds to `01`, which is the day of the date. `%Y` corresponds to `2021`, which is the year of the date. Now you have successfully converted the string into a vector of the Date class!
