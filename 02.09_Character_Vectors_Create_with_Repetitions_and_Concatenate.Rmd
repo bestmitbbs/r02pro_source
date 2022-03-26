@@ -119,22 +119,17 @@ cat(c("Peter", "James", "and Mary"),"\n",
 ```
 
 ### Exercises
-1. Write R codes using the  `rep()` function to reproduce the following three vectors.
-```{r, echo = FALSE, results = TRUE}
-rep(letters[1:4], 3)
-rep(letters[1:4], rep(3, 4))
-rep(letters[1:4], 4:1)
-```
+1. Write R codes using the  `rep()` function to reproduce the following three vectors with alphabetic letter values. Try not put direct letters in your code.
+
+i). a b c d a b c d a b c d
+ii). a a a b b b c c c d d d 
+iii). a a a a b b b b c c d
 
 2. Please use the `paste()` function to reproduce the following sentences.
-```{r, echo = FALSE, results = TRUE}
-names <- c("Alice", "Bob", "Charlie")
-sports <- c("tennis", "soccer", "baseball")
-years <- c(4:2)
-locations <- c("London", "New York", "Berlin")
-paste(names, "has been playing", sports, "for", 
-      years, "years in", locations)
-```
+
+Alice has been playing tennis for 4 years in London.
+Bob has been playing soccer for 3 years in New York.
+Charlie has been playing baseball for 2 years in Berlin.
 
 3. Please use the `paste()` and `cat()` functions to reproduce the following message. 
 ```{r, echo = FALSE, results = TRUE}
