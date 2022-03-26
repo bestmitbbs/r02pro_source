@@ -227,10 +227,3 @@ Here, the first row is the numeric vector's name. The second row shows all uniqu
 2. Use two different ways to create a numeric vector with `1 2 3 1 2 3 4 5 1 2 3 4 5 6 7` as result. Show the unique elements and their corresponding frequency.
 
 
-
-3. Write R code using `rep()` function to create a character vector with the same result as `c("sheep","pig", "cat","sheep","pig", "cat","sheep","pig", "cat")`
-
-
-
-4. Write R code using `rep()` function to create character vector with the same result as `c("sheep","sheep","pig","pig","pig","pig","cat","cat","cat")`
-
