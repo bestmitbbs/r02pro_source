@@ -115,6 +115,13 @@ class(True)
 class("true")
 ```
 
+Finally, you can use the `vector(mode, length)` function to create a logical vector of certain length. 
+```{r}
+vector("logical", 2)
+```
+
+Note that the default value is `FALSE`.
+
 
 ### Logical vectors: creation when testing for types
 

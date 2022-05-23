@@ -80,6 +80,13 @@ typeof(char_vec)
 typeof(animals)
 ```
 
+Finally, you can use the `vector(mode, length)` function to create a character vector of certain length. 
+```{r}
+vector("character", 6)
+```
+
+Note that the default value is an empty string for all elements.
+
 ### Change case{#case}
 
 In character vectors, each string can contain both uppercase and lowercase letters. You can unify the cases of all letters inside a vector. Let's review the character vector `four_strings` first,

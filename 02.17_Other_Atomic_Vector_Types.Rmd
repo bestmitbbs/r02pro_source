@@ -57,6 +57,12 @@ complex(real = 1:5, imaginary = 5:1)
 complex(modulus = 1:5, argument = 1:5)
 ```
 
+Finally, you can use the `vector(mode, length)` function to create a complex vector of certain length. 
+```{r}
+vector("complex", 4)
+```
+
+Note that the default value is `0+0i`.
 
 ### Raw Vectors
 

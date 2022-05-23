@@ -202,7 +202,3 @@ While some of the object types look more intuitive than others, you have nothing
 
 3. Write the R code to get the list of all objects in the environment.
 
-<<<<<<< HEAD
-=======
-
->>>>>>> e5b4e15619ce4762dabe335c7edeccecb8a5b818

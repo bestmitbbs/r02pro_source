@@ -8,10 +8,6 @@ We will start off this chapter by learning **numeric vectors**. Numeric vectors 
 rm(list=ls())
 ```
 
-```{r, include=FALSE}
-knitr::opts_chunk$set(
-  comment = "#>", echo = TRUE, eval = TRUE, results = FALSE, error = TRUE, fig.width = 6, warning = FALSE, collapse = TRUE)
-```
 
 A **numeric vector** is an atomic vector containing only numbers. For example, `6` is a numeric vector with one element of value 6. 
  
@@ -98,8 +94,13 @@ As expected, you can also view the newly assigned values of `z1` in the environm
 knitr::include_graphics("pics/2en2.PNG")
 ```
 
+Finally, you can use the `vector(mode, length)` function to create a vector of certain `mode` and `length`. 
+```{r}
+vector("numeric", 4)
+```
 
-### Operations and recycling rule{#operation-recycling}
+
+### Operations and recycling rule {#operation-recycling}
 
 Since numeric vectors are purely made of numbers, you can do **arithmetic operations** between them, just like the fancy calculator in Section \@ref(Calculator). If two or more vectors are of the **same length**, the operation is done **element-wisely**. In other words, R will perform the operation between elements in the same index of different vectors. First, let's create another vector `x2` of length 1 and compute the sum of `x1` and `x2`. Also recall that we've previously created a length-1 numeric vector `x1` with value 6.
 
