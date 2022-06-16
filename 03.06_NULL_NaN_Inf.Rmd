@@ -91,7 +91,7 @@ str(d) # the class is changed to numeric, but the length is still 0
 
 ### NaN {#NaN}
 
-`NaN`, represents **Not a Number**, usually appears when you divide 0 by 0. 
+`NaN`, represents **Not a Number**, usually appears when you divide 0 by 0, indicating the result is not well-defined.
 ```{r, results = TRUE}
 0/0
 ```
