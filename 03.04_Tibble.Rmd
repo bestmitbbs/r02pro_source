@@ -79,7 +79,7 @@ While the tibble subsetting and modifying is very similar to those for data fram
 
 First of all, when you use the `[` and  `]` to do tibble subsetting, it always returns a tibble by default, even if only one column is selected. This behavior is different from subsetting data frames using `[` and `]`. If you are particularly interested in selecting only one column and returning it as a vector, you need to add `drop = TRUE` in the subsetting process. You can also subset a single row and convert it into a vector by adding the same argument.
 ```{r, results = TRUE}
-my_tibble[, 1]               #3*1 tibble
+my_tibble[, 1]               #6*1 tibble
 my_data_frame[, 1]           #vector
 my_tibble[, 1, drop = TRUE]  #vector
 ```
