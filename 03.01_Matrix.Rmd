@@ -4,7 +4,7 @@ Having mastered atomic vectors, which are an 1-dimensional objects containing el
 
 ### Create a matrix from a vector
 
-One of most common ways to create a matrix from a vector is to use the function `matrix()`. In the `matrix()` function, the first argument is the data vector,  and the following arguments of `nrow` and `ncol` represent the desired numbers of rows and columns of the matrix. 
+One of most common ways to create a matrix from a vector is to use the function `matrix()`. In the `matrix()` function, the first argument is the data vector,  and the following arguments of `nrow` and `ncol` represent the desired numbers of rows and columns of the matrix.
 
 ```{r, results = TRUE}
 matrix(data = 1:12, nrow = 3, ncol = 4)
