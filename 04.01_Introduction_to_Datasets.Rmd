@@ -47,7 +47,7 @@ str(gm2007)
 The `str()` function gives a list of each component, the corresponding type, the length, and the first several values. 
 To get a first impression on the dataset, you can use the `summary()` function introduced in Section \@ref(vector-functions). 
 ```{r}
-summary(sahp)
+summary(gm2007)
 ```
 In the output, we get the summary statistics for each variable. For numeric variables, we get the minimum, 1st quartile, median, mean, 3rd quartile, and the maximum. It also shows the number of `NA`'s for a particular variable. For character variables, we only get the length of the vector, the class, and the mode. 
 
