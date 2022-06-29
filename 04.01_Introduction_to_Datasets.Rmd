@@ -4,9 +4,9 @@ In this section, we will introduce two datasets that will be used extensively th
 
 ### Gapminder Data Set {#intro-gapminder}
 
-We will first introduce a dataset `gm2007`, located in the R package **r02pro**, the companion package of this book. The `gm2007` dataset is curated from the gapminder (https://www.gapminder.org/) website. In particular, `gm2007` contains 233 observations and 23 variables. Each observation (row) corresponds to a specific country. 
+We will first introduce a dataset `gm2007`, located in the R package **r02pro**, the companion package of this book. The `gm2007` dataset is curated from the gapminder (https://www.gapminder.org/) website. In particular, `gm2007` contains 466 observations and 18 variables, observed in year 2007. Each observation (row) corresponds to a specific country. 
 
-First, let's load the **r02pro** and **tibble** package since `gm2007` is in a tibble format. 
+First, let's load the **r02pro** and **tibble** packages since `gm2007` is in a tibble format. 
 
 
 ```{r}
@@ -14,13 +14,12 @@ library(r02pro)
 library(tibble)
 ```
 
-After loading the three packages, you can type `sahp` to have a quick look of the dataset.
+After loading the two packages, you can type `gm2007` to have a quick look of the dataset.
 ```{r, results = TRUE}
 gm2007
-
 ```
 
-You can see that `gm2007` is a *tibble* with 233 observations and 23 variables. By default, the output only shows the first 10 observations in the tibble along with the first few variables that can fit the window. To view the full dataset, you can use the `View()` function, which will open the dataset in a new window. 
+You can see that `gm2007` is a *tibble* with 466 observations and 18 variables. By default, the output only shows the first 10 observations in the tibble along with the first few variables that can fit the window. To view the full dataset, you can use the `View()` function, which will open the dataset in a new window. 
 ```{r, eval=FALSE}
 View(gm2007)
 ```
@@ -34,11 +33,12 @@ head(gm2007, 15)
 
 To get a first impression on the dataset, you can use the `summary()` function introduced in Section \@ref(vector-functions). 
 ```{r}
-summary(sahp)
+summary(gm2007)
 ```
+
 In the output, we get the summary statistics for each variable. For numeric variables, we get the minimum, 1st quartile, median, mean, 3rd quartile, and the maximum. It also shows the number of `NA`'s for a particular variable. For character variables, we only get the length of the vector, the class, and the mode. 
 
-Although the types of each variable are shown in the result when typing `sahp`, a more detailed list can be found with the function `str()`. 
+Although the types of each variable are shown in the result when typing `gm2007`, a more detailed list can be found with the function `str()`. 
 
 ```{r, results=TRUE}
 str(gm2007)
@@ -65,7 +65,7 @@ The `str()` function gives a list of each component, the corresponding type, the
 
 The data set `sahp` is a part of the Ames Housing Price data, containing 165 observations and 12 features including the sale date and price. 
 
-The data set `sahp` is also located in the R package **r02pro**. Similarly, you can type `sahp` to have a quick look of the dataset.
+The data set `sahp` is also included in the R package **r02pro**. Similarly, you can type `sahp` to have a quick look of the dataset.
 
 ```{r, results = TRUE}
 sahp
@@ -76,9 +76,7 @@ You can see that `sahp` is a *tibble* with 165 observations and 12 variables.  L
 summary(sahp)
 ```
 
-In the output, we get the summary statistics for each variable. For numeric variables, we get the minimum, 1st quartile, median, mean, 3rd quartile, and the maximum. It also shows the number of `NA`'s for a particular variable. For character variables, we only get the length of the vector, the class, and the mode. 
-
-Although the types of each variable are shown in the result when typing `sahp`, a more detailed list can be found with the function `str()`. 
+Again, we can use the `str()` function to a detailed list of each variable along with its type. 
 
 ```{r, results=TRUE}
 str(sahp)
@@ -174,9 +172,9 @@ good_qual <- sahp$oa_qual > 5
 ```
 
 
-#### Recover Modified Values
+### Recover Modified Values
 
-When you are working with a data set inside a package, you may accidentally modified some values in place by mistake. In this situation, you don't need to panic as you can easily recover the data set into a faculty setting (i.e. the original version inside the package). To do this, you just need to use the `data()` function with the data set name as its argument. Let's try to modify one value of `sahp` and recover the data set afterward.
+When you are working with a data set inside a package, you may accidentally modified some values in place by mistake. In this situation, you don't need to panic as you can easily recover the data set into its "factory" setting (i.e. the original version inside the package). To do this, you just need to use the `data()` function with the data set name as its argument. Let's try to modify one value of `sahp` and recover the data set afterward.
 ```{r, results=TRUE}
 sahp[1,2]              #get the original value
 sahp[1,2] <- 5         #modify the value
