@@ -1,7 +1,5 @@
 ## Exporting Data to Delimited Files  {#export-data}
 
-We will start by introducing how to export data to a file in this chapter.
-
 
 ### Set the working directory {#setwd}
 
@@ -14,8 +12,8 @@ knitr::include_graphics("pics/5_setwd.png")
 
 There are three options under this menu. 
 
-- *To Source File Location*: this is the same directory as the current R script. 
-- *To Files Pane Location*: this is the same directory as shown in the Files Panel on the bottom right of RStudio. 
+- *To Source File Location*: this will set the working directory as the directory of the current R script. 
+- *To Files Pane Location*: this will set the working directory as the directory of the Files Pane on the bottom right of RStudio. 
 - *Choose Directory...*: this will open up a window from which you can choose any desired directory. 
 
 After selecting any of the three options, we can see a line of code containing the function `setwd()` executed in the console. Indeed, this menu operation is equivalent to using the `setwd()` function with the argument being the full path or relative path of the desired directory. 
@@ -26,7 +24,7 @@ Another related function is `getwd()` which tells us the absolute path represent
 getwd()
 ```
 
-For illustration purposes, we will create a folder called "data" using the function `dir.create()` under the current working directory and export/import all files from this folder. 
+For illustration purposes, we will create a folder called "data" using the function `dir.create()` under the current working directory and export/import to/from files in this folder. 
 ```{r, warning=FALSE}
 dir.create("data")
 ```
@@ -34,7 +32,7 @@ dir.create("data")
 
 ### Delimited files
 
-In most applications, you will use a specific file type called **delimited** file. In a delimited file, each row represents a single observation, and it has values separated by the **delimiter**. In principle, *any character (including letters, numbers, or symbols)* can be used as a delimiter, with the most commonly used ones being the following.
+In most applications, you will interact with the so-called **delimited** file. In a delimited file, each row represents a single observation, and it has values separated by the **delimiter**. In principle, *any character (including letters, numbers, or symbols)* can be used as a delimiter, with the most commonly used ones being the following.
 
 ```{r echo = FALSE, results = TRUE}
 library(tibble)
@@ -69,7 +67,7 @@ library(readr)
 write_csv(gm_small, "data/gm_small.csv")
 ```
 
-Note here, we are writing the data into a file names "gm_small.csv" in the folder "data". This is called a **relative file path**. You can also use a **absolute file path** on your computer, though it is not as collaboration friendly as the relative path.  
+Note here, we are writing the tibble `gm_small` into a file named "gm_small.csv" in the folder "data". "data/gm_small.csv" is an example of **relative file path**. You can also use the **absolute file path** on your computer, though it is not as collaboration friendly as the relative path, since your collaborator may have a different file structure from yours.  
 
 You can verify the .csv file has been indeed created and open the file with RStudio or any text editor to verify its contents. 
 
@@ -78,7 +76,7 @@ knitr::include_graphics("pics/4.2_csv_content.png")
 ```
 
 
-We can see that all the information has been written in the .csv file, which has *commas* separating the values on each line. In particular, you may find out the first row of the file corresponds to the column names. If you don't want to include the column names, you can set the argument `col_names = FALSE`. 
+We can see that all the information has been written in the .csv file, with *commas* separating the values on each line. In particular, you may find out the first row of the file corresponds to the column names. If you don't want to include the column names, you can set the argument `col_names = FALSE`. 
 
 ```{r, eval=FALSE}
 write_csv(gm_small, "data/gm_small_no_colname.csv", col_names = FALSE)
