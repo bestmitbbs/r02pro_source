@@ -11,6 +11,7 @@ install.packages("writexl")
 ```
 
 Now, we can load the **writexl** package and use the `write_xlsx()` function to write data into an Excel file with extension .xlsx. Let's first load the data from "gm_small.csv" and write it to "gm_small.xlsx". 
+
 ```{r, eval = FALSE}
 library(writexl)
 library(readr)
@@ -32,11 +33,10 @@ You can open this file with Excel and verify its contents.
 
 ### Import Excel Files (.xls and .xlsx ) using `read_excel()`
 
-Having learned how to export data into an Excel file, let's see how to read an existing Excel file into R. We can use the `read_excel()` function in the `readxl` package to import Excel files.  Here, `readxl` is another subpackage in the **tidyverse** package. Thus we can directly load the package if the **tidyverse** package is already installed. 
-
-
+After learning how to export data into an Excel file, let's see how to read an existing Excel file into R. We can use the `read_excel()` function in the `readxl` package to import Excel files. Here, `readxl` is another subpackage in the **tidyverse** package. Thus we can directly load the package if the **tidyverse** package is already installed. 
 
 Let's import the Excel file "two_data.xlsx" we just created into R. 
+
 ```{r, results=TRUE}
 library(readxl)
 my_df <- read_excel("data/two_data.xlsx")
@@ -68,7 +68,6 @@ As introduced in Table \@ref(tab:importMenu), to import Excel files, you can sel
 
 Similar to importing the delimited files, we can see the first several rows in the **Data Preview** window. The first row shows the column names and their associate types in parentheses. For each column, you can click the dropdown menu after the type to change its type. Now, let's discuss several options in the **Import Options** section and their corresponding arguments in the `read_excel()` function. 
 
-
 ```{r importExcelOptions, echo = FALSE, results = TRUE}
 Option  <- c("Name","Sheet", "Range", "Max Rows", "Skip","NA", "First Row as Names", "Code Preview")
 Argument <- c("-", "`sheet`","`range`","`n_max`","`skip`", "`na`", "`col_names`", "-")
@@ -78,8 +77,6 @@ knitr::kable(d, caption = "Menu Options and its Corresponding Arguments in `read
 ```
 
 Note that similar as importing delimited files, when you change these options, the code in the *Code Preview* window will change accordingly, which is a great way to learn on how they work.
-
-
 
 ### Exercises
 
