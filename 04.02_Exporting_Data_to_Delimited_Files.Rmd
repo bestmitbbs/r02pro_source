@@ -2,19 +2,19 @@
 
 ### Set the working directory {#setwd}
 
-First, we will introduce an important concept called **Working Directory**. In order to achieve **data export** and **import**, you are recommended to set the *working directory*, since we usually use a path relative to the working directory for interacting with files on the computer in R. To set the working directory, you can click *Session* on the menu and click  *Set Working Directory*. 
+First, we will introduce an important concept called **Working Directory**. In order to achieve **data export** and **data import**, you are recommended to set the *working directory*, since we usually use a path relative to the working directory for interacting with files on the computer in R. To set the working directory, you can click *Session* on the menu and click  *Set Working Directory*. 
 
 ```{r setwd1, results = TRUE, echo=FALSE, fig.align = 'center', fig.cap="Set Working Directory", out.width = '90%'}
 knitr::include_graphics("pics/5_setwd.png")
 ```
 
-There are three options under this menu. 
+There are three options under this menu: 
 
 - *To Source File Location*: this will set the working directory as the directory of the current R script. 
 - *To Files Pane Location*: this will set the working directory as the directory of the Files Pane on the bottom right of RStudio. 
 - *Choose Directory...*: this will open up a window from which you can choose any desired directory. 
 
-After selecting any of the three options, we can see a line of code containing the function `setwd()` executed in the console. Indeed, this menu operation is equivalent to using the `setwd()` function with the argument being the full path or relative path of the desired directory. 
+After selecting one of the three options, we can see a line of code containing the function `setwd()` executed in the console. Indeed, this menu operation is equivalent to using the `setwd()` function with the argument being the full path or relative path of the desired directory. 
 
 Another related function is `getwd()`, which tells us the absolute path representing the current working directory. When you see an error message saying that a file is not found, it is a good idea to check the current working directory and check whether it is correct. 
 
@@ -70,7 +70,7 @@ You can verify the .csv file has been indeed created and open the file with RStu
 knitr::include_graphics("pics/4.2_csv_content.png")
 ```
 
-We can see that all the information is wrote in the .csv file, with *commas* separating the values on each line. In particular, you may find out the first row of the file corresponds to the column names. If you don't want to include the column names, you can set the argument `col_names = FALSE`. 
+We can see that all the information is wrote in the .csv file, with *commas* separating the values on each observation. In particular, you may find out the first row of the file corresponds to the column names. If you don't want to include the column names, you can set the argument `col_names = FALSE`. 
 
 ```{r, eval=FALSE}
 write_csv(gm_small, "data/gm_small_no_colname.csv", col_names = FALSE)
@@ -84,7 +84,7 @@ write_csv(gm_small, "data/gm_small_missing.csv", na = "This value is missing!")
 
 ### Write an object into a general delimited file {#write-delim}
 
-As introduced at the beginning, there are different types of *delimited files*, depending on the specific *delimiter*. The function `write_delim()` enables us to write an object into a delimited file with any chosen delimiter. The usage of `write_delim()` is almost identical to `write_csv()`, except that it has an additional argument `delim`, which specifies the delimiter to be used. Let's see the following example with `*` as the delimiter. 
+As introduced at the beginning, there are different types of *delimited files*, depending on the specific *delimiter* of your choice. The function `write_delim()` enables us to write an object into a delimited file with any chosen delimiter. The usage of `write_delim()` is almost identical to `write_csv()`, except that it has an additional argument `delim`, which specifies the delimiter to be used. Let's see the following example with `*` as the delimiter. 
 
 ```{r, eval=FALSE}
 write_delim(gm_small, "data/gm_small_star.csv", delim = "*")
