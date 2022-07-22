@@ -114,7 +114,6 @@ read_csv("x,y,z
 ```
 
 Here, the first column is wrongly interpreted as a character vector. 
-:::
 
 
 ### Importing Data From a Delimited File
