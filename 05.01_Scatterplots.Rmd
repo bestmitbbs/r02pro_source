@@ -1,27 +1,27 @@
-## Scatterplots {#scatterplots}
+## Scatterplot {#scatterplot}
 
 From this section, you will learn various kinds of plots, that involves one or more variables in a data set.
 
-Let's first look at the gapminder data set `gm2007`. We are wondering the relationship between `sugar` and `cholesterol_fat_in_blood`. 
+Let's first look at the gapminder data set `gm2004`. We would like to learn the relationship between `sugar` and `cholesterol`. 
 
-To visualize the relationship between two continuous variables, the most commonly used plot is the **scatterplot**, which is a 2-dimensional plot with a collection of all the datapoints, where the x-axis and y-axis correspond to the two variables, respectively. 
+To visualize the relationship between two continuous variables, one of the most commonly used plots is the **scatterplot**, which is a 2-dimensional plot with a collection of all the datapoints, where the x-axis and y-axis correspond to the two variables, respectively. 
 
 
 ### Using the `plot()` function
 
-In base R, we can use the `plot()` function to generate a scatterplot with the first argument being the variable on the x-axis and the second argument being the variable on the y-axis. 
+In base R, you can use the `plot()` function to generate a scatterplot with the first argument being the variable on the x-axis and the second argument being the variable on the y-axis. 
 
 ```{r, results = TRUE}
 library(r02pro)
-plot(gm2007$sugar,
-     gm2007$cholesterol_fat_in_blood_female)
+plot(gm2004$sugar,
+     gm2004$cholesterol)
 ```
 
-From the scatterplot, we can see a clear increasing trend between `sugar` and `cholesterol_fat_in_blood`, which is consistent with our intuition. The `plot()` function provides a rich capability of customization by setting the **graphical parameters**. We summarize a few commonly used parameters for scatterplots as below. 
+From the scatterplot, you can see a clear increasing trend between `sugar` and `cholesterol`, which is consistent with our intuition. The `plot()` function provides a rich capability of customization by setting the **graphical parameters**. We summarize a few commonly used parameters for scatterplots as below. 
 ```{r echo = FALSE, results = TRUE}
 Parameter  <- c('`col`',"`xlab`","`ylab`","`main`","`pch`","`cex`")
 Meaning <- c("Color", "A title for the x-axis", "A title for the y-axis", "An overall title for the plot", "Shape of the points","Size of text and symbols")
-Example <- c('"red"', '"Living Area"', '"Sale Price"', '"Sale Price vs. Living Area"', '`2`', '`2`')
+Example <- c('"red"', '"Sugar"', '"Cholesterol"', '"Cholesterol vs. Sugar"', '`2`', '`2`')
 d <- data.frame(Parameter, Meaning, Example)
 knitr::kable(d)
 ```
@@ -29,88 +29,127 @@ knitr::kable(d)
 Let's see the effect of these parameters in the following example.
 
 ```{r, results = TRUE}
-plot(sahp$liv_area, sahp$sale_price, 
+plot(gm2004$sugar,
+     gm2004$cholesterol,
      col = "red", 
-     xlab = "Living Area", 
-     ylab = "Sale Price", 
-     main = "Sale Price vs. Living Area",  
+     xlab = "Sugar", 
+     ylab = "Cholesterol", 
+     main = "Cholesterol vs. Sugar",  
      pch = 2, 
      cex = 2)
 ```
 
+### Interacting and Saving the plot from `plot()`
 
-```{r}
-plot(gm2007$sugar, gm2007$cholesterol_fat_in_blood_female)
+After generating the plot, there are many convenient options in the "Plots" panel of RStudio that allow us to interact with the plot. 
+
+```{r, echo = FALSE, fig.align = 'center', fig.cap="Plots Panel Options", out.width = '70%'}
+knitr::include_graphics("pics/figure_options.jpg")
 ```
 
 
+Here are a few options.
 
-Considering the housing prices, a natural question you may have is that are the bigger houses more expensive? 
+- Zoom: the figure will be detached as a separate window in RStudio. You can them drag it around or freely adjust its size just like any other window. 
+- Export (Save as Image): you can choose the Image Format, change the directory, customize the file name, and set the Width and Height. 
+- Export (Save as PDF): you can choose the PDF Size, Orientation (Portrait or Landscape), directory, and File Name. 
+- Export (Copy to Clipboard): this option is useful if you just want to immediately paste the picture into another document such as a Word document, Preview, or email message. Before copying, you can also customize the width and height. 
 
-To answer this question, you need to look at the relationship between `liv_area` and the `sale_price` in the `sahp` data set. 
-To visualize the relationship between two continuous variables, the most commonly used plot is the **scatterplot**, which is a 2-dimensional plot with a collection of all the datapoints, where the x-axis and y-axis correspond to the two variables, respectively. 
 
-### Using the `plot()` function
-In base R, we can use the `plot()` function to generate this scatterplot with the first argument being the variable on the x-axis and the second argument being the variable on the y-axis. 
-```{r, results = TRUE}
-library(r02pro)
-plot(sahp$liv_area, sahp$sale_price)
+In addition to using the menu options, you can also write script to automatically save the plot to your disk. To do that, you need to do the following three steps.
+
+1. Specify a file which will serve as the output device for the `plot()` function. You can use the functions `png()`, `jpeg()`, `png()`, and `pdf()` with the target file name as the argument. 
+2. Run the `plot()` function. 
+3. Run `dev.off()` to close the connection. 
+
+Let's see an example. 
+
+```{r, eval=FALSE}
+pdf("data/cholestrol_vs_sugar.pdf")
+plot(gm2004$sugar,
+     gm2004$cholesterol)
+dev.off()
 ```
 
-From the scatterplot, we can see a clear increasing trend between `sale_price` and `liv_area`, which is consistent with our intuition. The `plot()` function provides a rich capability of customization by setting the **graphical parameters**. We summarize a few commonly used parameters for scatterplots as below. 
-```{r echo = FALSE, results = TRUE}
-Parameter  <- c('`col`',"`xlab`","`ylab`","`main`","`pch`","`cex`")
-Meaning <- c("Color", "A title for the x-axis", "A title for the y-axis", "An overall title for the plot", "Shape of the points","Size of text and symbols")
-Example <- c('"red"', '"Living Area"', '"Sale Price"', '"Sale Price vs. Living Area"', '`2`', '`2`')
-d <- data.frame(Parameter, Meaning, Example)
-knitr::kable(d)
-```
-
-Let's see the effect of these parameters in the following example.
-
-```{r, results = TRUE}
-plot(sahp$liv_area, sahp$sale_price, 
-     col = "red", 
-     xlab = "Living Area", 
-     ylab = "Sale Price", 
-     main = "Sale Price vs. Living Area",  
-     pch = 2, 
-     cex = 2)
-```
-
+Note that when you use the .pdf format, you can have multiple plots generated from the `plot()` before running `dev.off()`. In this case, the output .pdf file will contain multiple pages where each page corresponds to a plot.
 
 ### Using the `ggplot()` function {#point}
+
 Although the `plot()` function gets the work done, the **ggplot2** package provides a superior user experience which allows us to create complex plots with ease. Since the **ggplot2** package is a member of the **tidyverse** package, you don't need to install it separately if **tidyverse** was already installed. Let's first load the package **ggplot2** and create a scatterplot.
+
 ```{r, results = TRUE}
 library(ggplot2)
-ggplot(data = sahp) + 
-  geom_point(mapping = aes(x = liv_area, y = sale_price))
+ggplot(data = gm2004) + 
+  geom_point(mapping = aes(x = sugar, 
+                           y = cholesterol))
 ```
 
-Aside from the expected scatterplot, you can see a warning message "Removed 1 rows containing missing values (geom_point)." This indicate that there is 1 row in `sahp` that contains missing values and it was removed during the plotting process. The removal of missing values is a default behavior for all plots generated by the **ggplot2** package.
+Aside from the expected scatterplot, you can see a warning message "Removed 128 rows containing missing values (geom_point)." This indicate that there are 128 rows in `gm2004` that contains missing values (see Section \@ref(missing-values) for a detailed treatment of missing values) and they were removed during the plotting process. The removal of missing values is a default behavior for all plots generated by the **ggplot2** package.
 
 Now, let's walk through the mechanism of **ggplot2**. In a nutshell, ggplot2 implements the **grammar of graphics**, a coherent system for describing and building graphs. A more detailed description on the grammar of graphics can be found in @wickham2010layered. 
 
 Let's break it down into two steps. In **ggplot2**, we always start with the function `ggplot()` with a data frame or tibble as its argument. 
+
 ```{r, results=TRUE}
-ggplot(data = sahp)
+ggplot(data = gm2004)
 ```
 
-After running this code, you can see an empty plot. This is because ggplot does not yet know which variables or what type of plots you want to create. To generate a scatterplot, you can use add a layer using the `+` operator followed by the `geom_point()` function. The `geom_point()` is one of the many available geoms in ggplot. 
+After running this code, you can see an empty plot. This is because ggplot does not yet know which variables or what type of plots you want to create. To generate a **scatterplot**, you can add a layer using the `+` operator followed by the `geom_point()` function. The `geom_point()` is one of the many available geoms in ggplot. 
 
 Inside `geom_point()`, you need to set the value of the `mapping` argument. The `mapping` argument takes a functional form as `mapping = aes()`, where the `aes` is short for aesthetics. For example, you can use `aes()` to tell ggplot to use which variable on the x-axis, which variable on the y-axis. Let's take another look at this example.
 ```{r, eval=FALSE}
-ggplot(data = sahp) + 
-  geom_point(mapping = aes(x = liv_area, y = sale_price))
+ggplot(data = gm2004) + 
+  geom_point(mapping = aes(x = sugar, 
+                           y = cholesterol))
 ```
 
-Here, inside the `aes()` function, we set `x = liv_area` and `y = sale_price`, indicating that the variable `liv_area` will appear on the x-axis and `sale_price` will appear on the y-axis.
+
+
+Here, inside the `aes()` function, we set `x = sugar` and `y = cholesterol`, indicating that the variable `sugar` will appear on the x-axis and `cholesterol` will appear on the y-axis.
+
+::: {.infobox .caution data-latex="{caution}"}
+When creating a ggplot, we recommend starting a new line after each `+` and also put all arguments of the `aes()` function on separate lines for better readability. 
+::: 
+
+
+Now, let's look at another example. We would like to explore the relationship between `GDP_per_capita` and `life_expectancy`. 
+
+```{r}
+ggplot(data = gm2004) + 
+  geom_point(mapping = aes(x = GDP_per_capita, 
+                           y = life_expectancy))
+```
+
+We can see that `life_expectancy` in general increases (in a non-linear fashion) as `GDP_per_capita` increases, again consistent with our knowledge. From the figure, you can see that there is a pretty heavy left tail for `GDP_per_capita`. To fix this problem, you can actually use a log transformation of `GDP_per_capita` in the scatterplot. Note that you can directly use the transformed form as an aesthetic mapping, without the need to first add the transformation as a variable.
+```{r}
+ggplot(data = gm2004) + 
+  geom_point(mapping = aes(x = log(GDP_per_capita), 
+                           y = life_expectancy))
+```
+ 
+After the logarithm transformation, you can see a relationship that is more linear. 
+
+### Interact and Save the plot from `ggplot()`
+
+After generating the plot using `ggplot()`, you can use exactly the same menu options for interacting the plot as for `plot()`.
+
+However, the mechanism for saving plots from `ggplot()` is completely different from that of `plot()`. To save a plot from `ggplot()`, you just need to use the `ggsave()` function after generating the plot without first setting up the connection to the file. The `ggsave()` function is very smart in the sense that it will automatic save the plot to the desired format depending on the extension of the given file name. 
+
+```{r, eval=FALSE}
+ggplot(data = gm2004) + 
+  geom_point(mapping = aes(x = sugar, 
+                           y = cholesterol))
+ggsave("data/cholestrol_vs_sugar_ggplot.pdf") #save the plot as a .pdf file
+ggsave("data/cholestrol_vs_sugar_ggplot.jpg") #save the plot as a .jpg image
+```
+
+
 
 ### Exercises
 
-Using the `sahp` dataset,
 
-1.	Create a scatterplot to visualize the relationship between `bedroom` (on the x-axis) and `sale_price` (on the y-axis) without using any package, then set labels according to variable names and change all points to red.
+1.	Using the `sahp` dataset, create a scatterplot to visualize the relationship between `bedroom` (on the x-axis) and `sale_price` (on the y-axis) without using any package, then set labels according to variable names and change all points to red. Finally, save the plot to `data/sale_price_vs_bedroom.jpg` and discuss the findings.
+2. Using the `gm2004` dataset, create a scatterplot to visualize the relationship between `sanitation` ( on the x-axis) and `life_expectancy` (on the y-axis) using the **ggplot2** pckage. Finally, save the plot to `data/life_expectancy_vs_sanitation.pdf` and discuss the findings.
 
 
 
