@@ -26,6 +26,24 @@ d <- data.frame(Parameter, Meaning, Example)
 knitr::kable(d)
 ```
 
+::: {.infobox .caution data-latex="{caution}"}
+A collection of shapes and their associated integers are as below.
+```{r, echo=FALSE}
+library(ggplot2)
+shapes <- data.frame(
+  shape = c(0:19, 22, 21, 24, 23, 20),
+  x = 0:24 %/% 5,
+  y = -(0:24 %% 5)
+)
+ggplot(shapes, aes(x, y)) + 
+  geom_point(aes(shape = shape), size = 5, fill = "red") +
+  geom_text(aes(label = shape), hjust = 0, nudge_x = 0.15) +
+  scale_shape_identity() +
+  expand_limits(x = 4.1) +
+  theme_void()
+```
+:::
+
 Let's see the effect of these parameters in the following example.
 
 ```{r, results = TRUE}
@@ -38,6 +56,8 @@ plot(gm2004$sugar,
      pch = 2, 
      cex = 2)
 ```
+
+
 
 ### Interacting and Saving the plot from `plot()`
 
