@@ -14,6 +14,10 @@ There are three options under this menu:
 - *To Files Pane Location*: this will set the working directory as the directory of the Files Pane on the bottom right of RStudio. 
 - *Choose Directory...*: this will open up a window from which you can choose any desired directory. 
 
+Keep in mind that if you choose to work under a RStudio project, you might notice an additional choice under the *Set Working Directory* tab:
+
+- *To Project Directory*: this will set the working directory as the directory of your current RStudio project. 
+
 After selecting one of the three options, we can see a line of code containing the function `setwd()` executed in the console. Indeed, this menu operation is equivalent to using the `setwd()` function with the argument being the full path or relative path of the desired directory. 
 
 Another related function is `getwd()`, which tells us the absolute path representing the current working directory. When you see an error message saying that a file is not found, it is a good idea to check the current working directory and check whether it is correct. 
