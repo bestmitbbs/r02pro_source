@@ -129,7 +129,7 @@ Suppose `exercise <- c("&5", "Nd", "9iC", "3df", "df", "nd", "_5", "9ic")`
 
 1. Sort `exercise` in the  ascending order. Explain why 1) `3df` goes before `9ic`; 2) `&5` goes before `3df`; 3) `9ic` goes before `9iC`.
 
-2. Apply both `rank()` and `order()` to the character vector `exercise`. Explain how does the returned element `7` mean differently in two returned vectors. #麻烦帮忙看看这个题的题目清楚吗
+2. Apply both `rank()` and `order()` to the character vector `exercise`. Within the two returned vectors, explain how does the element `7` means differently in two vectors. 
 
 
 
