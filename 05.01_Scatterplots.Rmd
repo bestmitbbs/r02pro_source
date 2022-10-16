@@ -169,7 +169,7 @@ ggsave("data/cholestrol_vs_sugar_ggplot.jpg") #save the plot as a .jpg image
 ### Exercises
 
 
-1.	Using the `sahp` dataset, create a scatterplot to visualize the relationship between `bedroom` (on the x-axis) and `sale_price` (on the y-axis) without using any package, then set labels according to variable names and change all points to red. Finally, save the plot to `data/sale_price_vs_bedroom.jpg` and discuss the findings.
+1.	Using the `sahp` dataset, create a scatterplot to visualize the relationship between `liv_area` (on the x-axis) and `sale_price` (on the y-axis) without using any package, then set labels according to variable names and change all points to red. Finally, save the plot to `data/sale_price_vs_liv_area.jpg` and discuss the findings.
 2. Using the `gm2004` dataset, create a scatterplot to visualize the relationship between `sanitation` ( on the x-axis) and `life_expectancy` (on the y-axis) using the **ggplot2** pckage. Finally, save the plot to `data/life_expectancy_vs_sanitation.pdf` and discuss the findings.
 
 
