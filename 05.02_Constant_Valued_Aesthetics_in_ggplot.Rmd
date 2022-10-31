@@ -1,4 +1,4 @@
-## ggplot Aesthetics (I): Constant-Valued Aesthetics {#aes}
+## ggplot Aesthetics (I): Constant-Valued Aesthetics {#aes-constant-value}
 
 Having learned how to generate a basic scatterplot using `geom_point()` in Section \@ref(scatterplot), let's introduce one of the most important ingredients in a `geom`, namely, the **aesthetics**. Aesthetics include various features that you can change that affect the appearances of a plot, including color, shape, and size. 
 
