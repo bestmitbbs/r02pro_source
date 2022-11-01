@@ -1,4 +1,4 @@
-## ggplot Aesthetics (II): Local Aesthetics Mapping {#aes-map}
+## ggplot Aesthetics (II): Local Aesthetics Mapping {#aes-local-map}
 
 In Section \@ref(aes), we introduced the first kind of aesthetics, namely **Constant-Valued Aesthetics**, where we set constant values to aesthetics that change features of the plot globally. In some applications, however, you may want to highlight different groups of the data with different values of aesthetics. In this section, we will dive deep into this topic: **Local Aesthetics Mapping**.
 
