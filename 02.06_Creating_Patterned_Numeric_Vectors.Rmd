@@ -228,7 +228,7 @@ Here, the first row is the numeric vector's name. The second row shows all uniqu
 
 1. Use five different ways to create an equally-spaced sequence with `2 4 6 8 10` as result.
 
-2. Use two different ways to create the patterned sequence with "2 2 6 6 8 8 2 2 6 6 8 8" as result.
+2. Use two different ways to create the patterned sequence with `2 2 6 6 8 8 2 2 6 6 8 8` as result.
 
 3. Use two different ways to create a numeric vector with `1 2 3 1 2 3 4 5 1 2 3 4 5 6 7` as result. Show the unique elements and their corresponding frequency.
 
