@@ -193,6 +193,12 @@ It is important that, to assign two numeric vectors as the two arguments in `rep
 num4 <- rep(c(1,5,7), c(3,2))
 ```
 
+Last but not least, you can also apply `each` and `times` arguments in the `rep()` command. The former implies how many times each element in the vector of interest will be repeated per round, while the latter determines how many rounds the repeating will include.
+
+```{r}
+rep(c(1,2), each = 3, times = 3)
+```
+
 ### The `unique()` and `table()` Functions -- Getting unique elements and their frequencies
 
 So far, you have learned how to create vectors with specific patterns. Sometimes, you may want to inspect the unique elements (elements with different values) in a numeric vector and their corresponding frequencies. Let’s use num3 as an example. **(Don’t forget to use ls() or check the environment panel to find all objects you have defined)**,
@@ -222,8 +228,8 @@ Here, the first row is the numeric vector's name. The second row shows all uniqu
 
 1. Use five different ways to create an equally-spaced sequence with `2 4 6 8 10` as result.
 
+2. Use two different ways to create the patterned sequence with `2 2 6 6 8 8 2 2 6 6 8 8` as result.
 
-
-2. Use two different ways to create a numeric vector with `1 2 3 1 2 3 4 5 1 2 3 4 5 6 7` as result. Show the unique elements and their corresponding frequency.
+3. Use two different ways to create a numeric vector with `1 2 3 1 2 3 4 5 1 2 3 4 5 6 7` as result. Show the unique elements and their corresponding frequency.
 
 

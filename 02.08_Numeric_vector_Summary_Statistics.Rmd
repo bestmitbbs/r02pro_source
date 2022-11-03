@@ -71,7 +71,6 @@ h
 diff(h)
 ```
 
-#我就是好奇查了一下diff() functions，下面这一段可以是optional的，但是it is worth noting that diff() 和 sum() 的mechanism不一样
 It is worth noting that the `diff()` function doesn't work the same way as the `sum()` function. Specifically, `diff()` returns the **difference between consecutive elements** in a numeric vector. In `h`, the difference between the first and the second elements (`3` and `2`) is `-1`, whereas that between the second and the third elements (`2` and `75`) is `73`. In other words, the computations in done by subtracting the former element from the latter one in a consecutive pair.  
 
 
