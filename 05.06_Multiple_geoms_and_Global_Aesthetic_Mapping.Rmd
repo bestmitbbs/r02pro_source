@@ -123,7 +123,7 @@ As another example, for the combination of scatterplot and line plot, we can als
 ```{r, eval = FALSE}
 ggplot(data = sahp_2006,
        mapping = aes(x = dt_sold, 
-                          y = sale_price)) + 
+                     y = sale_price)) + 
   geom_line() + 
   geom_point()
 ```

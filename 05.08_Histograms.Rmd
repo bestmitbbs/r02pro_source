@@ -2,9 +2,7 @@
 
 In Section \@ref(bar-charts), we learned how to use `geom_bar()` to generate bar charts for visualizing the distributions of discrete variables. You may be wondering, how about visualizing continuous variables? One popular plot is called **histograms**. 
 
-In this section, we will use the `gm2004` data set.
-
-Let's again use the `sahp` housing price data set. 
+In this section, we will return to the `gm2004` data set.
 
 ### Using the `hist()` function
 
