@@ -6,7 +6,7 @@ There are in general three kinds of aesthetics:
 
 1. **Constant-Valued Aesthetics**: this type of aesthetics change the corresponding feature of a plot **globally** (for example, `color = "red"` will make everything red). This type of aesthetic specification appears as **an argument of the geoms** (for example `geom_point()`). This will be the focus of our current section. 
 
-2. **Local Aesthetic Mapping**: this type of aesthetics (for example, a color) will take possibly different values (different color values) for different data points depending on the **mapped variables, only for the current geom**. This type of aesthetic specification appears as an argument of the `aes()` function of the corresponding geom. We will cover this type of aesthetic in the next Section (Section \@ref(aes-map)).
+2. **Local Aesthetic Mapping**: this type of aesthetics (for example, `color`) will take possibly different values (different color values) for different data points depending on the **mapped variables, only for the current geom**. This type of aesthetic specification appears as an argument of the `aes()` function of the corresponding geom. We will cover this type of aesthetic in the next Section (Section \@ref(aes-map)).
 
 3. **Global Aesthetic Mapping**: this type of aesthetics will use possibly different values for different data points depending on the **mapped variable, at the global level**, which will be **passed** to all individual geoms. This type of aesthetic specification appears as an argument of the `aes()` function, which is an argument of the `ggplot()` function. We will cover this type of aesthetic in Section \@ref(multi-geom), where multiple geoms are used. 
 
