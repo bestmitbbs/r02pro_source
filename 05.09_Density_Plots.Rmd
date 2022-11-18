@@ -115,6 +115,6 @@ Use the `sahp` data set to answer the following questions.
 
 1. Create density plot on the living area (`liv_area`) with dashed lines and different colors for different values of `kit_qual`. What conclusions can you draw from the plot? 
 
-2. Try to create density plot for `kit_qual`. Do you think this plot is informative? If not, create a plot that captures the distribution of `kit_qual`.   
+2. Try to create density plot for `kit_qual`. Do you think this plot is informative? If not, create a plot that captures the distribution of `kit_qual`.    
 
 
