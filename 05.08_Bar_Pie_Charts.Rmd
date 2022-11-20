@@ -4,7 +4,7 @@ For visualizing the relationship between two **continuous variables**, we have l
 
 In this section, we will introduce two new kinds of plots for **discrete variables**, called **bar chart** and **pie chart**. A bar chart uses rectangular bars with heights or lengths proportional to the values they represent, in order to visualize a discrete variable. A pie chart divides a circle into slices to represent numerical proportions.
 
-### An Introduction to Bar Chart
+### An Introduction to Bar Chart {#intro-bar-chart}
 
 In the `sahp` dataset, you may be interested in the distribution of kitchen quality of the house (denoted in the `kit_qual` variable). To generate a bar chart, you can use the function `geom_bar()`. 
 
@@ -108,7 +108,7 @@ ggplot(data = sahp) +
 
 As you can imagine, the second argument of `fct_relevel()` contains the desired order of the factors, which will be reflected in the order of the bars. 
 
-### Aesthetics in Bar Charts
+### Aesthetics in Bar Charts {#bar-aes}
 
 As before, we can use aesthetics to control the appearance of bar charts. 
 

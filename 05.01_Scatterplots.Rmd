@@ -142,7 +142,7 @@ We can see that `life_expectancy` in general increases (in a non-linear fashion)
 
 ```{r}
 ggplot(data = gm2004) + 
-  geom_point(mapping = aes(x = log(GDP_per_capita), 
+  geom_point(mapping = aes(x = log10(GDP_per_capita), 
                            y = life_expectancy))
 ```
  

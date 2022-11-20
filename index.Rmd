@@ -1,6 +1,6 @@
 --- 
 title: "R Programming: Zero to Pro"
-author: "[Yang Feng](https://yangfeng.hosting.nyu.edu/) and [Jianan Zhu](https://yangfeng.hosting.nyu.edu/authors/jianan-zhu/)"
+author: "r02proers"
 date: "`r Sys.Date()`"
 site: bookdown::bookdown_site
 output: bookdown::gitbook
