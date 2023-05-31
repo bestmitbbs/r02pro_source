@@ -1,3 +1,0 @@
-# Data Visualization {#data-visualization}
-
-Equipped with the knowledge of different R objects in Chapters \@ref(r-objects) and \@ref(r-objects-other-types), we are ready to dive into the colorful world of **data visualization**. In this chapter, you will learn all kinds of plots that can be generated in R. 
