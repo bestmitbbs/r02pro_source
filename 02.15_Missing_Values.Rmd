@@ -1,6 +1,6 @@
 ## Missing Values (`NA`) {#missing-values}
 
-So far, we have been working with the ideal case that the vector is fully observed without any missing values. However, in most applications, you may encounter the situation, where some values like `NA` or `NaN`, which are **missing** or **undefined** in the data set for certain variables, and such values can be resulted from one of the below situations:
+So far, we have been working with the ideal case that the vector is fully observed without any missing values. However, in most applications, you may encounter the situation, where some values like `NA` or a large value `999`, which represent **missingness** in the data set for certain variables, and such values can be resulted from one of the below situations:
 
 a) the observer fails to record the data, meaning the value is not available at the given position of a vector or a data frame, or 
 b) the data is impossible or undefined, meaning the value is resulted from an error or logical contradiction, such as dividing by 0.

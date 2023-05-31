@@ -1,0 +1,3 @@
+#rsync -av  --include '*/' --include '*.bib' --include '*.html' --include '*.txt' --include '*.zip' --include '*.pdf' --include '*.jpeg' --include '*.png' --include '*.jpg' --include '*.css' --include ‘*.htaccess’ --exclude '*'  "/Users/yangfeng/dropbox/My_website/public/" yangfeng@159.203.92.10:public_html/
+
+rsync -av  "/Users/yangfeng/Dropbox/r02pro_book/r02pro_source/_book/" yangfeng@15.204.130.71:public_html/r02pro

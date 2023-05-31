@@ -2,6 +2,8 @@
 
 In this chapter, we have introduced the most commonly used plots for visualization. It is helpful to review what we have learned so far. 
 
+### Summary of geoms
+
 ```{r echo = FALSE, results = TRUE, warning=FALSE, message=FALSE}
 library(kableExtra)
 Names <- c("Histogram",
@@ -31,3 +33,36 @@ kableExtra::kable(d) %>% kableExtra::row_spec(c(3, 5,8), hline_after = T)%>%kabl
 ```
 
 
+### The grammatical structure of `ggplot()`
+
+Next, we review the grammatical structure of `ggplot()`.
+
+```{r echo = FALSE, results = TRUE}
+Code  <- c("`ggplot(data = <DATA>) +`", "`<GEOM_FUNCTION>(`", "`mapping = aes(<MAPPINGS>),`", "`stat = <STAT>, `", "`position = <POSITION>) + `", "`<COORDINATE_FUNCTION> +`", "`<FACET_FUNCTION> +`","`<SCALE_FUNCTION> +`", "`<THEME_FUNCTION>`")
+Info <- c("data to be used", "geom for generating the desirable plot", "aesthetic mappings, this may include the x and y axes and other features like `color`, `shape`, `fill`, `linetype`, `size`, etc.", "statistical transformation, for example, when we create the errorbar", "position, like `stack`, `dodge`, `fill`", "such as flipping the x and y axes", "`facet_wrap()` and `facet_grid()`, create multiple plots for different subsets of the data", "customize the x and y breaks", "customize labels, title, and fonts")
+d <- data.frame(Code, Info)
+kableExtra::kable(d, format = "pipe") 
+```
+
+### A complex `ggplot()` example
+
+To conclude this chapter, let's look at an example with all components.
+
+```{r, warning=FALSE, message=FALSE}
+library(r02pro)
+library(tidyverse)
+ggplot(data = na.omit(sahp)) +
+  geom_bar(
+    mapping = aes(x = kit_qual, fill = oa_qual > 5),
+    stat = "count", #Default stat for geom_bar, can be removed
+    position = "fill") +
+  coord_flip() +
+  facet_wrap(vars(house_style)) +
+  scale_y_continuous(breaks = seq(from = 0, to = 1, by = 0.2)) +
+  theme(plot.title = element_text(size = 24, color = "magenta")) +
+        xlab("Kitchen quality") +
+  ylab("Proportion") +
+  ggtitle('A bar chart in proportion of kitchen quality')
+```
+
+This plot shows a bar chart using the data `sahp` for the variable `kit_qual`, map the variable `oa_qual > 5` to the fill aesthetic and with `fill` position, with the x and y coordinates flipped, faceted using the variable `house_style`, and with the breaks on the y axis, the title and its font, the label on the y axis being customized. 

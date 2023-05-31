@@ -118,6 +118,8 @@ Generally, you can use `^` to do power operations. For example, `10^5` will give
 2 \times 10^4 &= \mbox{2e+04}\\
 1.2 \times 10^{-3} &= \mbox{1.2e-03}
 \end{align}
+
+Another thing to note is that we don't use commas when writing a big number in R as we do in reports and essays. For example, we need to write 1000000 for a million instead of 1,000,000.
 :::
 
 In mathematics, the *logarithmic operations* are inverse to the power operations. If **$b^y = x$** and you only know *$b$* and *$x$*, you can do logarithmic operations to solve *$y$* using the general form **$y = \log(x, b)$**, which is called the logarithm of $x$ with base $b$. 

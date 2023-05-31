@@ -42,7 +42,7 @@ class(pattern5)
 
 As powerful as the colon operator `:` is, it is really restricted to creating equally-spaced numeric vectors with an increment 1 or -1. By contrast, the `seq()` function don't have such a restriction, and it will come into play when you want to create equally-spaced numeric vectors with increments other than 1 or -1.
 
-***a. Create sequences with the `by` argument
+***a. Create sequences with the `by` argument*** 
 
 The `seq()` function can include three arguments: `from`, `to`, and `by`. The `from` and `to` arguments specify the start and limited end values, respectively, while the `by` argument specifies the increment of the sequence. 
 
@@ -93,7 +93,7 @@ seq(from = 1.5, to = -1, by = 0.5)
 It's worth-noting that the arguments in `seq()` function should make algebraic sense. For example, in the last example above, it doesn't make sense to use a positive value in the `by`argument when the start value is bigger than the limited end value, which implies a decreasing sequence. In such cases, You should expect to see an error message.
 
 
-***b. Create sequences with the `length.out` argument
+***b. Create sequences with the `length.out` argument*** 
 
 In `seq()`, instead of setting the increment via the `by` argument, you can also specify the `length.out` argument, which creates a equally-spaced sequence with the assigned length (a.k.a. the number of elements in the numeric vector). R will automatically calculate the difference between two neighboring elements according to values of three arguments in `seq()`.
 
@@ -114,7 +114,7 @@ What will happen if you assign a decimal number to the `length.out` argument? In
 Unlike creating sequences with `by` argument, if you specify the `length.out` argument in `seq()`, the start value and limited end value of the sequence you get will be exactly match the input arguments. 
 ::: 
 
-***c. Create sequences with both the `by` and `length.out` arguments
+***c. Create sequences with both the `by` and `length.out` arguments*** 
 
 Lastly, if you provide both the `by` and `length.out` arguments, only one of the `from` and `to` arguments is necessary. With one value (the start value or the limit end value) fixed, seq() will create a vector with specified increment and length.
 

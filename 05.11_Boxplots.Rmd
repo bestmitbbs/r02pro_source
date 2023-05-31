@@ -85,9 +85,11 @@ Let's say we want to compare the `sale_price` for houses with different `kit_qua
 
 ```{r}
 ggplot(data = sahp) + 
-  geom_boxplot(aes(x = kit_qual, y = sale_price))
-ggplot(data = gm2004%>%remove_missing(vars="HDI_category")) + 
-  geom_boxplot(aes(x = HDI_category, y = log(GDP_per_capita)))
+  geom_boxplot(aes(x = kit_qual, 
+                   y = sale_price))
+ggplot(data = gm2004 %>% remove_missing(vars="HDI_category")) + 
+  geom_boxplot(aes(x = HDI_category, 
+                   y = log(GDP_per_capita)))
 ```
 
 This plot shows the boxplots of `sale_price` for different values of `kit_qual` side-by-side, which makes the comparison of distributions straightforward.
@@ -149,7 +151,8 @@ This agrees perfectly with our intuition that houses with higher overall quality
 Before talking about aesthetics, let's create a boxplot of `sale_price` for different values of `house_style`. 
 ```{r, warning=FALSE}
 ggplot(data = na.omit(sahp), 
-       aes(x = house_style, y = sale_price)) +
+       aes(x = house_style, 
+           y = sale_price)) +
   geom_boxplot() +
   scale_x_discrete(limits=c("1Story", "2Story"))
 ```
@@ -158,7 +161,8 @@ Note that we only show the two boxplots with `house_style` equaling `"1Story"` o
 
 ```{r, eval = TRUE, results = FALSE, warning=FALSE}
 g <- ggplot(data = na.omit(sahp), 
-            aes(x = house_style, y = sale_price)) +
+            aes(x = house_style, 
+                y = sale_price)) +
   scale_x_discrete(limits=c("1Story", "2Story"))
 g + geom_boxplot()
 ```

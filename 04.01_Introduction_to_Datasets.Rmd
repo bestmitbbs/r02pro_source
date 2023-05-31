@@ -4,46 +4,46 @@ In this section, we will introduce two datasets that will be used extensively th
 
 ### Gapminder Data Set {#intro-gapminder}
 
-We will first introduce a dataset `gm2007`, located in the R package **r02pro**, the companion package of this book. The `gm2007` dataset is created from the gapminder (https://www.gapminder.org/) website from a wide range of public health related topics. In particular, `gm2007` contains 466 observations and 18 healthcare variables collected in year 2007. Each observation (row) corresponds to a specific country, with columns representing features like mortality, health spending, and other demographic information. 
+We will first introduce a dataset `gm2004`, located in the R package **r02pro**, the companion package of this book. The `gm2004` dataset is created from the gapminder (https://www.gapminder.org/) website from a wide range of public health related topics. In particular, `gm2004` contains 472 observations and 23 healthcare variables collected in year 2004. Each observation (row) corresponds to a specific country, with columns representing features like mortality, health spending, and other demographic information. 
 
-Let's begin by loading the **r02pro** and **tibble** packages since `gm2007` is in a tibble format. 
+Let's begin by loading the **r02pro** and **tibble** packages since `gm2004` is in a tibble format. 
 
 ```{r}
 library(r02pro)
 library(tibble)
 ```
 
-After loading the two packages, you can type `gm2007` to have a quick look of the dataset.
+After loading the two packages, you can type `gm2004` to have a quick look of the dataset.
 
 ```{r, results = TRUE}
-gm2007
+gm2004
 ```
 
-You can see that `gm2007` is a *tibble* with 466 observations and 18 variables. By default, the output only gives a compact view of the first 10 observations in the tibble along with the first few variables that can fit the window. To view the full dataset, you can use the `View()` function, which will open the dataset in a new window. 
+You can see that `gm2004` is a *tibble* with 472 observations and 23 variables. By default, the output only gives a compact view of the first 10 observations in the tibble along with the first few variables that can fit the window. To view the full dataset, you can use the `View()` function, which will open the dataset in a new window. 
 
 ```{r, eval=FALSE}
-View(gm2007)
+View(gm2004)
 ```
 
 To view the top rows of the dataset, you can use the `head()` function, which produces the first 6 observations by default. You can also set an optional second argument to pick any given number of observations. 
 
 ```{r}
-head(gm2007)
-head(gm2007, 15)
+head(gm2004)
+head(gm2004, 15)
 ```
 
 To get a general idea on the dataset, you can use the `summary()` function introduced in Section \@ref(vector-functions). 
 
 ```{r}
-summary(gm2007)
+summary(gm2004)
 ```
 
 In the output, we get the summary statistics for each variable. For numeric variables, we get the minimum, 1st quartile, median, mean, 3rd quartile, and the maximum. It also shows the number of `NA`'s for a particular variable. For character variables, we only get the length of the vector, the class, and the mode. 
 
-Although the types of each variable are shown in the result when typing `gm2007`, a more detailed list can be found with the function `str()`. 
+Although the types of each variable are shown in the result when typing `gm2004`, a more detailed list can be found with the function `str()`. 
 
 ```{r, results=TRUE}
-str(gm2007)
+str(gm2004)
 ```
 
 The `str()` function lists out all variables in the dataset with their corresponding type, length, and each variable's first several values. 

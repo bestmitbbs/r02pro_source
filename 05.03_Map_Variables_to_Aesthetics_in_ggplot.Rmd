@@ -9,7 +9,7 @@ library(ggplot2)
 library(r02pro)
 ggplot(data = gm2004) + 
   geom_point(mapping = aes(x = sugar, 
-                           y = cholesterol))
+                           y = cholesterol)) 
 ```
 
 In the `aes()` function, `x` and `y` can also be viewed as aesthetics. It is clear to see that we are not setting `x` and `y` as constants. Instead, we map the variable `sugar` to `x` and the variable `cholesterol` to `y`. The `x` and `y` coordinates control the location of each data points depending on the variables of `sugar` and `cholesterol`, which is the essence of scatterplot. Now, let's see how to do local aesthetic mappings for color, size, shape, and so on. 
