@@ -92,7 +92,7 @@ The curious you may found that there is a `[1]` showing before the result `3`.  
 :::
 
 
-Although the console may work well for some quick calculations, you need to resort to panel 1 in Figure \@ref(fig:four) (known as the **Editor**) to save our work and run multiple lines of code at once.
+Although the console may work well for some quick calculations, you need to resort to panel 1 in Figure \@ref(fig:four) (known as the **Editor**) to save our work and run multiple lines of code at the same time.
 
 ***d. Editor***
 
