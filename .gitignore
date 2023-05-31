@@ -9,4 +9,5 @@ rsconnect
 latex/.DS_Store
 pics/.DS_Store
 r02pro/.Rproj
-
+up_r02pro.sh
+old_version
